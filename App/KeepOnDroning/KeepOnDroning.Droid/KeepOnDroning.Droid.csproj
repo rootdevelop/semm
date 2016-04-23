@@ -87,6 +87,7 @@
     <Compile Include="Views\CustomLocationView.cs" />
     <Compile Include="Converters\EPreFlightStatusToImageConverter.cs" />
     <Compile Include="Bootstrap\VisibilityPluginBootstrap.cs" />
+    <Compile Include="Converters\BooleanToImageConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -116,6 +117,8 @@
     <AndroidResource Include="Resources\drawable\GreenButton.png" />
     <AndroidResource Include="Resources\drawable\OrangeButton.png" />
     <AndroidResource Include="Resources\drawable\RedButton.png" />
+    <AndroidResource Include="Resources\drawable\OK.png" />
+    <AndroidResource Include="Resources\drawable\ComputerSaysNo.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

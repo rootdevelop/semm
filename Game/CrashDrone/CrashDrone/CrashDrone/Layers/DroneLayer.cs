@@ -11,9 +11,9 @@ namespace CrashDrone.Common
 
         public DroneLayer() : base(CCColor4B.Transparent)
         {
-#warning remove comment when png is uploaded
-            //drone = new CCSprite("Drone.png");
-            //AddChild(drone);
+            drone = new CCSprite("/Asset/Content/Images/drone.png");
+            drone.Scale = 0.3f;
+            AddChild(drone);
         }
 
         protected override void AddedToScene()
@@ -22,8 +22,7 @@ namespace CrashDrone.Common
 
             // Use the bounds to layout the positioning of our drawable assets
             var bounds = VisibleBoundsWorldspace;
-#warning remove comment when png is uploaded
-            //drone.Position = new CCPoint(bounds.MinX, bounds.MidY);
+            drone.Position = new CCPoint(bounds.MaxX * 0.1f, bounds.MidY);
         }
 
         public void MoveUp(List<CCTouch> touches, CCEvent touchEvent)
