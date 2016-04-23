@@ -12,8 +12,11 @@ namespace CrashDrone.Common.Entities
         public PeripherySpawner(PeripheryLayer periphery)
         {
             _layer = periphery;
+            Spawn();
         }
-        
+
+
+
         private void Spawn()
         {
             var peripheryEntity = new Forest();

@@ -10,6 +10,8 @@ namespace CrashDrone.Common.Entities
     {
         public Forest() : base("forest.png")
         {
+            this.Speed = 0.5f;
         }
+
     }
 }
