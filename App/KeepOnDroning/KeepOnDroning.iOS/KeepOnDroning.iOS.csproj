@@ -119,6 +119,12 @@
     <Reference Include="MonoGame.Framework.Net">
       <HintPath>..\packages\CocosSharp.1.7.1.0\lib\Xamarin.iOS10\MonoGame.Framework.Net.dll</HintPath>
     </Reference>
+    <Reference Include="MvvmCross.Plugins.Location">
+      <HintPath>..\packages\MvvmCross.Plugin.Location.4.1.4\lib\Xamarin.iOS10\MvvmCross.Plugins.Location.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Location.iOS">
+      <HintPath>..\packages\MvvmCross.Plugin.Location.4.1.4\lib\Xamarin.iOS10\MvvmCross.Plugins.Location.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json">
@@ -157,11 +163,11 @@
       <DependentUpon>InteractiveMapView.cs</DependentUpon>
     </Compile>
     <Compile Include="Bootstrap\VisibilityPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\LocationPluginBootstrap.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Views\" />
-    <Folder Include="Resources\Images.xcassets\BackButton.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\StartGreenButton.png" />

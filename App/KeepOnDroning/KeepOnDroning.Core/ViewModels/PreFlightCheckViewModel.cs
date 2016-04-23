@@ -4,6 +4,10 @@ using System.Threading.Tasks;
 using MvvmCross.Platform;
 using KeepOnDroning.Core.Enums;
 using KeepOnDroning.Core.Services.Interfaces;
+using MvvmCross.Plugins.Location;
+using MvvmCross.Platform.UI;
+using System.Diagnostics;
+using System;
 
 namespace KeepOnDroning.Core.ViewModels
 {
@@ -20,9 +24,24 @@ namespace KeepOnDroning.Core.ViewModels
         private bool _isLoading;
         private bool _showInformation = true;
         private EPreFlightStatus _preFlightStatus;
+        private MvxGeoLocation _loc;
 
         public PreFlightCheckViewModel()
         {
+
+            Mvx.Resolve<IMvxLocationWatcher>().Start(new MvxLocationOptions()
+                {
+                    Accuracy = MvxLocationAccuracy.Fine,
+                    TrackingMode = MvxLocationTrackingMode.Foreground
+                }, (location) =>
+                {
+                    _loc = location;
+                },
+                (error) =>
+                {
+                    Debug.WriteLine(error);
+                });
+
             NoFlyText = "Interact with Start Button for info";
             BirdsText = "Interact with Start Button for info";
             WeatherText = "Interact with Start Button for info";
@@ -71,53 +90,65 @@ namespace KeepOnDroning.Core.ViewModels
                     {
                         IsLoading = true;
 
-                        var res = await Mvx.Resolve<IToDroneOrNotToDroneOrMaybeShouldCouldIDroneTodayOrNotBecauseILikeDroningSoMuchPleaseYesService>().TellMe(0, 0); //TODO add GPS lat long
+                        try
+                        {
+                            _loc = Mvx.Resolve<IMvxLocationWatcher>().CurrentLocation;
 
-                        Reset();
-                        await Task.Delay(500);
-                        PreFlightStatus = EPreFlightStatus.Orange;
+                            var res = await Mvx.Resolve<IToDroneOrNotToDroneOrMaybeShouldCouldIDroneTodayOrNotBecauseILikeDroningSoMuchPleaseYesService>().TellMe(_loc.Coordinates.Latitude, _loc.Coordinates.Longitude); //TODO add GPS lat long
 
-
-                        // Do checks
-                        NoFlyIsOkay = !res.HasNoFlyZone;
-
-                        if (NoFlyIsOkay)
-                            NoFlyText = "You are not in a no-fly zone!";
-                        else
-                            NoFlyText = "You are in a no-fly zone!";
-                        
-                        await Task.Delay(1000);
-
-                        BirdsIsOkay = !res.HasBirds;
-
-                        if (BirdsIsOkay)
-                            BirdsText = "No dangerous birds are near!";
-                        else
-                            BirdsText = "STOP! Angry birds are near";
-
-                        await Task.Delay(1000);
+                            Reset();
+                            await Task.Delay(500);
+                            PreFlightStatus = EPreFlightStatus.Orange;
 
 
-                        PlanesIsOkay = !res.CrossingFlightpaths;
+                            // Do checks
+                            NoFlyIsOkay = !res.HasNoFlyZone;
 
-                        if (PlanesIsOkay)
-                            PlanesText = "No roaring engines above you!";
-                        else
-                            PlanesText = "Planes ahead, only for the brave!";
+                            if (NoFlyIsOkay)
+                                NoFlyText = "You are not in a no-fly zone!";
+                            else
+                                NoFlyText = "You are in a no-fly zone!";
 
-                        await Task.Delay(1000);
+                            await Task.Delay(1000);
+
+                            BirdsIsOkay = !res.HasBirds;
+
+                            if (BirdsIsOkay)
+                                BirdsText = "No dangerous birds are near!";
+                            else
+                                BirdsText = "STOP! Angry birds are near";
+
+                            await Task.Delay(1000);
 
 
-                        WeatherIsOkay = !res.HasDangerDanger;
+                            PlanesIsOkay = !res.CrossingFlightpaths;
 
-                        if (WeatherIsOkay)
-                            WeatherText = "There is no bad weather, only wrong clothing!";
-                        else
-                            WeatherText = "Rain! Don't forget to give your drone an umbrella!";
+                            if (PlanesIsOkay)
+                                PlanesText = "No roaring engines above you!";
+                            else
+                                PlanesText = "Planes ahead, only for the brave!";
 
-						if(WeatherIsOkay && BirdsIsOkay && NoFlyIsOkay && PlanesIsOkay)
-                        	PreFlightStatus = EPreFlightStatus.Green;
-                        IsLoading = false;
+                            await Task.Delay(1000);
+
+
+                            WeatherIsOkay = !res.HasDangerDanger;
+
+                            if (WeatherIsOkay)
+                                WeatherText = "There is no bad weather, only wrong clothing!";
+                            else
+                                WeatherText = "Rain! Don't forget to give your drone an umbrella!";
+
+                            if (WeatherIsOkay && BirdsIsOkay && NoFlyIsOkay && PlanesIsOkay)
+                                PreFlightStatus = EPreFlightStatus.Green;
+                            IsLoading = false;
+                              
+                        }
+                        catch (Exception ex)
+                        {
+                            Debug.WriteLine("No gps?");
+                            IsLoading = false;
+                        }
+                  
                     });
             }
         }
