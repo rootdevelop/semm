@@ -115,8 +115,8 @@ namespace KeepOnDroning.Core.ViewModels.ViewModels
                         else
                             WeatherText = "Rain! Don't forget to give your drone an umbrella!";
 
-
-                        PreFlightStatus = EPreFlightStatus.Green;
+						if(WeatherIsOkay && BirdsIsOkay && NoFlyIsOkay && PlanesIsOkay)
+                        	PreFlightStatus = EPreFlightStatus.Green;
                         IsLoading = false;
                     });
             }

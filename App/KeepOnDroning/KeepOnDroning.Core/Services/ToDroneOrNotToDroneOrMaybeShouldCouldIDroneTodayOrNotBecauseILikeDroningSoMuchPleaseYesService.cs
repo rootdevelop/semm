@@ -3,10 +3,11 @@ using Xciles.Uncommon.Net;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using KeepOnDroning.Core.Domain;
+using KeepOnDroning.Core.Services.Interfaces;
 
 namespace KeepOnDroning.Core.Services
 {
-    public class ToDroneOrNotToDroneOrMaybeShouldCouldIDroneTodayOrNotBecauseILikeDroningSoMuchPleaseYesService
+	public class ToDroneOrNotToDroneOrMaybeShouldCouldIDroneTodayOrNotBecauseILikeDroningSoMuchPleaseYesService : IToDroneOrNotToDroneOrMaybeShouldCouldIDroneTodayOrNotBecauseILikeDroningSoMuchPleaseYesService
     {
 
         public async Task<ToDroneOrNotToDroneResponse> TellMe(double lat, double lng)

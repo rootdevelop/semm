@@ -7,7 +7,8 @@ using Android.Views;
 namespace KeepOnDroning.Droid.Views
 {
 	[Activity(Label = "View for GameViewModel",
-		Theme = "@style/Theme.Main")]
+		Theme = "@style/Theme.Main",
+		ScreenOrientation = ScreenOrientation.Portrait)]
 	public class GameView : MvxActivity
     {
         protected override void OnCreate(Bundle bundle)

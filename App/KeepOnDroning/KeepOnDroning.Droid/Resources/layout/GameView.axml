@@ -14,7 +14,7 @@
         android:minHeight="25px"
         local:MvxBind="Click GoBackCommand">
         <ImageView
-            android:src="@android:drawable/ic_menu_gallery"
+            android:src="@drawable/backbutton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/imageView7" />

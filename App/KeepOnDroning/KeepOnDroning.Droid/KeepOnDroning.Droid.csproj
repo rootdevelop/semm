@@ -119,6 +119,7 @@
     <AndroidResource Include="Resources\drawable\RedButton.png" />
     <AndroidResource Include="Resources\drawable\OK.png" />
     <AndroidResource Include="Resources\drawable\ComputerSaysNo.png" />
+    <AndroidResource Include="Resources\drawable\BackButton.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
