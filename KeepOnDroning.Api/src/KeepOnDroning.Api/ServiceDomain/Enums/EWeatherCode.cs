@@ -1,6 +1,6 @@
 ﻿namespace KeepOnDroning.Api.ServiceDomain.Enums
 {
-    public enum EWheaterCode
+    public enum EWeatherCode
     {
         Thunderstormwithlightrain = 200,
         Thunderstormwithrain = 201,

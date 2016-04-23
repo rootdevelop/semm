@@ -15,7 +15,7 @@ namespace KeepOnDroning.Api.Business
         private readonly string _openWeatherMapUri = "http://api.openweathermap.org/data/2.5/weather?lat={0}&lon={1}&appid={2}";
         private string _wheaterAppId = "37bafeb001ed3617ec71a179eaf594ce"; 
 
-        public async Task<Weather> GetWeather(float latitude, float longitude)
+        public async Task<WeatherResult> GetWeather(float latitude, float longitude)
         {
             using (var client = new HttpClient())
             {
@@ -24,7 +24,7 @@ namespace KeepOnDroning.Api.Business
                 httpResponseMessage.EnsureSuccessStatusCode();
 
                 var resultAsString = await httpResponseMessage.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<Weather>(resultAsString, _jsonSerializerSettings);
+                return JsonConvert.DeserializeObject<WeatherResult>(resultAsString, _jsonSerializerSettings);
             }
         }
     }
