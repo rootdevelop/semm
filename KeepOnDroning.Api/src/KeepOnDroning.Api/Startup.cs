@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using KeepOnDroning.Api.Data;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
+using Microsoft.Data.Entity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -16,24 +18,26 @@ namespace KeepOnDroning.Api
         {
             // Set up configuration sources.
             var builder = new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json");
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json")
+                .AddEnvironmentVariables();
 
-            if (env.IsEnvironment("Development"))
-            {
-                // This will push telemetry data through Application Insights pipeline faster, allowing you to view results immediately.
-            }
-
-            builder.AddEnvironmentVariables();
-            Configuration = builder.Build().ReloadOnChanged("appsettings.json");
+            Configuration = builder.Build();
         }
 
         public IConfigurationRoot Configuration { get; set; }
 
-        // This method gets called by the runtime. Use this method to add services to the container
+        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddEntityFramework()
+                .AddSqlServer()
+                .AddDbContext<DroningDbContext>(options =>
+                    options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]));
+
             // Add framework services.
             services.AddMvc();
+
+            // Config
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline
