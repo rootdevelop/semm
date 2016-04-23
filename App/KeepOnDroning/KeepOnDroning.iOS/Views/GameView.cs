@@ -44,5 +44,10 @@ namespace KeepOnDroning.iOS
 			if (GameUIView != null)
 				GameUIView.Paused = false;
 		}
+
+		public override bool PrefersStatusBarHidden()
+		{
+			return true;
+		}
 	}
 }

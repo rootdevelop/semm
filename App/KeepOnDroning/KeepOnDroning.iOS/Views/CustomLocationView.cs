@@ -18,11 +18,10 @@ namespace KeepOnDroning.iOS
             // Perform any additional setup after loading the view, typically from a nib.
         }
 
-        public override void DidReceiveMemoryWarning()
-        {
-            base.DidReceiveMemoryWarning();
-            // Release any cached data, images, etc that aren't in use.
-        }
+		public override bool PrefersStatusBarHidden()
+		{
+			return true;
+		}
     }
 }
 
