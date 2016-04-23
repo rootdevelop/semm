@@ -118,8 +118,9 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CrashDrone\CrashDrone.csproj">
-      <Name>CrashDrone</Name>
+    <ProjectReference Include="..\CrashDrone\CrashDrone.Common.csproj">
+      <Name>CrashDrone.Common</Name>
+      <Project>{920D9669-D74E-4978-8C45-33F6B0B945F7}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

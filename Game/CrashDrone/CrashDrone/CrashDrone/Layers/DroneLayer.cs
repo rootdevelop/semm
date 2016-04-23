@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using CocosSharp;
 using Microsoft.Xna.Framework;
 
-namespace CrashDrone
+namespace CrashDrone.Common
 {
     public class DroneLayer : CCLayerColor
     {

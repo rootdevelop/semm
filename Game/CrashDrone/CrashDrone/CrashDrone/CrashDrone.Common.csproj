@@ -33,10 +33,12 @@
   <ItemGroup>
     <Compile Include="GameDelegate.cs" />
     <Compile Include="Layers\CollisionLayer.cs" />
+    <Compile Include="Layers\HudLayer.cs" />
     <Compile Include="Layers\DroneLayer.cs" />
     <Compile Include="Layers\PeripheryLayer.cs" />
     <Compile Include="Layers\BackgroundLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scenes\GameScene.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="box2d, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
