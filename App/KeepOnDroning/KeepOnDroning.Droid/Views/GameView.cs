@@ -3,6 +3,7 @@ using Android.OS;
 using MvvmCross.Droid.Views;
 using MvvmCross.Binding.BindingContext;
 using Android.Views;
+using Android.Content.PM;
 
 namespace KeepOnDroning.Droid.Views
 {
