@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using KeepOnDroning.Api.Data;
 using KeepOnDroning.Api.Domain;
+using KeepOnDroning.Api.ServiceDomain;
+using KeepOnDroning.Api.ServiceDomain.Enums;
 using Microsoft.Data.Entity;
 
 namespace KeepOnDroning.Api.Business
@@ -17,20 +19,33 @@ namespace KeepOnDroning.Api.Business
             _dbContext = dbContext;
         }
 
-        public async Task<List<Airport>> NoFlightZones(float latitude, float longitude)
+        public async Task<List<ServiceNoFlyZone>> NoFlyZones(float latitude, float longitude)
         {
-            var noFlyZones = await (from a in _dbContext.Set<Domain.Airport>()
+            var noFlyEntities = await (from a in _dbContext.Set<Domain.Airport>()
                                     where distance(a.Lat, a.Lng, latitude, longitude, 'K') < 50
                                     select a).ToListAsync();
 
-            if (noFlyZones.Count > 0)
+            if (noFlyEntities.Count > 0)
             {
                 return null;
             }
+
+            var noFlyZones = noFlyEntities.Select(x =>
+            {
+                return new ServiceNoFlyZone()
+                {
+                    Name = x.Name,
+                    Type = ENoFlyZoneType.Airport,
+                    Latitude = x.Lat,
+                    Longitude = x.Lng,
+                    Size = 5,
+                };
+            }).ToList();
+
             return noFlyZones;
         }
 
-        public async Task<bool> IsInNoFlightZone(float latitude, float longitude)
+        public async Task<bool> IsInNoFlyZone(float latitude, float longitude)
         {
             var noFlyZones = await (from a in _dbContext.Set<Domain.Airport>()
                                     where distance(a.Lat, a.Lng, latitude, longitude, 'K') < 5
