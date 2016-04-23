@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using KeepOnDroning.Api.Business;
 using KeepOnDroning.Api.Data;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
@@ -38,6 +39,7 @@ namespace KeepOnDroning.Api
             services.AddMvc();
 
             // Config
+            services.AddTransient<DancerBusiness, DancerBusiness>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline
