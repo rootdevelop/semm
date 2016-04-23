@@ -30,8 +30,8 @@ namespace SpaceGame.Droid
 				var contentSearchPaths = new List<string> () { "Fonts", "Sounds" };
 				CCSizeI viewSize = gameView.ViewSize;
 
-				int width = 768;
-				int height = 1027;
+				int width = 600;
+				int height = 400;
 
 				// Set world dimensions
 				gameView.DesignResolution = new CCSizeI (width, height);
@@ -40,6 +40,7 @@ namespace SpaceGame.Droid
 				// Determine whether to use the high or low def versions of our images
 				// Make sure the default texel to content size ratio is set correctly
 				// Of course you're free to have a finer set of image resolutions e.g (ld, hd, super-hd)
+				/*
 				if (width < viewSize.Width)
 				{
 					contentSearchPaths.Add ("Images/Hd");
@@ -50,6 +51,7 @@ namespace SpaceGame.Droid
 					contentSearchPaths.Add ("Images/Ld");
 					CCSprite.DefaultTexelToContentSizeRatio = 1.0f;
 				}
+				*/
 
 				gameView.ContentManager.SearchPaths = contentSearchPaths;
 
