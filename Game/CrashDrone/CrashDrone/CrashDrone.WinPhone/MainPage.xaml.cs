@@ -16,8 +16,7 @@ using MonoGame.Framework;
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 
 using CocosSharp;
-
-using CrashDrone;
+using CrashDrone.Common;
 
 namespace CrashDrone.WinPhone
 {

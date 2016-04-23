@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using CocosSharp;
 using CocosDenshion;
 
-namespace CrashDrone
+namespace CrashDrone.Common
 {
     public static class GameDelegate
     {
@@ -39,8 +39,13 @@ namespace CrashDrone
 
                 gameView.ContentManager.SearchPaths = contentSearchPaths;
 
-                CCScene gameScene = new CCScene(gameView);
-                gameScene.AddLayer(new GameLayer());
+
+                var gameScene = new GameScene(gameView);
+                gameScene.AddLayer(new BackgroundLayer());
+                gameScene.AddLayer(new PeripheryLayer());
+                gameScene.AddLayer(new CollisionLayer());
+                gameScene.AddLayer(new DroneLayer());
+                gameScene.AddLayer(new HudLayer());
                 gameView.RunWithScene(gameScene);
             }
         }

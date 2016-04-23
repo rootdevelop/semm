@@ -1,7 +1,6 @@
 using Android.App;
 using Android.OS;
 using MvvmCross.Droid.Views;
-using MvvmCross.Binding.BindingContext;
 
 namespace KeepOnDroning.Droid.Views
 {
