@@ -1,4 +1,4 @@
-﻿// WARNING
+// WARNING
 //
 // This file has been generated automatically by Xamarin Studio from the outlets and
 // actions declared in your storyboard file.
@@ -14,9 +14,16 @@ namespace KeepOnDroning.iOS
 	[Register ("InteractiveMapView")]
 	partial class InteractiveMapView
 	{
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UIButton BtnBack { get; set; }
+
 		void ReleaseDesignerOutlets ()
 		{
+			if (BtnBack != null) {
+				BtnBack.Dispose ();
+				BtnBack = null;
+			}
 		}
 	}
 }
-
