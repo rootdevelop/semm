@@ -23,7 +23,7 @@ namespace KeepOnDroning.iOS
 			set.Bind (btnMap).To (ViewModel => ViewModel.GoToInteractiveMapCommand);
 			set.Bind (btnStart).To (ViewModel => ViewModel.PreFlightCheckCommand);
 
-			set.Bind (lblNoFLyZone).To (ViewModel => ViewModel.NoFlyText);
+			set.Bind (lblNoFlyZone).To (ViewModel => ViewModel.NoFlyText);
 			set.Bind (lblBirds).To (ViewModel => ViewModel.BirdsText);
 			set.Bind (lblPlains).To (ViewModel => ViewModel.PlanesText);
 			set.Bind (lblWeather).To (ViewModel => ViewModel.WeatherText);

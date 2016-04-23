@@ -43,7 +43,7 @@ namespace KeepOnDroning.iOS
 		UIKit.UILabel lblBirds { get; set; }
 
 		[Outlet]
-		UIKit.UILabel lblNoFLyZone { get; set; }
+		UIKit.UILabel lblNoFlyZone { get; set; }
 
 		[Outlet]
 		UIKit.UILabel lblPlains { get; set; }
@@ -78,9 +78,9 @@ namespace KeepOnDroning.iOS
 				btnStart = null;
 			}
 
-			if (lblNoFLyZone != null) {
-				lblNoFLyZone.Dispose ();
-				lblNoFLyZone = null;
+			if (lblNoFlyZone != null) {
+				lblNoFlyZone.Dispose ();
+				lblNoFlyZone = null;
 			}
 
 			if (lblBirds != null) {
