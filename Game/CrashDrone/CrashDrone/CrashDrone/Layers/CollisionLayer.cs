@@ -11,11 +11,11 @@ namespace CrashDrone.Common
         // Define a label variable
         CCLabel label;
 
-        public CollisionLayer() : base(CCColor4B.Blue)
+        public CollisionLayer() : base(CCColor4B.Transparent)
         {
 
             // create and initialize a Label
-            label = new CCLabel("Hello CocosSharp", "Fonts/MarkerFelt", 22, CCLabelFormat.SpriteFont);
+            label = new CCLabel("Collision", "Fonts/MarkerFelt", 22, CCLabelFormat.SpriteFont);
 
             // add the label as a child to this Layer
             AddChild(label);
