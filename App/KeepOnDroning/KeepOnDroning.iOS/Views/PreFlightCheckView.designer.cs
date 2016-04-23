@@ -1,11 +1,13 @@
 // WARNING
 //
-// This file has been generated automatically by Xamarin Studio Business to store outlets and
-// actions made in the UI designer. If it is removed, they will be lost.
-// Manual changes to this file may not be handled correctly.
+// This file has been generated automatically by Xamarin Studio from the outlets and
+// actions declared in your storyboard file.
+// Manual changes to this file will not be maintained.
 //
 using Foundation;
+using System;
 using System.CodeDom.Compiler;
+using UIKit;
 
 namespace KeepOnDroning.iOS
 {
@@ -50,72 +52,60 @@ namespace KeepOnDroning.iOS
 
 		[Outlet]
 		UIKit.UILabel lblWeather { get; set; }
-		
+
 		void ReleaseDesignerOutlets ()
 		{
 			if (btnCustom != null) {
 				btnCustom.Dispose ();
 				btnCustom = null;
 			}
-
 			if (btnGame != null) {
 				btnGame.Dispose ();
 				btnGame = null;
 			}
-
 			if (btnInfo != null) {
 				btnInfo.Dispose ();
 				btnInfo = null;
 			}
-
 			if (btnMap != null) {
 				btnMap.Dispose ();
 				btnMap = null;
 			}
-
 			if (btnStart != null) {
 				btnStart.Dispose ();
 				btnStart = null;
 			}
-
-			if (lblNoFlyZone != null) {
-				lblNoFlyZone.Dispose ();
-				lblNoFlyZone = null;
-			}
-
-			if (lblBirds != null) {
-				lblBirds.Dispose ();
-				lblBirds = null;
-			}
-
-			if (lblPlains != null) {
-				lblPlains.Dispose ();
-				lblPlains = null;
-			}
-
-			if (lblWeather != null) {
-				lblWeather.Dispose ();
-				lblWeather = null;
-			}
-
-			if (imgCheckNoFly != null) {
-				imgCheckNoFly.Dispose ();
-				imgCheckNoFly = null;
-			}
-
 			if (imgCheckBirds != null) {
 				imgCheckBirds.Dispose ();
 				imgCheckBirds = null;
 			}
-
+			if (imgCheckNoFly != null) {
+				imgCheckNoFly.Dispose ();
+				imgCheckNoFly = null;
+			}
 			if (imgCheckPlains != null) {
 				imgCheckPlains.Dispose ();
 				imgCheckPlains = null;
 			}
-
 			if (imgCheckWeather != null) {
 				imgCheckWeather.Dispose ();
 				imgCheckWeather = null;
+			}
+			if (lblBirds != null) {
+				lblBirds.Dispose ();
+				lblBirds = null;
+			}
+			if (lblNoFlyZone != null) {
+				lblNoFlyZone.Dispose ();
+				lblNoFlyZone = null;
+			}
+			if (lblPlains != null) {
+				lblPlains.Dispose ();
+				lblPlains = null;
+			}
+			if (lblWeather != null) {
+				lblWeather.Dispose ();
+				lblWeather = null;
 			}
 		}
 	}
