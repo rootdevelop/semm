@@ -108,6 +108,9 @@ namespace KeepOnDroning.Droid
 			// aapt resource value: 0x7f050001
 			public const int MvxBindingTagUnique = 2131034113;
 			
+			// aapt resource value: 0x7f050002
+			public const int myButton = 2131034114;
+			
 			static Id()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -131,10 +134,13 @@ namespace KeepOnDroning.Droid
 			public const int InteractiveMapView = 2130968578;
 			
 			// aapt resource value: 0x7f040003
-			public const int PreFlightCheckView = 2130968579;
+			public const int Main = 2130968579;
 			
 			// aapt resource value: 0x7f040004
-			public const int SplashScreen = 2130968580;
+			public const int PreFlightCheckView = 2130968580;
+			
+			// aapt resource value: 0x7f040005
+			public const int SplashScreen = 2130968581;
 			
 			static Layout()
 			{

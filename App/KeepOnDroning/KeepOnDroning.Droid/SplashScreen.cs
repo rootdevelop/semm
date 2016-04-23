@@ -17,5 +17,10 @@ namespace KeepOnDroning.Droid
             : base(Resource.Layout.SplashScreen)
         {
         }
+
+		protected override void OnCreate(Android.OS.Bundle bundle)
+		{
+			base.OnCreate(bundle);
+		}
     }
 }
