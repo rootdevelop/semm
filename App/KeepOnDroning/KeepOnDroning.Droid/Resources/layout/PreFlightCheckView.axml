@@ -87,6 +87,7 @@
                 local:MvxBind="Text NoFlyText;Checked NoFlyIsOkay"
                 android:editable="false"
                 android:clickable="false"
+                android:button="@drawable/checkbox"
                 android:textColor="@color/black_color" />
         </LinearLayout>
         <LinearLayout

@@ -116,6 +116,9 @@
     <AndroidResource Include="Resources\drawable\GreenButton.png" />
     <AndroidResource Include="Resources\drawable\OrangeButton.png" />
     <AndroidResource Include="Resources\drawable\RedButton.png" />
+    <AndroidResource Include="Resources\drawable\checkbox.xml" />
+    <AndroidResource Include="Resources\drawable\OK.png" />
+    <AndroidResource Include="Resources\drawable\ComputerSaysNo.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
