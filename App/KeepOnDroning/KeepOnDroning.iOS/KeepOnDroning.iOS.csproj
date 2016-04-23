@@ -134,4 +134,9 @@
   <ItemGroup>
     <Folder Include="Views\" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\StartGreenButton.png" />
+    <BundleResource Include="Resources\StartRedButton.png" />
+    <BundleResource Include="Resources\StartOrangeButton.png" />
+  </ItemGroup>
 </Project>
