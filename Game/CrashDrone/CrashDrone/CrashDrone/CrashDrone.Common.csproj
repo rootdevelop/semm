@@ -32,9 +32,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Entities\CollisionSpawner.cs" />
+    <Compile Include="Entities\Collision\Airplane.cs" />
+    <Compile Include="Entities\Collision\Bird.cs" />
+    <Compile Include="Entities\Collision\House.cs" />
     <Compile Include="Entities\Collision\Tree.cs" />
     <Compile Include="Entities\PeripherySpawner.cs" />
     <Compile Include="Entities\Periphery\Forest.cs" />
+    <Compile Include="Entities\Periphery\RoastedChicken.cs" />
     <Compile Include="GameDelegate.cs" />
     <Compile Include="Layers\CollisionLayer.cs" />
     <Compile Include="Layers\HudLayer.cs" />

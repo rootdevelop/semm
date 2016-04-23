@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CrashDrone.Entities.Collision
+namespace CrashDrone.Entities
 {
     class Tree
     {
