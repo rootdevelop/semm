@@ -19,51 +19,43 @@
         <view contentMode="scaleToFill" id="2">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I0a-xl-ADY">
+                <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background.png" translatesAutoresizingMaskIntoConstraints="NO" id="I0a-xl-ADY">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iWV-g0-cVF">
-                    <rect key="frame" x="550" y="554" width="50" height="46"/>
+                    <rect key="frame" x="532" y="536" width="68" height="64"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="50" id="er8-ug-bHT"/>
-                        <constraint firstAttribute="height" constant="46" id="puP-AX-cyF"/>
+                        <constraint firstAttribute="width" constant="68" id="er8-ug-bHT"/>
+                        <constraint firstAttribute="height" constant="64" id="puP-AX-cyF"/>
                     </constraints>
-                    <state key="normal" title="Info"/>
+                    <state key="normal" backgroundImage="InfoButton.png"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGT-jJ-PSp">
-                    <rect key="frame" x="0.0" y="554" width="50" height="46"/>
+                    <rect key="frame" x="0.0" y="536" width="68" height="64"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="46" id="AfQ-Gc-VVN"/>
-                        <constraint firstAttribute="width" constant="50" id="YKE-UG-6ih"/>
+                        <constraint firstAttribute="height" constant="64" id="AfQ-Gc-VVN"/>
+                        <constraint firstAttribute="width" constant="68" id="YKE-UG-6ih"/>
                     </constraints>
-                    <state key="normal" title="Game"/>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n0P-y1-s60">
-                    <rect key="frame" x="0.0" y="0.0" width="50" height="46"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="50" id="BRp-Lk-22n"/>
-                        <constraint firstAttribute="height" constant="46" id="LIb-vo-hhM"/>
-                    </constraints>
-                    <state key="normal" title="Custom"/>
+                    <state key="normal" backgroundImage="GameButton.png"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8I-qG-Uh7">
-                    <rect key="frame" x="550" y="0.0" width="50" height="46"/>
+                    <rect key="frame" x="532" y="0.0" width="68" height="64"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="46" id="ZRb-qj-ifQ"/>
-                        <constraint firstAttribute="width" constant="50" id="rpC-pj-cWo"/>
+                        <constraint firstAttribute="height" constant="64" id="ZRb-qj-ifQ"/>
+                        <constraint firstAttribute="width" constant="68" id="rpC-pj-cWo"/>
                     </constraints>
-                    <state key="normal" title="Map"/>
+                    <state key="normal" backgroundImage="MapButton.png"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSG-gc-PWA">
-                    <rect key="frame" x="258" y="446" width="85" height="86"/>
+                    <rect key="frame" x="236" y="403" width="128" height="129"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="85" id="MkL-9r-77C"/>
-                        <constraint firstAttribute="height" constant="86" id="ReY-Vk-acK"/>
+                        <constraint firstAttribute="width" constant="128" id="MkL-9r-77C"/>
+                        <constraint firstAttribute="height" constant="129" id="ReY-Vk-acK"/>
                     </constraints>
                     <state key="normal" backgroundImage="StartGreenButton.png"/>
                 </button>
                 <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVO-5A-vdF">
-                    <rect key="frame" x="57" y="95" width="486" height="315"/>
+                    <rect key="frame" x="57" y="95" width="486" height="272"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="486" id="v02-P8-bEk"/>
@@ -108,6 +100,14 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D0f-SU-xIL">
                     <rect key="frame" x="170" y="182" width="21" height="21"/>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n0P-y1-s60">
+                    <rect key="frame" x="0.0" y="0.0" width="68" height="64"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="68" id="BRp-Lk-22n"/>
+                        <constraint firstAttribute="height" constant="64" id="LIb-vo-hhM"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="WaypointButton.png"/>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -139,6 +139,11 @@
         </view>
     </objects>
     <resources>
+        <image name="Background.png" width="602" height="601"/>
+        <image name="GameButton.png" width="242" height="226"/>
+        <image name="InfoButton.png" width="244" height="225"/>
+        <image name="MapButton.png" width="244" height="228"/>
         <image name="StartGreenButton.png" width="433" height="428"/>
+        <image name="WaypointButton.png" width="241" height="230"/>
     </resources>
 </document>
