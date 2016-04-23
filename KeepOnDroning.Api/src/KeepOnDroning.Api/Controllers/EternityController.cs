@@ -20,7 +20,7 @@ namespace KeepOnDroning.Api.Controllers
 
         [Route("Azshara")]
         [HttpPost]
-        public async Task Azshara(OoiRequest legion)
+        public async Task Azshara([FromBody] OoiRequest legion)
         {
             await _eternityBusiness.Summon(legion);
         }
