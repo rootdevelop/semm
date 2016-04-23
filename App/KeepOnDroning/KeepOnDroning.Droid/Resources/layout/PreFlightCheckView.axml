@@ -1,12 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:local="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
-    <TextView
-        android:layout_width="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <RelativeLayout
+        android:background="#FF00FF"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        local:MvxBind="Click GoToInteractiveMapCommand">
+        <ImageView
+            android:src="@android:drawable/ic_menu_gallery"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView1" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:background="#FF00FF"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        local:MvxBind="Click GoToCustomLocationCommand">
+        <ImageView
+            android:src="@android:drawable/ic_menu_gallery"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView2" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:background="#FF00FF"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        local:MvxBind="Click InformationCommand">
+        <ImageView
+            android:src="@android:drawable/ic_menu_gallery"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView3" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:background="#FF00FF"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        local:MvxBind="Click GoToGameCommand">
+        <ImageView
+            android:src="@android:drawable/ic_menu_gallery"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView4" />
+    </RelativeLayout>
+    <LinearLayout
+        android:background="#FF00FF"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:text="Preflightcheckview" />
-</LinearLayout>
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:background="#FF030F"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/linearLayout1">
+            <CheckBox
+                android:text="CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/checkBox1"
+                local:MvxBind="Text NoFlyText;Checked NoFlyIsOkay"
+                android:editable="true" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:background="#02030F"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/linearLayout2">
+            <CheckBox
+                android:text="CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/checkBox2"
+                local:MvxBind="Text BirdsText;Checked BirdsIsOkay"
+                android:editable="true" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:background="#020FFF"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/linearLayout3">
+            <CheckBox
+                android:text="CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/checkBox3"
+                local:MvxBind="Text PlanesText;Checked PlanesIsOkay"
+                android:editable="true" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:background="#020FFF"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/linearLayout4">
+            <CheckBox
+                android:text="CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/checkBox4"
+                local:MvxBind="Text WeatherText;Checked WeatherIsOkay"
+                android:editable="true" />
+        </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout
+        android:background="#FFFFFF"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="100dp"
+        local:MvxBind="Click PreFlightCheckCommand">
+        <ImageView
+            android:src="@android:drawable/ic_menu_gallery"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView4" />
+    </RelativeLayout>
+</RelativeLayout>

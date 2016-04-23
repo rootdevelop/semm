@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace CrashDrone.Common.Entities
 {
-    class Forest : PeripheryEntity
+    public class Forest : PeripheryEntity
     {
+        public Forest() : base("forest.png")
+        {
+        }
     }
 }

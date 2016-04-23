@@ -7,7 +7,10 @@ using CocosSharp;
 
 namespace CrashDrone.Common.Entities
 {
-    abstract class PeripheryEntity : CCSprite
+    public abstract class PeripheryEntity : CCSprite
     {
+        public PeripheryEntity(string filename) : base(filename)
+        {
+        }
     }
 }

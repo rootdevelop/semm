@@ -6,14 +6,12 @@ using Android.Views;
 
 namespace KeepOnDroning.Droid.Views
 {
-	[Activity(Label = "View for GameView")]
+	[Activity(Label = "View for GameViewModel",
+		Theme = "@style/Theme.Main")]
 	public class GameView : MvxActivity
     {
         protected override void OnCreate(Bundle bundle)
         {
-			RequestWindowFeature(WindowFeatures.NoTitle);
-			Window.AddFlags(WindowManagerFlags.Fullscreen);
-
             base.OnCreate(bundle);
 			SetContentView(Resource.Layout.GameView);
         }

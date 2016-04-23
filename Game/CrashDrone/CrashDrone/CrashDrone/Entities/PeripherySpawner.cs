@@ -1,17 +1,34 @@
 ﻿using CocosSharp;
+using System;
 
 namespace CrashDrone.Common.Entities
 {
-    class PeripherySpawner
+    public class PeripherySpawner
     {
-        private CCLayerColor _peripheryLayer;
+        private int _height;
 
-        public PeripherySpawner(CCLayerColor periphery)
+        public Action<PeripheryEntity> EntitySpawned; 
+
+        public PeripherySpawner( int height)
         {
-            _peripheryLayer = periphery;
+            _height = height;
         }
 
 
+
+
+        private Spawn()
+        {
+            var peripheryEntity = new Forest();
+
+            peripheryEntity.PositionX = 0;
+            peripheryEntity.PositionY = height-forest.;
+
+            if (EntitySpawned != null)
+            {
+                EntitySpawned(peripheryEntity);
+            }
+        }
 
     }
 }
