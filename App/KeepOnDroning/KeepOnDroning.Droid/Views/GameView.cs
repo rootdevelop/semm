@@ -5,6 +5,7 @@ using MvvmCross.Binding.BindingContext;
 using Android.Views;
 using Android.Content.PM;
 using CocosSharp;
+using CrashDrone.Common;
 
 namespace KeepOnDroning.Droid.Views
 {
@@ -19,7 +20,7 @@ namespace KeepOnDroning.Droid.Views
 			SetContentView(Resource.Layout.GameView);
 
 			var gameView = (CCGameView)FindViewById(Resource.Id.GameView);
-			//gameView.ViewCreated += GameDelegate.LoadGame;
+			gameView.ViewCreated += GameDelegate.LoadGame;
         }
     }
 }
