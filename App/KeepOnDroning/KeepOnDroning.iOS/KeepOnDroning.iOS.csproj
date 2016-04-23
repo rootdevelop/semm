@@ -197,6 +197,22 @@
     <BundleResource Include="Content\Images\Periphery\cloud2.png" />
     <BundleResource Include="Content\Images\Periphery\forest.png" />
     <BundleResource Include="Resources\BackButton.png" />
+    <BundleResource Include="Resources\IMG_background.png" />
+    <BundleResource Include="Resources\IMG_birds_negative.png" />
+    <BundleResource Include="Resources\IMG_birds_positive.png" />
+    <BundleResource Include="Resources\IMG_check_button.png" />
+    <BundleResource Include="Resources\IMG_game_button.png" />
+    <BundleResource Include="Resources\IMG_info_button.png" />
+    <BundleResource Include="Resources\IMG_logo.png" />
+    <BundleResource Include="Resources\IMG_map_view_button.png" />
+    <BundleResource Include="Resources\IMG_noflyzones_negative.png" />
+    <BundleResource Include="Resources\IMG_noflyzones_positive.png" />
+    <BundleResource Include="Resources\IMG_otherobjects_negative.png" />
+    <BundleResource Include="Resources\IMG_otherobjects_positive.png" />
+    <BundleResource Include="Resources\IMG_waypoints_button.png" />
+    <BundleResource Include="Resources\IMG_weather_negative.png" />
+    <BundleResource Include="Resources\IMG_weather_positive.png" />
+    <BundleResource Include="Resources\IMG_wind.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KeepOnDroning.Core\KeepOnDroning.Core.csproj">
