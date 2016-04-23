@@ -138,5 +138,12 @@
     <BundleResource Include="Resources\StartGreenButton.png" />
     <BundleResource Include="Resources\StartRedButton.png" />
     <BundleResource Include="Resources\StartOrangeButton.png" />
+    <BundleResource Include="Resources\Background.png" />
+    <BundleResource Include="Resources\ComputerSaysNo.png" />
+    <BundleResource Include="Resources\GameButton.png" />
+    <BundleResource Include="Resources\InfoButton.png" />
+    <BundleResource Include="Resources\MapButton.png" />
+    <BundleResource Include="Resources\OK.png" />
+    <BundleResource Include="Resources\WaypointButton.png" />
   </ItemGroup>
 </Project>
