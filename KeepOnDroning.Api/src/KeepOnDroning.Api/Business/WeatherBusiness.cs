@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using KeepOnDroning.Api.Helpers;
 using KeepOnDroning.Api.ServiceDomain;
 using Newtonsoft.Json;
 
@@ -45,8 +46,8 @@ namespace KeepOnDroning.Api.Business
                     WindDegree = weather.Wind.Deg,
                     WindSpeed = weather.Wind.Speed
                 },
-                MaxHeight = 1000,
                 HasDangerDanger = IsDangerDanger(weather),
+                MaxHeight = 1000,
             };
             return dancer;
         }
@@ -76,6 +77,10 @@ namespace KeepOnDroning.Api.Business
                 return true;
             }
             if (weatherCode <= 957)
+            {
+                return true;
+            }
+            if (weather.Wind.Speed > DroningConstants.MaxWindSpeed)
             {
                 return true;
             }

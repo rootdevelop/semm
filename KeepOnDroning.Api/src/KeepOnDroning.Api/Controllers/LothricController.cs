@@ -14,21 +14,9 @@ namespace KeepOnDroning.Api.Controllers
         [Route("Estus")]
         public async Task<DancerResponse> Estus(WeatherBusiness weatherBusiness, float latitude, float longitude)
         {
-            var dancer = weatherBusiness
+            var dancer = await weatherBusiness.Dancing(latitude, longitude);
 
-            return new DancerResponse()
-            {
-                Weather = new WeatherResponse()
-                {
-                    WindSpeed = 10,
-                    WindDegree = 20
-                },
-                CrossingFlightpaths = false,
-                HasBirds = true,
-                HasDangerDanger = true,
-                HasNoFlyZone = true,
-                MaxHeight = 500
-            };
+            return dancer;
         }
     }
 }
