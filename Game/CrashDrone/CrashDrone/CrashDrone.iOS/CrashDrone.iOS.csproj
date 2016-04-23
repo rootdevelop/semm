@@ -81,41 +81,34 @@
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
-    <InterfaceDefinition Include="Main.storyboard" />
+    <InterfaceDefinition Include="ViewController.xib" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\Images\Hd\" />
-    <Folder Include="Content\Images\Ld\" />
     <Folder Include="Content\Sounds\" />
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="box2d, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CocosSharp.1.7.0.0-pre1\lib\Xamarin.iOS10\box2d.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="CocosSharp, Version=1.7.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CocosSharp.1.7.0.0-pre1\lib\Xamarin.iOS10\CocosSharp.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Lidgren.Network, Version=2012.1.7.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CocosSharp.1.7.0.0-pre1\lib\Xamarin.iOS10\Lidgren.Network.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="MonoGame.Framework, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CocosSharp.1.7.0.0-pre1\lib\Xamarin.iOS10\MonoGame.Framework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="MonoGame.Framework.Net, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CocosSharp.1.7.0.0-pre1\lib\Xamarin.iOS10\MonoGame.Framework.Net.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="OpenTK-1.0" />
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
+    <Reference Include="box2d, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\CocosSharp.1.7.0.0-pre1\lib\Xamarin.iOS10\box2d.dll</HintPath>
+    </Reference>
+    <Reference Include="CocosSharp, Version=1.7.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\CocosSharp.1.7.0.0-pre1\lib\Xamarin.iOS10\CocosSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Lidgren.Network, Version=2012.1.7.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\CocosSharp.1.7.0.0-pre1\lib\Xamarin.iOS10\Lidgren.Network.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoGame.Framework, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\CocosSharp.1.7.0.0-pre1\lib\Xamarin.iOS10\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoGame.Framework.Net, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\CocosSharp.1.7.0.0-pre1\lib\Xamarin.iOS10\MonoGame.Framework.Net.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CrashDrone\CrashDrone.Common.csproj">
@@ -124,4 +117,14 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <ItemGroup>
+    <BundleResource Include="Content\Images\drone.png" />
+    <BundleResource Include="Content\Images\Periphery\cloud1.png" />
+    <BundleResource Include="Content\Images\Periphery\cloud2.png" />
+    <BundleResource Include="Content\Images\Periphery\forest.png" />
+    <BundleResource Include="Content\Images\Hud\battery.png" />
+    <BundleResource Include="Content\Images\Collision\house.png" />
+    <BundleResource Include="Content\Images\Collision\radar.png" />
+    <BundleResource Include="Content\Images\Collision\tree.png" />
+  </ItemGroup>
 </Project>
