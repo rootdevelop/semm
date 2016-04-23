@@ -7,7 +7,7 @@ namespace KeepOnDroning.Api.ServiceDomain
 {
     public class ServiceCoordinate
     {
-        public double Lat { get; set; }
-        public double Lng { get; set; }
+        public float Lat { get; set; }
+        public float Lng { get; set; }
     }
 }
