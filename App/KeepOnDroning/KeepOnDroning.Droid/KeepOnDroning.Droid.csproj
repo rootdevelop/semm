@@ -83,6 +83,12 @@
       <HintPath>..\packages\CocosSharp.1.7.1.0\lib\MonoAndroid10\MonoGame.Framework.dll</HintPath>
     </Reference>
     <Reference Include="OpenTK-1.0" />
+    <Reference Include="MvvmCross.Plugins.Location">
+      <HintPath>..\packages\MvvmCross.Plugin.Location.4.1.4\lib\MonoAndroid\MvvmCross.Plugins.Location.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Location.Droid">
+      <HintPath>..\packages\MvvmCross.Plugin.Location.4.1.4\lib\MonoAndroid\MvvmCross.Plugins.Location.Droid.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
@@ -98,6 +104,7 @@
     <Compile Include="Converters\EPreFlightStatusToImageConverter.cs" />
     <Compile Include="Bootstrap\VisibilityPluginBootstrap.cs" />
     <Compile Include="Converters\BooleanToImageConverter.cs" />
+    <Compile Include="Bootstrap\LocationPluginBootstrap.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
