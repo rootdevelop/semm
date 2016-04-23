@@ -32,7 +32,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="GameDelegate.cs" />
-    <Compile Include="GameLayer.cs" />
+    <Compile Include="Layers\CollisionLayer.cs" />
+    <Compile Include="Layers\DroneLayer.cs" />
+    <Compile Include="Layers\PeripheryLayer.cs" />
+    <Compile Include="Layers\BackgroundLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

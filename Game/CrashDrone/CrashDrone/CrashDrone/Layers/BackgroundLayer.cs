@@ -5,13 +5,13 @@ using Microsoft.Xna.Framework;
 
 namespace CrashDrone
 {
-    public class GameLayer : CCLayerColor
+    public class BackgroundLayer : CCLayerColor
     {
 
         // Define a label variable
         CCLabel label;
 
-        public GameLayer() : base(CCColor4B.Blue)
+        public BackgroundLayer() : base(CCColor4B.Blue)
         {
 
             // create and initialize a Label
