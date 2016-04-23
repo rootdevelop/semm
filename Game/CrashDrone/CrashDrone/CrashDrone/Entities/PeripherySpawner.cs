@@ -1,12 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CocosSharp;
 
 namespace CrashDrone.Common.Entities
 {
     class PeripherySpawner
     {
+        private CCLayerColor _peripheryLayer;
+
+        public PeripherySpawner(CCLayerColor periphery)
+        {
+            _peripheryLayer = periphery;
+        }
+
+
+
     }
 }
