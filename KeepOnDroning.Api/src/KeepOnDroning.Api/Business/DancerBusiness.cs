@@ -4,18 +4,29 @@ using System.Globalization;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using KeepOnDroning.Api.Data;
+using KeepOnDroning.Api.Domain;
 using KeepOnDroning.Api.Helpers;
 using KeepOnDroning.Api.ServiceDomain;
+using Microsoft.Data.Entity;
 using Newtonsoft.Json;
 
 namespace KeepOnDroning.Api.Business
 {
     public class DancerBusiness
-    {
+    {       
         private readonly JsonSerializerSettings _jsonSerializerSettings = new JsonSerializerSettings { PreserveReferencesHandling = PreserveReferencesHandling.Objects };
 
         private readonly string _openWeatherMapUri = "http://api.openweathermap.org/data/2.5/weather?lat={0}&lon={1}&appid={2}";
-        private string _wheaterAppId = "37bafeb001ed3617ec71a179eaf594ce"; 
+        private string _wheaterAppId = "37bafeb001ed3617ec71a179eaf594ce";
+
+        private readonly NoFlyingBusiness _noFlyingBusiness;
+
+        public DancerBusiness(NoFlyingBusiness noFlyingBusiness)
+        {
+            _noFlyingBusiness = noFlyingBusiness;
+        }
+
 
         public async Task<WeatherResult> GetWeather(float latitude, float longitude)
         {
@@ -35,7 +46,6 @@ namespace KeepOnDroning.Api.Business
             var weather = await GetWeather(latitude, longitude);
 
 
-
             var random = new Random();
             var randomBirds = random.Next(100) < 10;
 
@@ -50,6 +60,7 @@ namespace KeepOnDroning.Api.Business
                     WindSpeed = weather.Wind.Speed
                 },
                 HasDangerDanger = IsDangerDanger(weather),
+                HasNoFlyZone = await _noFlyingBusiness.IsInNoFlightZone(latitude, longitude),
                 MaxHeight = 1000,
                 
             };
@@ -67,7 +78,7 @@ namespace KeepOnDroning.Api.Business
             {
                 return true;
             }
-            
+
             if (weatherCode >= 232 && weatherCode <= 501)
             {
                 return true;
@@ -90,7 +101,5 @@ namespace KeepOnDroning.Api.Business
             }
             return false;
         }
-
-
     }
 }
