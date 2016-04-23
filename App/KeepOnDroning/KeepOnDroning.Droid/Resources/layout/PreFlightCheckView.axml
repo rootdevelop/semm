@@ -79,11 +79,12 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:id="@+id/linearLayout1">
-            <ImageView
+            <Mvx.MvxImageView
                 android:src="@drawable/ok"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:id="@+id/imageView5"
+                local:MvxBind="DrawableId NoFlyIsOkay,Converter=BooleanToImage"
                 android:layout_marginRight="10dp" />
             <TextView
                 android:text="CheckBox"
@@ -100,11 +101,12 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:id="@+id/linearLayout2">
-            <ImageView
+            <Mvx.MvxImageView
                 android:src="@drawable/ok"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:id="@+id/imageView5"
+                local:MvxBind="DrawableId BirdsIsOkay,Converter=BooleanToImage"
                 android:layout_marginRight="10dp" />
             <TextView
                 android:text="CheckBox"
@@ -121,11 +123,12 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:id="@+id/linearLayout3">
-            <ImageView
+            <Mvx.MvxImageView
                 android:src="@drawable/ok"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:id="@+id/imageView5"
+                local:MvxBind="DrawableId PlanesIsOkay,Converter=BooleanToImage"
                 android:layout_marginRight="10dp" />
             <TextView
                 android:text="CheckBox"
@@ -142,10 +145,11 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:id="@+id/linearLayout4">
-            <ImageView
+            <Mvx.MvxImageView
                 android:src="@drawable/ok"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
+                local:MvxBind="DrawableId WeatherIsOkay,Converter=BooleanToImage"
                 android:id="@+id/imageView5"
                 android:layout_marginRight="10dp" />
             <TextView

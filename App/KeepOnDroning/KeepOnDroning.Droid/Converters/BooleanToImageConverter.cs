@@ -7,7 +7,7 @@ namespace KeepOnDroning.Droid
 	{
 		protected override int Convert (bool value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
 		{
-			int result = Resource.Drawable.RedButton;
+			int result = Resource.Drawable.ComputerSaysNo;
 
 			if (value)
 				result = Resource.Drawable.OK;
