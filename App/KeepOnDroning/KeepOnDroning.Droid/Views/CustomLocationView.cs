@@ -5,13 +5,13 @@ using MvvmCross.Binding.BindingContext;
 
 namespace KeepOnDroning.Droid.Views
 {
-	[Activity(Label = "View for PreFlightCheckView")]
-    public class PreFlightCheckView : MvxActivity
+	[Activity(Label = "View for CustomLocationView")]
+	public class CustomLocationView : MvxActivity
     {
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-			SetContentView(Resource.Layout.PreFlightCheckView);
+			SetContentView(Resource.Layout.CustomLocationView);
         }
     }
 }
