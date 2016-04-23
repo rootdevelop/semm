@@ -75,6 +75,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
+    <Folder Include="Assets\Content\" />
+    <Folder Include="Assets\Content\tilemaps\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ItemGroup>
@@ -82,5 +84,9 @@
       <Project>{FF28F8C9-0486-405D-8474-74EFACE48953}</Project>
       <Name>SpaceGame.Common</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Content\tilemaps\dungeon.tmx" />
+    <AndroidAsset Include="Assets\Content\tilemaps\dungeon_1.png" />
   </ItemGroup>
 </Project>

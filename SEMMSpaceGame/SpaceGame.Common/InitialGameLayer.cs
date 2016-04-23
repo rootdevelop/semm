@@ -6,6 +6,7 @@ namespace SpaceGame.Common
 	public class InitialGameLayer : CCLayerColor
 	{
 		CCLabel helloLabel;
+		CCTileMap tileMap;
 
 		public InitialGameLayer () : base (CCColor4B.Blue)
 		{
@@ -20,6 +21,9 @@ namespace SpaceGame.Common
 		protected override void AddedToScene ()
 		{
 			base.AddedToScene ();
+
+			tileMap = new CCTileMap ("tilemaps/dungeon.tmx");
+			this.AddChild (tileMap);
 
 			helloLabel = new CCLabel("Hello Space Apps!", "Arial", 30, CCLabelFormat.SystemFont);
 			helloLabel.PositionX = ContentSize.Height/2;
