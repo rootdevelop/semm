@@ -53,7 +53,7 @@ namespace SpaceGame.iOS
 				int height = 1024;
 
 				// Set world dimensions
-				gameView.ResolutionPolicy = CCViewResolutionPolicy.ExactFit;
+				gameView.ResolutionPolicy = CCViewResolutionPolicy.ShowAll;
 
 				// Determine whether to use the high or low def versions of our images
 				// Make sure the default texel to content size ratio is set correctly

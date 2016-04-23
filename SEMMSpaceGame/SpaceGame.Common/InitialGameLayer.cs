@@ -22,7 +22,7 @@ namespace SpaceGame.Common
 		{
 			base.AddedToScene ();
 
-			tileMap = new CCTileMap ("tilemaps/dungeon.tmx");
+			tileMap = new CCTileMap ("tilemaps/level0.tmx");
 			this.AddChild (tileMap);
 
 			helloLabel = new CCLabel("Hello Space Apps!", "Arial", 30, CCLabelFormat.SystemFont);

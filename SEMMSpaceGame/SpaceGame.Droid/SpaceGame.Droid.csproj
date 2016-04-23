@@ -88,5 +88,7 @@
   <ItemGroup>
     <AndroidAsset Include="Assets\Content\tilemaps\dungeon.tmx" />
     <AndroidAsset Include="Assets\Content\tilemaps\dungeon_1.png" />
+    <AndroidAsset Include="Assets\Content\tilemaps\level0.jpg" />
+    <AndroidAsset Include="Assets\Content\tilemaps\level0.tmx" />
   </ItemGroup>
 </Project>

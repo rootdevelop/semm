@@ -129,5 +129,7 @@
   <ItemGroup>
     <BundleResource Include="Content\tilemaps\dungeon_1.png" />
     <BundleResource Include="Content\tilemaps\dungeon.tmx" />
+    <BundleResource Include="Content\tilemaps\level0.jpg" />
+    <BundleResource Include="Content\tilemaps\level0.tmx" />
   </ItemGroup>
 </Project>
