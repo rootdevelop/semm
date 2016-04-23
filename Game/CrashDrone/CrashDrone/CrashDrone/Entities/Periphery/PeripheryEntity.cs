@@ -7,7 +7,7 @@ using CocosSharp;
 
 namespace CrashDrone.Common.Entities
 {
-    abstract class PeripheryEntity : CCNode
+    abstract class PeripheryEntity : CCSprite
     {
     }
 }
