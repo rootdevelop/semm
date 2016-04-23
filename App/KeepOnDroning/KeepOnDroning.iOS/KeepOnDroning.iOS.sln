@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeepOnDroning.iOS", "KeepOnDroning.iOS.csproj", "{237FE99C-E921-452A-BB82-A17B7987D27F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{237FE99C-E921-452A-BB82-A17B7987D27F}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{237FE99C-E921-452A-BB82-A17B7987D27F}.Debug|iPhone.Build.0 = Debug|iPhone
+		{237FE99C-E921-452A-BB82-A17B7987D27F}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{237FE99C-E921-452A-BB82-A17B7987D27F}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{237FE99C-E921-452A-BB82-A17B7987D27F}.Release|iPhone.ActiveCfg = Release|iPhone
+		{237FE99C-E921-452A-BB82-A17B7987D27F}.Release|iPhone.Build.0 = Release|iPhone
+		{237FE99C-E921-452A-BB82-A17B7987D27F}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{237FE99C-E921-452A-BB82-A17B7987D27F}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+	EndGlobalSection
+EndGlobal

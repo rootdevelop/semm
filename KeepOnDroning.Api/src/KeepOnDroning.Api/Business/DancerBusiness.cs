@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 
 namespace KeepOnDroning.Api.Business
 {
-    public class WeatherBusiness
+    public class DancerBusiness
     {
         private readonly JsonSerializerSettings _jsonSerializerSettings = new JsonSerializerSettings { PreserveReferencesHandling = PreserveReferencesHandling.Objects };
 
@@ -50,6 +50,7 @@ namespace KeepOnDroning.Api.Business
                 },
                 HasDangerDanger = IsDangerDanger(weather),
                 MaxHeight = 1000,
+                
             };
             return dancer;
         }
@@ -88,5 +89,7 @@ namespace KeepOnDroning.Api.Business
             }
             return false;
         }
+
+
     }
 }
