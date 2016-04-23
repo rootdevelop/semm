@@ -5,7 +5,7 @@ using MvvmCross.Platform;
 using KeepOnDroning.Core.Enums;
 using KeepOnDroning.Core.Services.Interfaces;
 
-namespace KeepOnDroning.Core.ViewModels.ViewModels
+namespace KeepOnDroning.Core.ViewModels
 {
     public class PreFlightCheckViewModel : MvxViewModel
     {

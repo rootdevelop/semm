@@ -1,7 +1,7 @@
 ﻿using MvvmCross.iOS.Views;
 using MvvmCross.Binding.BindingContext;
 using UIKit;
-using KeepOnDroning.Core.ViewModels.ViewModels;
+using KeepOnDroning.Core.ViewModels;
 
 namespace KeepOnDroning.iOS
 {
