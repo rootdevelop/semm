@@ -38,10 +38,10 @@ namespace CrashDrone.Common
 
             var bounds = VisibleBoundsWorldspace;
             energySprite.Position = new CCPoint(bounds.MaxX * 0.1f, bounds.MaxY * 0.95f);
-            energyLabel.Position = new CCPoint(bounds.MaxX * 0.1f, bounds.MaxY * 0.85f);
+            energyLabel.Position = new CCPoint(bounds.MaxX * 0.1f, bounds.MaxY * 0.89f);
 
-            buttonUp.Position = new CCPoint(bounds.MaxX * 0.9f, bounds.MaxY * 0.1f);
-            buttonDown.Position = new CCPoint(bounds.MaxX * 0.1f, bounds.MaxY * 0.1f);
+            buttonUp.Position = new CCPoint(bounds.MaxX * 0.9f, bounds.MaxY * 0.12f);
+            buttonDown.Position = new CCPoint(bounds.MaxX * 0.1f, bounds.MaxY * 0.12f);
         }
 
         public void AddEnergy(int addedAmount)

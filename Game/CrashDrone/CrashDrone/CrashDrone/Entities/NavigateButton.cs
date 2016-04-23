@@ -27,6 +27,7 @@ namespace CrashDrone.Common.Entities
         private void CreateSpriteGraphic(string name)
         {
             graphic = new CCSprite(string.Format("/Asset/Content/Images/button_{0}.png", name));
+            graphic.Scale = 0.75f;
             graphic.IsAntialiased = false;
             AddChild(graphic);
         }

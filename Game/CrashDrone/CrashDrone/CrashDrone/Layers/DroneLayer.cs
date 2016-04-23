@@ -26,7 +26,7 @@ namespace CrashDrone.Common
             base.AddedToScene();
 
             var bounds = VisibleBoundsWorldspace;
-            drone.SetStartPosition(new CCPoint(bounds.MaxX * 0.1f, bounds.MidY));
+            drone.SetStartPosition(new CCPoint(bounds.MaxX * 0.2f, bounds.MidY));
         }
 
         public void MoveUp()
