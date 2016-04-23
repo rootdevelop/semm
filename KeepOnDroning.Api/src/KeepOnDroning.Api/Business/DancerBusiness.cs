@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -20,7 +21,7 @@ namespace KeepOnDroning.Api.Business
         {
             using (var client = new HttpClient())
             {
-                var uri = String.Format(_openWeatherMapUri, latitude, longitude, _wheaterAppId);
+                var uri = String.Format(_openWeatherMapUri, latitude.ToString("G", new CultureInfo("en-US")), longitude.ToString("G", new CultureInfo("en-US")), _wheaterAppId);
                 var httpResponseMessage = await client.GetAsync(uri);
                 httpResponseMessage.EnsureSuccessStatusCode();
 

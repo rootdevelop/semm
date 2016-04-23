@@ -11,24 +11,37 @@ namespace KeepOnDroning.Api.ServiceDomain
     {
         [JsonProperty(PropertyName = "coord")]
         public Coord Coordinate { get; set; }
+
         [JsonProperty(PropertyName = "sys")]
         public Sys Sys { get; set; }
+
         [JsonProperty(PropertyName = "weather")]
         public Weather[] Weather { get; set; }
+
+        [JsonProperty(PropertyName = "_base")]
+        public string Base { get; set; }
+
         [JsonProperty(PropertyName = "main")]
         public Main Main { get; set; }
+
         [JsonProperty(PropertyName = "wind")]
         public Wind Wind { get; set; }
+
         [JsonProperty(PropertyName = "rain")]
         public Rain Rain { get; set; }
+
         [JsonProperty(PropertyName = "clouds")]
         public Clouds Clouds { get; set; }
+
         [JsonProperty(PropertyName = "dt")]
         public int Dt { get; set; }
+
         [JsonProperty(PropertyName = "id")]
         public int Id { get; set; }
+
         [JsonProperty(PropertyName = "name")]
         public string Name { get; set; }
+
         [JsonProperty(PropertyName = "cod")]
         public EWeatherCode WeatherCode { get; set; }
     }
@@ -36,33 +49,39 @@ namespace KeepOnDroning.Api.ServiceDomain
     public class Coord
     {
         [JsonProperty(PropertyName = "lon")]
-        public int Lon { get; set; }
+        public float Lon { get; set; }
         [JsonProperty(PropertyName = "lat")]
-        public int Lat { get; set; }
+        public float Lat { get; set; }
     }
 
     public class Sys
     {
+        [JsonProperty(PropertyName = "message")]
+        public float Message { get; set; }
         [JsonProperty(PropertyName = "country")]
         public string Country { get; set; }
         [JsonProperty(PropertyName = "sunrise")]
-        public int Sunrise { get; set; }
+        public float Sunrise { get; set; }
         [JsonProperty(PropertyName = "sunset")]
-        public int Sunset { get; set; }
+        public float Sunset { get; set; }
     }
 
     public class Main
     {
         [JsonProperty(PropertyName = "temp")]
         public float Temp { get; set; }
-        [JsonProperty(PropertyName = "humidity")]
-        public int Humidity { get; set; }
         [JsonProperty(PropertyName = "pressure")]
-        public int Pressure { get; set; }
+        public float Pressure { get; set; }
+        [JsonProperty(PropertyName = "humidity")]
+        public float Humidity { get; set; }
         [JsonProperty(PropertyName = "temp_min")]
         public float TempMin { get; set; }
         [JsonProperty(PropertyName = "temp_max")]
         public float TempMax { get; set; }
+        [JsonProperty(PropertyName = "sea_level")]
+        public float SeaLevel { get; set; }
+        [JsonProperty(PropertyName = "grnd_level")]
+        public float GrndLevel { get; set; }
     }
 
     public class Wind
@@ -76,13 +95,13 @@ namespace KeepOnDroning.Api.ServiceDomain
     public class Rain
     {
         [JsonProperty(PropertyName = "_3h")]
-        public int _3H { get; set; }
+        public float _3H { get; set; }
     }
 
     public class Clouds
     {
         [JsonProperty(PropertyName = "all")]
-        public int All { get; set; }
+        public float All { get; set; }
     }
 
     public class Weather
@@ -93,8 +112,6 @@ namespace KeepOnDroning.Api.ServiceDomain
         public string Type { get; set; }
         [JsonProperty(PropertyName = "description")]
         public string Description { get; set; }
-        [JsonProperty(PropertyName = "icon")]
-        public string Icon { get; set; }
     }
 
 }
