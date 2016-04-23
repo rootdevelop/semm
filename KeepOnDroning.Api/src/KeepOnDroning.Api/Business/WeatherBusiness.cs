@@ -40,6 +40,8 @@ namespace KeepOnDroning.Api.Business
 
             var dancer = new DancerResponse()
             {
+                Lat = latitude,
+                Lng = longitude,
                 HasBirds = randomBirds,
                 Weather = new WeatherResponse()
                 {

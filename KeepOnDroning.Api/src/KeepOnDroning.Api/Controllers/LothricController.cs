@@ -28,7 +28,7 @@ namespace KeepOnDroning.Api.Controllers
 
         [Route("Estusses")]
         [HttpPost]
-        public async Task<List<DancerResponse>> Estusses(IList<ServiceCoordinate> coordinates)
+        public async Task<RouteResult> Estusses(IList<ServiceCoordinate> coordinates)
         {
             var list = new List<DancerResponse>();
 
@@ -37,7 +37,20 @@ namespace KeepOnDroning.Api.Controllers
                 list.Add(await _weatherBusiness.Dancing(coordinate.Lat, coordinate.Lng));
             }
 
-            return list;
+            var resp = new RouteResult
+            {
+                DancerResponses = list,
+                BasinOfVows = new DancerResponse()
+                {
+                    CrossingFlightpaths = list.Any(x => x.CrossingFlightpaths),
+                    HasBirds = list.Any(x => x.HasBirds),
+                    HasDangerDanger = list.Any(x => x.HasDangerDanger),
+                    HasNoFlyZone = list.Any(x => x.HasNoFlyZone),
+                    MaxHeight = list.Max(x => x.MaxHeight),
+                }
+            };
+
+            return resp;
         }
     }
 }
