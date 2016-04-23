@@ -98,6 +98,12 @@
     <Reference Include="MvvmCross.Localization">
       <HintPath>..\packages\MvvmCross.Binding.4.1.4\lib\Xamarin.iOS10\MvvmCross.Localization.dll</HintPath>
     </Reference>
+    <Reference Include="MvvmCross.Plugins.Visibility">
+      <HintPath>..\packages\MvvmCross.Plugin.Visibility.4.1.4\lib\Xamarin.iOS10\MvvmCross.Plugins.Visibility.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Visibility.iOS">
+      <HintPath>..\packages\MvvmCross.Plugin.Visibility.4.1.4\lib\Xamarin.iOS10\MvvmCross.Plugins.Visibility.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json">
@@ -123,6 +129,7 @@
     <Compile Include="Views\PreFlightCheckView.designer.cs">
       <DependentUpon>PreFlightCheckView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bootstrap\VisibilityPluginBootstrap.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
