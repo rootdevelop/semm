@@ -28,12 +28,12 @@ namespace CrashDrone.Common
                 // Of course you're free to have a finer set of image resolutions e.g (ld, hd, super-hd)
                 if (width < viewSize.Width)
                 {
-                    contentSearchPaths.Add("Images/Hd");
+                    contentSearchPaths.Add("Images/Collision");
                     CCSprite.DefaultTexelToContentSizeRatio = 2.0f;
                 }
                 else
                 {
-                    contentSearchPaths.Add("Images/Ld");
+                    contentSearchPaths.Add("Images/Periphery");
                     CCSprite.DefaultTexelToContentSizeRatio = 1.0f;
                 }
 
@@ -41,11 +41,6 @@ namespace CrashDrone.Common
 
 
                 var gameScene = new GameScene(gameView);
-                gameScene.AddLayer(new BackgroundLayer());
-                gameScene.AddLayer(new PeripheryLayer());
-                gameScene.AddLayer(new CollisionLayer());
-                gameScene.AddLayer(new DroneLayer());
-                gameScene.AddLayer(new HudLayer());
                 gameView.RunWithScene(gameScene);
             }
         }
