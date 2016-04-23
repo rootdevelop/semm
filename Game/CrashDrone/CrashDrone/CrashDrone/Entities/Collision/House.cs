@@ -8,5 +8,8 @@ namespace CrashDrone.Common.Entities
 {
     class House : CollisionEntity
     {
+        public House() : base("house.png")
+        {
+        }
     }
 }

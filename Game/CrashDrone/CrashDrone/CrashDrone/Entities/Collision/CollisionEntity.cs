@@ -11,5 +11,9 @@ namespace CrashDrone.Common.Entities
     {
         public float Speed { get; set; }
         public CollisionEffect CollisionEffect { get; set; }
+
+        public CollisionEntity(string filename) : base(filename)
+        {
+        }
     }
 }

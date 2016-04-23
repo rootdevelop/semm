@@ -8,5 +8,8 @@ namespace CrashDrone.Common.Entities
 {
     class Airplane : CollisionEntity
     {
+        public Airplane() : base("airplane.png")
+        {
+        }
     }
 }

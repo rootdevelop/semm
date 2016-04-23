@@ -8,7 +8,8 @@ namespace CrashDrone.Common
 {
     public enum CollisionEffect
     {
-        GameOver = 0,
+        None = 0,
+        GameOver,
         LoseEnergy,
         GainEnergy
     }
