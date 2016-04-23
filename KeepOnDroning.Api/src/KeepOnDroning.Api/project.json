@@ -28,7 +28,6 @@
     "frameworks": {
       "dnx451": {
         "dependencies": {
-          "Xciles.Uncommon": "1.4.0"
         }
       },
         "dnxcore50": { }
