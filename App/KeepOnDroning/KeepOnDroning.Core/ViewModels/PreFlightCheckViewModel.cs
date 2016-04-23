@@ -4,8 +4,6 @@ namespace KeepOnDroning.Core.ViewModels
 {
     public class PreFlightCheckViewModel : MvxViewModel
     {
-		public PreFlightCheckViewModel()
-		{
-		}
+		
     }
 }
