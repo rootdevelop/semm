@@ -6,47 +6,73 @@ namespace CrashDrone.Common.Entities
     public class PeripherySpawner
     {
         private PeripheryLayer _layer;
-        private bool _isSpawning;
+        private bool _forestSpawned;
 
-        public Action<PeripheryEntity> EntitySpawned; 
+        public Action<PeripheryEntity> EntitySpawned;
+
+
+        float timeSinceLastCloudSpawn;
+        public float TimeInbetweenCloudSpawns
+        {
+            get;
+            set;
+        }
 
         public PeripherySpawner(PeripheryLayer periphery)
         {
-            _isSpawning = false;
             _layer = periphery;
+
+            TimeInbetweenCloudSpawns = 0.8f;
+            timeSinceLastCloudSpawn = TimeInbetweenCloudSpawns;
         }
 
         public void Activity(float frameTime)
         {
-            if (!_isSpawning)
+            if (!_forestSpawned)
             {
-                _isSpawning = true;
-                Spawn();
+                _forestSpawned = true;
+                SpawnForest();
+            }
+            else
+            {
+                SpawningCloudActivity(frameTime);
+            }
+            
+            //    SpawnReductionTimeActivity(frameTime);
+            
+        }
+
+        private void SpawningCloudActivity(float frameTime)
+        {
+            timeSinceLastCloudSpawn += frameTime;
+
+            if (timeSinceLastCloudSpawn > TimeInbetweenCloudSpawns)
+            {
+               timeSinceLastCloudSpawn -= TimeInbetweenCloudSpawns;
+
+               SpawnCloud();
             }
 
-            //if (IsSpawning)
-            //{
-            //    SpawningActivity(frameTime);
-
-            //    SpawnReductionTimeActivity(frameTime);
-            //}
+            
         }
 
-        private void SpawningActivity(float frameTime)
-        {
-            //timeSinceLastSpawn += frameTime;
-
-            //if (timeSinceLastSpawn > TimeInbetweenSpawns)
-            //{
-            //    timeSinceLastSpawn -= TimeInbetweenSpawns;
-
-            //    Spawn();
-            //}
-        }
-
-        private void Spawn()
+        private void SpawnForest()
         {
             var peripheryEntity = new Forest();
+
+            if (EntitySpawned != null)
+            {
+                EntitySpawned(peripheryEntity);
+            }
+        }
+
+        private void SpawnCloud()
+        {
+            TimeInbetweenCloudSpawns = CCRandom.GetRandomFloat(0.8f, 3f);
+
+            var peripheryEntity = new Cloud();
+            peripheryEntity.PositionX = _layer.VisibleBoundsWorldspace.MaxX + peripheryEntity.ContentSize.Width*0.5f;
+            peripheryEntity.PositionY = CCRandom.GetRandomFloat(_layer.VisibleBoundsWorldspace.MaxY * 0.25f, _layer.VisibleBoundsWorldspace.MaxY * 0.8f);
 
             if (EntitySpawned != null)
             {

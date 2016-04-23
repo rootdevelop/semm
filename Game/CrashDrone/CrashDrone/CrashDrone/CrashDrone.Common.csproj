@@ -40,6 +40,7 @@
     <Compile Include="Entities\Drone.cs" />
     <Compile Include="Entities\NavigateButton.cs" />
     <Compile Include="Entities\PeripherySpawner.cs" />
+    <Compile Include="Entities\Periphery\Cloud.cs" />
     <Compile Include="Entities\Periphery\Forest.cs" />
     <Compile Include="Entities\Periphery\PeripheryEntity.cs" />
     <Compile Include="Entities\Periphery\RoastedChicken.cs" />
