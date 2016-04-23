@@ -9,8 +9,6 @@
     <RootNamespace>KeepOnDroning.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>KeepOnDroningiOS</AssemblyName>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -160,5 +158,11 @@
     <BundleResource Include="Resources\OK.png" />
     <BundleResource Include="Resources\WaypointButton.png" />
     <BundleResource Include="Resources\LaunchScreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KeepOnDroning.Core\KeepOnDroning.Core.csproj">
+      <Project>{F95FB6AF-06FB-4EA0-875E-547D4F08837F}</Project>
+      <Name>KeepOnDroning.Core</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>
