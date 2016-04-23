@@ -104,7 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
-    <InterfaceDefinition Include="Views\FirstView.xib" />
+    <InterfaceDefinition Include="Views\PreFlightCheckView.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -116,9 +116,11 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="DebugTrace.cs" />
-    <Compile Include="Views\FirstView.cs" />
-    <Compile Include="Views\FirstView.designer.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
+    <Compile Include="Views\PreFlightCheckView.cs" />
+    <Compile Include="Views\PreFlightCheckView.designer.cs">
+      <DependentUpon>PreFlightCheckView.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -126,5 +128,8 @@
       <Project>{F95FB6AF-06FB-4EA0-875E-547D4F08837F}</Project>
       <Name>KeepOnDroning.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
   </ItemGroup>
 </Project>

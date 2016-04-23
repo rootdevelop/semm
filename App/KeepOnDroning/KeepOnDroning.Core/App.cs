@@ -11,7 +11,7 @@ namespace KeepOnDroning.Core
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 
-            RegisterAppStart<ViewModels.FirstViewModel>();
+            RegisterAppStart<ViewModels.PreFlightCheckViewModel>();
         }
     }
 }

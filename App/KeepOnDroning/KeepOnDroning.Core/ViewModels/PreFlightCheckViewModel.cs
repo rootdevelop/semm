@@ -2,7 +2,7 @@ using MvvmCross.Core.ViewModels;
 
 namespace KeepOnDroning.Core.ViewModels
 {
-    public class FirstViewModel 
+    public class PreFlightCheckViewModel 
         : MvxViewModel
     {
         private string _hello = "Hello MvvmCross";
