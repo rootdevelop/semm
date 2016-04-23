@@ -67,6 +67,12 @@
       <HintPath>..\packages\MvvmCross.Binding.4.1.4\lib\MonoAndroid\MvvmCross.Localization.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Android.Export" />
+    <Reference Include="MvvmCross.Plugins.Visibility">
+      <HintPath>..\packages\MvvmCross.Plugin.Visibility.4.1.4\lib\MonoAndroid\MvvmCross.Plugins.Visibility.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Visibility.Droid">
+      <HintPath>..\packages\MvvmCross.Plugin.Visibility.4.1.4\lib\MonoAndroid\MvvmCross.Plugins.Visibility.Droid.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
@@ -79,6 +85,8 @@
     <Compile Include="Views\InteractiveMapView.cs" />
     <Compile Include="Views\GameView.cs" />
     <Compile Include="Views\CustomLocationView.cs" />
+    <Compile Include="Converters\EPreFlightStatusToImageConverter.cs" />
+    <Compile Include="Bootstrap\VisibilityPluginBootstrap.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -87,7 +95,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Main.axml" />
     <AndroidResource Include="Resources\values\Strings.xml" />
     <AndroidResource Include="Resources\mipmap-hdpi\Icon.png" />
     <AndroidResource Include="Resources\mipmap-mdpi\Icon.png" />
@@ -101,9 +108,18 @@
     <AndroidResource Include="Resources\layout\InteractiveMapView.axml" />
     <AndroidResource Include="Resources\layout\GameView.axml" />
     <AndroidResource Include="Resources\layout\CustomLocationView.axml" />
+    <AndroidResource Include="Resources\values\colors.xml" />
+    <AndroidResource Include="Resources\drawable\WaypointButton.png" />
+    <AndroidResource Include="Resources\drawable\MapButton.png" />
+    <AndroidResource Include="Resources\drawable\InfoButton.png" />
+    <AndroidResource Include="Resources\drawable\GameButton.png" />
+    <AndroidResource Include="Resources\drawable\GreenButton.png" />
+    <AndroidResource Include="Resources\drawable\OrangeButton.png" />
+    <AndroidResource Include="Resources\drawable\RedButton.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
+    <Folder Include="Converters\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ItemGroup>

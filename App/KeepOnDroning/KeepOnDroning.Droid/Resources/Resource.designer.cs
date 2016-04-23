@@ -83,11 +83,75 @@ namespace KeepOnDroning.Droid
 			}
 		}
 		
+		public partial class Color
+		{
+			
+			// aapt resource value: 0x7f060004
+			public const int black_color = 2131099652;
+			
+			// aapt resource value: 0x7f060000
+			public const int blue_color = 2131099648;
+			
+			// aapt resource value: 0x7f060001
+			public const int blue_light_color = 2131099649;
+			
+			// aapt resource value: 0x7f060005
+			public const int grey_color = 2131099653;
+			
+			// aapt resource value: 0x7f060007
+			public const int grey_light_color = 2131099655;
+			
+			// aapt resource value: 0x7f060006
+			public const int orange_color = 2131099654;
+			
+			// aapt resource value: 0x7f060002
+			public const int red_color = 2131099650;
+			
+			// aapt resource value: 0x7f060009
+			public const int transparent = 2131099657;
+			
+			// aapt resource value: 0x7f060003
+			public const int white_color = 2131099651;
+			
+			// aapt resource value: 0x7f060008
+			public const int whitebox_color = 2131099656;
+			
+			static Color()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Color()
+			{
+			}
+		}
+		
 		public partial class Drawable
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int splash = 2130837504;
+			public const int GameButton = 2130837504;
+			
+			// aapt resource value: 0x7f020001
+			public const int GreenButton = 2130837505;
+			
+			// aapt resource value: 0x7f020002
+			public const int InfoButton = 2130837506;
+			
+			// aapt resource value: 0x7f020003
+			public const int MapButton = 2130837507;
+			
+			// aapt resource value: 0x7f020004
+			public const int OrangeButton = 2130837508;
+			
+			// aapt resource value: 0x7f020005
+			public const int RedButton = 2130837509;
+			
+			// aapt resource value: 0x7f020006
+			public const int splash = 2130837510;
+			
+			// aapt resource value: 0x7f020007
+			public const int WaypointButton = 2130837511;
 			
 			static Drawable()
 			{
@@ -108,47 +172,53 @@ namespace KeepOnDroning.Droid
 			// aapt resource value: 0x7f050001
 			public const int MvxBindingTagUnique = 2131034113;
 			
-			// aapt resource value: 0x7f050009
-			public const int checkBox1 = 2131034121;
-			
-			// aapt resource value: 0x7f05000b
-			public const int checkBox2 = 2131034123;
-			
-			// aapt resource value: 0x7f05000d
-			public const int checkBox3 = 2131034125;
-			
-			// aapt resource value: 0x7f05000f
-			public const int checkBox4 = 2131034127;
-			
-			// aapt resource value: 0x7f050004
-			public const int imageView1 = 2131034116;
-			
-			// aapt resource value: 0x7f050005
-			public const int imageView2 = 2131034117;
-			
-			// aapt resource value: 0x7f050006
-			public const int imageView3 = 2131034118;
-			
-			// aapt resource value: 0x7f050007
-			public const int imageView4 = 2131034119;
-			
-			// aapt resource value: 0x7f050002
-			public const int imageView5 = 2131034114;
-			
-			// aapt resource value: 0x7f050008
-			public const int linearLayout1 = 2131034120;
-			
 			// aapt resource value: 0x7f05000a
-			public const int linearLayout2 = 2131034122;
+			public const int checkBox1 = 2131034122;
 			
 			// aapt resource value: 0x7f05000c
-			public const int linearLayout3 = 2131034124;
+			public const int checkBox2 = 2131034124;
 			
 			// aapt resource value: 0x7f05000e
-			public const int linearLayout4 = 2131034126;
+			public const int checkBox3 = 2131034126;
+			
+			// aapt resource value: 0x7f050010
+			public const int checkBox4 = 2131034128;
+			
+			// aapt resource value: 0x7f050005
+			public const int imageView1 = 2131034117;
+			
+			// aapt resource value: 0x7f050006
+			public const int imageView2 = 2131034118;
+			
+			// aapt resource value: 0x7f050007
+			public const int imageView3 = 2131034119;
+			
+			// aapt resource value: 0x7f050008
+			public const int imageView4 = 2131034120;
+			
+			// aapt resource value: 0x7f050004
+			public const int imageView5 = 2131034116;
+			
+			// aapt resource value: 0x7f050002
+			public const int imageView6 = 2131034114;
 			
 			// aapt resource value: 0x7f050003
-			public const int myButton = 2131034115;
+			public const int imageView7 = 2131034115;
+			
+			// aapt resource value: 0x7f050009
+			public const int linearLayout1 = 2131034121;
+			
+			// aapt resource value: 0x7f05000b
+			public const int linearLayout2 = 2131034123;
+			
+			// aapt resource value: 0x7f05000d
+			public const int linearLayout3 = 2131034125;
+			
+			// aapt resource value: 0x7f05000f
+			public const int linearLayout4 = 2131034127;
+			
+			// aapt resource value: 0x7f050011
+			public const int linearLayout8 = 2131034129;
 			
 			static Id()
 			{
@@ -173,13 +243,10 @@ namespace KeepOnDroning.Droid
 			public const int InteractiveMapView = 2130968578;
 			
 			// aapt resource value: 0x7f040003
-			public const int Main = 2130968579;
+			public const int PreFlightCheckView = 2130968579;
 			
 			// aapt resource value: 0x7f040004
-			public const int PreFlightCheckView = 2130968580;
-			
-			// aapt resource value: 0x7f040005
-			public const int SplashScreen = 2130968581;
+			public const int SplashScreen = 2130968580;
 			
 			static Layout()
 			{
@@ -210,11 +277,11 @@ namespace KeepOnDroning.Droid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f070001
-			public const int app_name = 2131165185;
+			// aapt resource value: 0x7f080001
+			public const int app_name = 2131230721;
 			
-			// aapt resource value: 0x7f070000
-			public const int hello = 2131165184;
+			// aapt resource value: 0x7f080000
+			public const int hello = 2131230720;
 			
 			static String()
 			{
@@ -229,11 +296,11 @@ namespace KeepOnDroning.Droid
 		public partial class Style
 		{
 			
-			// aapt resource value: 0x7f060001
-			public const int Theme_Main = 2131099649;
+			// aapt resource value: 0x7f070001
+			public const int Theme_Main = 2131165185;
 			
-			// aapt resource value: 0x7f060000
-			public const int Theme_Splash = 2131099648;
+			// aapt resource value: 0x7f070000
+			public const int Theme_Splash = 2131165184;
 			
 			static Style()
 			{
