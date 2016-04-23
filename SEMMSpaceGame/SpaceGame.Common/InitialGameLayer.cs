@@ -24,7 +24,7 @@ namespace SpaceGame.Common
 		{
 			base.AddedToScene ();
 
-			tileMap = new CCTileMap ("tilemaps/Background_Level_0.tmx");
+			tileMap = new CCTileMap ("tilemaps/Level0.tmx");
 			this.AddChild (tileMap);
 
 			playerSprite = new CCSprite ("Images/monkey.png");
