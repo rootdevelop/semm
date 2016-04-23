@@ -26,22 +26,36 @@ namespace KeepOnDroning.iOS
 
 		[Outlet]
 		UIKit.UIButton btnStart { get; set; }
+
+		[Outlet]
+		UIKit.UIImageView imgCheckBirds { get; set; }
+
+		[Outlet]
+		UIKit.UIImageView imgCheckNoFly { get; set; }
+
+		[Outlet]
+		UIKit.UIImageView imgCheckPlains { get; set; }
+
+		[Outlet]
+		UIKit.UIImageView imgCheckWeather { get; set; }
+
+		[Outlet]
+		UIKit.UILabel lblBirds { get; set; }
+
+		[Outlet]
+		UIKit.UILabel lblNoFLyZone { get; set; }
+
+		[Outlet]
+		UIKit.UILabel lblPlains { get; set; }
+
+		[Outlet]
+		UIKit.UILabel lblWeather { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (btnStart != null) {
-				btnStart.Dispose ();
-				btnStart = null;
-			}
-
-			if (btnMap != null) {
-				btnMap.Dispose ();
-				btnMap = null;
-			}
-
-			if (btnInfo != null) {
-				btnInfo.Dispose ();
-				btnInfo = null;
+			if (btnCustom != null) {
+				btnCustom.Dispose ();
+				btnCustom = null;
 			}
 
 			if (btnGame != null) {
@@ -49,9 +63,59 @@ namespace KeepOnDroning.iOS
 				btnGame = null;
 			}
 
-			if (btnCustom != null) {
-				btnCustom.Dispose ();
-				btnCustom = null;
+			if (btnInfo != null) {
+				btnInfo.Dispose ();
+				btnInfo = null;
+			}
+
+			if (btnMap != null) {
+				btnMap.Dispose ();
+				btnMap = null;
+			}
+
+			if (btnStart != null) {
+				btnStart.Dispose ();
+				btnStart = null;
+			}
+
+			if (lblNoFLyZone != null) {
+				lblNoFLyZone.Dispose ();
+				lblNoFLyZone = null;
+			}
+
+			if (lblBirds != null) {
+				lblBirds.Dispose ();
+				lblBirds = null;
+			}
+
+			if (lblPlains != null) {
+				lblPlains.Dispose ();
+				lblPlains = null;
+			}
+
+			if (lblWeather != null) {
+				lblWeather.Dispose ();
+				lblWeather = null;
+			}
+
+			if (imgCheckNoFly != null) {
+				imgCheckNoFly.Dispose ();
+				imgCheckNoFly = null;
+			}
+
+			if (imgCheckBirds != null) {
+				imgCheckBirds.Dispose ();
+				imgCheckBirds = null;
+			}
+
+			if (imgCheckPlains != null) {
+				imgCheckPlains.Dispose ();
+				imgCheckPlains = null;
+			}
+
+			if (imgCheckWeather != null) {
+				imgCheckWeather.Dispose ();
+				imgCheckWeather = null;
 			}
 		}
 	}

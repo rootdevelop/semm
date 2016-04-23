@@ -23,9 +23,16 @@ namespace KeepOnDroning.iOS
 			set.Bind (btnMap).To (ViewModel => ViewModel.GoToInteractiveMapCommand);
 			set.Bind (btnStart).To (ViewModel => ViewModel.PreFlightCheckCommand);
 
+			set.Bind (lblNoFLyZone).To (ViewModel => ViewModel.NoFlyText);
+			set.Bind (lblBirds).To (ViewModel => ViewModel.BirdsText);
+			set.Bind (lblPlains).To (ViewModel => ViewModel.PlanesText);
+			set.Bind (lblWeather).To (ViewModel => ViewModel.WeatherText);
 
-
-
+			// Bool to image converter
+			//set.Bind (imgCheckNoFly).To (ViewModel => ViewModel.NoFlyIsOkay);
+			//set.Bind (imgCheckBirds).To (ViewModel => ViewModel.BirdsIsOkay);
+			//set.Bind (imgCheckPlains).To (ViewModel => ViewModel.PlanesIsOkay);
+			//set.Bind (imgCheckWeather).To (ViewModel => ViewModel.WeatherIsOkay);
 			set.Apply();
 		}
 
