@@ -10,6 +10,7 @@ namespace KeepOnDroning.Api.Data
     public class DroningDbContext : DbContext
     {
         public DbSet<Airport> Airports { get; set; } 
+        public DbSet<Ooi> Oois { get; set; } 
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

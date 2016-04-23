@@ -9,26 +9,48 @@ using Microsoft.AspNet.Mvc;
 namespace KeepOnDroning.Api.Controllers
 {
     [Route("api/lothric")]
-    public class LothricController
+    public class LothricController : Controller
     {
-        [Route("Estus")]
-        public async Task<DancerResponse> Estus(WeatherBusiness weatherBusiness, float latitude, float longitude)
-        {
-            var dancer = weatherBusiness
+        private DancerBusiness _dancerBusiness;
 
-            return new DancerResponse()
+        public LothricController(DancerBusiness dancerBusiness)
+        {
+            _dancerBusiness = dancerBusiness;
+        }
+
+        [Route("Estus/{latitude}/{longitude}")]
+        public async Task<DancerResponse> Estus(float latitude, float longitude)
+        {
+            var dancer = await _dancerBusiness.Dancing(latitude, longitude);
+
+            return dancer;
+        }
+
+        [Route("Estusses")]
+        [HttpPost]
+        public async Task<RouteResult> Estusses(IList<ServiceCoordinate> coordinates)
+        {
+            var list = new List<DancerResponse>();
+
+            foreach (var coordinate in coordinates)
             {
-                Weather = new WeatherResponse()
+                list.Add(await _dancerBusiness.Dancing(coordinate.Lat, coordinate.Lng));
+            }
+
+            var resp = new RouteResult
+            {
+                DancerResponses = list,
+                BasinOfVows = new DancerResponse()
                 {
-                    WindSpeed = 10,
-                    WindDegree = 20
-                },
-                CrossingFlightpaths = false,
-                HasBirds = true,
-                HasDangerDanger = true,
-                HasNoFlyZone = true,
-                MaxHeight = 500
+                    CrossingFlightpaths = list.Any(x => x.CrossingFlightpaths),
+                    HasBirds = list.Any(x => x.HasBirds),
+                    HasDangerDanger = list.Any(x => x.HasDangerDanger),
+                    HasNoFlyZone = list.Any(x => x.HasNoFlyZone),
+                    MaxHeight = list.Max(x => x.MaxHeight),
+                }
             };
+
+            return resp;
         }
     }
 }

@@ -1,4 +1,5 @@
 using MvvmCross.Platform.IoC;
+using KeepOnDroning.Core.ViewModels;
 
 namespace KeepOnDroning.Core
 {
@@ -11,7 +12,7 @@ namespace KeepOnDroning.Core
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 
-            RegisterAppStart<ViewModels.PreFlightCheckViewModel>();
+            RegisterAppStart<PreFlightCheckViewModel>();
         }
     }
 }

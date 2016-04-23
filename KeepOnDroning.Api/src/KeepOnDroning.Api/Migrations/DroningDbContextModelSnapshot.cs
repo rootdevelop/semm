@@ -47,6 +47,32 @@ namespace KeepOnDroning.Api.Migrations
 
                     b.HasAnnotation("Relational:TableName", "Airports");
                 });
+
+            modelBuilder.Entity("KeepOnDroning.Api.Domain.Ooi", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<double>("CurrentLat");
+
+                    b.Property<double>("CurrentLng");
+
+                    b.Property<double>("DestinationLat");
+
+                    b.Property<double>("DestinationLng");
+
+                    b.Property<string>("Name");
+
+                    b.Property<double>("Speed");
+
+                    b.Property<int>("Type");
+
+                    b.Property<string>("UniqueIdentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasAnnotation("Relational:TableName", "Oois");
+                });
         }
     }
 }
