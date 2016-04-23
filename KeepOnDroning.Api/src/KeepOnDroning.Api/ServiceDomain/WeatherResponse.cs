@@ -11,5 +11,6 @@ namespace KeepOnDroning.Api.ServiceDomain
         // windrichting
         public float WindSpeed { get; set; }
         public float WindDegree { get; set; }
+        public string WindDirection { get; set; }
     }
 }

@@ -56,6 +56,7 @@ namespace KeepOnDroning.Api.Business
                 HasBirds = randomBirds,
                 Weather = new WeatherResponse()
                 {
+                    WindDirection = WindDirection.WindDegreesToDirection(weather.Wind.Deg),
                     WindDegree = weather.Wind.Deg,
                     WindSpeed = weather.Wind.Speed
                 },
