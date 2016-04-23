@@ -56,11 +56,12 @@ namespace KeepOnDroning.Api.Business
                 HasBirds = randomBirds,
                 Weather = new WeatherResponse()
                 {
+                    WindDirection = WindDirection.WindDegreesToDirection(weather.Wind.Deg),
                     WindDegree = weather.Wind.Deg,
                     WindSpeed = weather.Wind.Speed
                 },
                 HasDangerDanger = IsDangerDanger(weather),
-                HasNoFlyZone = await _noFlyingBusiness.IsInNoFlightZone(latitude, longitude),
+                HasNoFlyZone = await _noFlyingBusiness.IsInNoFlyZone(latitude, longitude),
                 MaxHeight = 1000,
                 
             };

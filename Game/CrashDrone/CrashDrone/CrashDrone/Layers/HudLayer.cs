@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using CocosSharp;
+using CrashDrone.Common.Entities;
 using Microsoft.Xna.Framework;
 
 namespace CrashDrone.Common
@@ -12,35 +13,35 @@ namespace CrashDrone.Common
         int energy;
         CCLabel energyLabel;
 
-        CCSprite buttonUp;
-        CCSprite buttonDown;
+        NavigateButton buttonUp;
+        NavigateButton buttonDown;
 
-        public HudLayer() : base(CCColor4B.Transparent)
+        public HudLayer(Action up, Action down) : base(CCColor4B.Transparent)
         {
             energySprite = new CCSprite("/Assets/Content/Images/Hud/battery.png");
             energySprite.Scale = 0.5f;
             AddChild(energySprite);
-            // create and initialize a Label
-            energyLabel = new CCLabel("100%", "Fonts/MarkerFelt", 22, CCLabelFormat.SpriteFont);
 
-            // add the label as a child to this Layer
+            energyLabel = new CCLabel("100%", "Fonts/MarkerFelt", 22, CCLabelFormat.SpriteFont);
             AddChild(energyLabel);
+
+            buttonUp = new NavigateButton("up", 100, up);
+            AddChild(buttonUp);
+
+            buttonDown = new NavigateButton("down", -100, down);
+            AddChild(buttonDown);
         }
 
         protected override void AddedToScene()
         {
             base.AddedToScene();
 
-            // Use the bounds to layout the positioning of our drawable assets
             var bounds = VisibleBoundsWorldspace;
             energySprite.Position = new CCPoint(bounds.MaxX * 0.1f, bounds.MaxY * 0.95f);
-            energyLabel.Position = new CCPoint(bounds.MaxX * 0.1f, bounds.MaxY * 0.85f);
+            energyLabel.Position = new CCPoint(bounds.MaxX * 0.1f, bounds.MaxY * 0.89f);
 
-            // Register for touch events
-#warning add buttons for touch events
-            //var touchListener = new CCEventListenerTouchAllAtOnce();
-            //touchListener.OnTouchesEnded = OnTouchesEnded;
-            //AddEventListener(touchListener, this);
+            buttonUp.Position = new CCPoint(bounds.MaxX * 0.9f, bounds.MaxY * 0.12f);
+            buttonDown.Position = new CCPoint(bounds.MaxX * 0.1f, bounds.MaxY * 0.12f);
         }
 
         public void AddEnergy(int addedAmount)
@@ -54,14 +55,6 @@ namespace CrashDrone.Common
             energy = energy - removedAmount;
             energyLabel.Text = energy + "%";
         }
-
-        void OnTouchesEnded(List<CCTouch> touches, CCEvent touchEvent)
-        {
-            if (touches.Count > 0)
-            {
-                // Perform touch handling here
-            }
-        }
-	}
+    }
 }
 

@@ -22,11 +22,10 @@ namespace KeepOnDroning.iOS
             BtnBack.TouchUpInside += (sender, e) => NavigationController.PopViewController(true);
         }
 
-        public override void DidReceiveMemoryWarning()
-        {
-            base.DidReceiveMemoryWarning();
-            // Release any cached data, images, etc that aren't in use.
-        }
+		public override bool PrefersStatusBarHidden()
+		{
+			return true;
+		}
     }
 }
 

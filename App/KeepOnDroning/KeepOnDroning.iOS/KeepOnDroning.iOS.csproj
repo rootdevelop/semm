@@ -119,6 +119,13 @@
     <Reference Include="MonoGame.Framework.Net">
       <HintPath>..\packages\CocosSharp.1.7.1.0\lib\Xamarin.iOS10\MonoGame.Framework.Net.dll</HintPath>
     </Reference>
+    <Reference Include="OpenTK-1.0" />
+    <Reference Include="MvvmCross.Plugins.Location">
+      <HintPath>..\packages\MvvmCross.Plugin.Location.4.1.4\lib\Xamarin.iOS10\MvvmCross.Plugins.Location.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Location.iOS">
+      <HintPath>..\packages\MvvmCross.Plugin.Location.4.1.4\lib\Xamarin.iOS10\MvvmCross.Plugins.Location.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json">
@@ -132,11 +139,13 @@
     <InterfaceDefinition Include="LaunchScreen.xib" />
     <InterfaceDefinition Include="Views\InteractiveMapView.xib" />
     <InterfaceDefinition Include="Views\CustomLocationView.xib" />
+    <InterfaceDefinition Include="Views\GameView.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
     <None Include="packages.config" />
+    <None Include="Content\Fonts\MarkerFelt-22.xnb" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -157,11 +166,15 @@
       <DependentUpon>InteractiveMapView.cs</DependentUpon>
     </Compile>
     <Compile Include="Bootstrap\VisibilityPluginBootstrap.cs" />
+    <Compile Include="Views\GameView.cs" />
+    <Compile Include="Views\GameView.designer.cs">
+      <DependentUpon>GameView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\LocationPluginBootstrap.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Views\" />
-    <Folder Include="Resources\Images.xcassets\BackButton.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\StartGreenButton.png" />
@@ -175,12 +188,40 @@
     <BundleResource Include="Resources\OK.png" />
     <BundleResource Include="Resources\WaypointButton.png" />
     <BundleResource Include="Resources\LaunchScreen.png" />
+    <BundleResource Include="Content\Images\drone.png" />
+    <BundleResource Include="Content\Images\Collision\house.png" />
+    <BundleResource Include="Content\Images\Collision\radar.png" />
+    <BundleResource Include="Content\Images\Collision\tree.png" />
+    <BundleResource Include="Content\Images\Hud\battery.png" />
+    <BundleResource Include="Content\Images\Periphery\cloud1.png" />
+    <BundleResource Include="Content\Images\Periphery\cloud2.png" />
+    <BundleResource Include="Content\Images\Periphery\forest.png" />
     <BundleResource Include="Resources\BackButton.png" />
+    <BundleResource Include="Resources\IMG_background.png" />
+    <BundleResource Include="Resources\IMG_birds_negative.png" />
+    <BundleResource Include="Resources\IMG_birds_positive.png" />
+    <BundleResource Include="Resources\IMG_check_button.png" />
+    <BundleResource Include="Resources\IMG_game_button.png" />
+    <BundleResource Include="Resources\IMG_info_button.png" />
+    <BundleResource Include="Resources\IMG_logo.png" />
+    <BundleResource Include="Resources\IMG_map_view_button.png" />
+    <BundleResource Include="Resources\IMG_noflyzones_negative.png" />
+    <BundleResource Include="Resources\IMG_noflyzones_positive.png" />
+    <BundleResource Include="Resources\IMG_otherobjects_negative.png" />
+    <BundleResource Include="Resources\IMG_otherobjects_positive.png" />
+    <BundleResource Include="Resources\IMG_waypoints_button.png" />
+    <BundleResource Include="Resources\IMG_weather_negative.png" />
+    <BundleResource Include="Resources\IMG_weather_positive.png" />
+    <BundleResource Include="Resources\IMG_wind.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KeepOnDroning.Core\KeepOnDroning.Core.csproj">
       <Project>{F95FB6AF-06FB-4EA0-875E-547D4F08837F}</Project>
       <Name>KeepOnDroning.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone\CrashDrone.Common.csproj">
+      <Project>{920D9669-D74E-4978-8C45-33F6B0B945F7}</Project>
+      <Name>CrashDrone.Common</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

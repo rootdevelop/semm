@@ -7,38 +7,54 @@ namespace CrashDrone.Common
 {
     public class DroneLayer : CCLayerColor
     {
-        CCSprite drone;
+        Drone drone;
 
         public DroneLayer() : base(CCColor4B.Transparent)
         {
-            drone = new CCSprite("/Asset/Content/Images/drone.png");
-            drone.Scale = 0.3f;
+            drone = new Drone();
             AddChild(drone);
+            Schedule(RunGameLogic);
+        }
+
+        void RunGameLogic(float frameTimeInSeconds)
+        {
+            drone.Activity(frameTimeInSeconds);
         }
 
         protected override void AddedToScene()
         {
             base.AddedToScene();
 
-            // Use the bounds to layout the positioning of our drawable assets
             var bounds = VisibleBoundsWorldspace;
-            drone.Position = new CCPoint(bounds.MaxX * 0.1f, bounds.MidY);
+            drone.SetStartPosition(new CCPoint(bounds.MaxX * 0.2f, bounds.MidY));
         }
 
-        public void MoveUp(List<CCTouch> touches, CCEvent touchEvent)
+        public void MoveUp()
         {
-            if (touches.Count > 0)
+            CCPoint newLocation;
+            if (drone.PositionY + 100 > 720)
             {
-                drone.PositionY += 1;
+                newLocation = new CCPoint(drone.PositionX, 720);
             }
+            else
+            {
+                newLocation = drone.Position.Offset(0, +100);
+            }
+            drone.HandleInput(newLocation);
         }
 
-        public void MoveDown(List<CCTouch> touches, CCEvent touchEvent)
+        public void MoveDown()
         {
-            if (touches.Count > 0)
+            CCPoint newLocation;
+            if (drone.PositionY - 100 < 120)
             {
-                drone.PositionY -= 1;
+                newLocation = new CCPoint(drone.PositionX, 120);
             }
+            else
+            {
+                newLocation = drone.Position.Offset(0, -100);
+            }
+            drone.HandleInput(newLocation);
         }
     }
 }
