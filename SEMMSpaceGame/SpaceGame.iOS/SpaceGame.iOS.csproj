@@ -117,11 +117,17 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Views\" />
+    <Folder Include="Content\" />
+    <Folder Include="Content\tilemaps\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SpaceGame.Common\SpaceGame.Common.csproj">
       <Project>{FF28F8C9-0486-405D-8474-74EFACE48953}</Project>
       <Name>SpaceGame.Common</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Content\tilemaps\dungeon_1.png" />
+    <BundleResource Include="Content\tilemaps\dungeon.tmx" />
   </ItemGroup>
 </Project>
