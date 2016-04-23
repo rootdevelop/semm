@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using KeepOnDroning.Api.Helpers;
 using KeepOnDroning.Api.ServiceDomain;
 using Newtonsoft.Json;
 
 namespace KeepOnDroning.Api.Business
 {
-    public class WeatherBusiness
+    public class DancerBusiness
     {
         private readonly JsonSerializerSettings _jsonSerializerSettings = new JsonSerializerSettings { PreserveReferencesHandling = PreserveReferencesHandling.Objects };
 
@@ -19,7 +21,7 @@ namespace KeepOnDroning.Api.Business
         {
             using (var client = new HttpClient())
             {
-                var uri = String.Format(_openWeatherMapUri, latitude, longitude, _wheaterAppId);
+                var uri = String.Format(_openWeatherMapUri, latitude.ToString("G", new CultureInfo("en-US")), longitude.ToString("G", new CultureInfo("en-US")), _wheaterAppId);
                 var httpResponseMessage = await client.GetAsync(uri);
                 httpResponseMessage.EnsureSuccessStatusCode();
 
@@ -39,14 +41,17 @@ namespace KeepOnDroning.Api.Business
 
             var dancer = new DancerResponse()
             {
+                Lat = latitude,
+                Lng = longitude,
                 HasBirds = randomBirds,
                 Weather = new WeatherResponse()
                 {
                     WindDegree = weather.Wind.Deg,
                     WindSpeed = weather.Wind.Speed
                 },
-                MaxHeight = 1000,
                 HasDangerDanger = IsDangerDanger(weather),
+                MaxHeight = 1000,
+                
             };
             return dancer;
         }
@@ -79,7 +84,13 @@ namespace KeepOnDroning.Api.Business
             {
                 return true;
             }
+            if (weather.Wind.Speed > DroningConstants.MaxWindSpeed)
+            {
+                return true;
+            }
             return false;
         }
+
+
     }
 }

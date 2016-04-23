@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace KeepOnDroning.Api.ServiceDomain
 {
-    public class ServiceCoordinate
+    public class RouteResult
     {
-        public float Lat { get; set; }
-        public float Lng { get; set; }
+        public IList<DancerResponse> DancerResponses { get; set; }
+        public DancerResponse BasinOfVows { get; set; } // summary
     }
 }
