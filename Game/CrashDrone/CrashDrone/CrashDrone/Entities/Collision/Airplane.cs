@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CrashDrone.Entities
 {
-    class Airplane
+    class Airplane : CollisionEntity
     {
     }
 }
