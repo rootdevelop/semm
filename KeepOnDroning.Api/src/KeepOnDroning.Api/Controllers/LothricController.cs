@@ -11,17 +11,17 @@ namespace KeepOnDroning.Api.Controllers
     [Route("api/lothric")]
     public class LothricController
     {
-        private WeatherBusiness _weatherBusiness;
+        private DancerBusiness _dancerBusiness;
 
-        public LothricController(WeatherBusiness weatherBusiness)
+        public LothricController(DancerBusiness dancerBusiness)
         {
-            _weatherBusiness = weatherBusiness;
+            _dancerBusiness = dancerBusiness;
         }
 
         [Route("Estus")]
         public async Task<DancerResponse> Estus(float latitude, float longitude)
         {
-            var dancer = await _weatherBusiness.Dancing(latitude, longitude);
+            var dancer = await _dancerBusiness.Dancing(latitude, longitude);
 
             return dancer;
         }
@@ -34,7 +34,7 @@ namespace KeepOnDroning.Api.Controllers
 
             foreach (var coordinate in coordinates)
             {
-                list.Add(await _weatherBusiness.Dancing(coordinate.Lat, coordinate.Lng));
+                list.Add(await _dancerBusiness.Dancing(coordinate.Lat, coordinate.Lng));
             }
 
             return list;
