@@ -3,10 +3,14 @@
   <style name="Theme.Splash" parent="android:Theme">
     <item name="android:windowBackground">@drawable/splash</item>
     <item name="android:windowNoTitle">true</item>
+    <item name="android:windowFullscreen">true</item>
   </style>
 
   <style name="Theme.Main" parent="android:Theme">
+  <item name="android:windowBackground">@color/white_color</item>
     <item name="android:windowNoTitle">true</item>
     <item name="android:windowFullscreen">true</item>
+    <item name="android:editTextColor">@color/black_color</item> 
+    <item name="android:textColorPrimary">@color/black_color</item>
   </style>
 </resources>

@@ -30,7 +30,7 @@ namespace KeepOnDroning.Api.ServiceDomain
         [JsonProperty(PropertyName = "name")]
         public string Name { get; set; }
         [JsonProperty(PropertyName = "cod")]
-        public EWheaterCode WheaterCode { get; set; }
+        public EWeatherCode WeatherCode { get; set; }
     }
 
     public class Coord

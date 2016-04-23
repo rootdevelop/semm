@@ -5,24 +5,21 @@ namespace CrashDrone.Common.Entities
 {
     public class PeripherySpawner
     {
-        private int _height;
+        private PeripheryLayer _layer;
 
         public Action<PeripheryEntity> EntitySpawned; 
 
-        public PeripherySpawner( int height)
+        public PeripherySpawner(PeripheryLayer periphery)
         {
-            _height = height;
+            _layer = periphery;
         }
-
-
-
-
-        private Spawn()
+        
+        private void Spawn()
         {
             var peripheryEntity = new Forest();
 
             peripheryEntity.PositionX = 0;
-            peripheryEntity.PositionY = height-forest.;
+            peripheryEntity.PositionY = _layer.ContentSize.Height - peripheryEntity.SpriteFrame.ContentSize.Height;
 
             if (EntitySpawned != null)
             {

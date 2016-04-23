@@ -6,7 +6,6 @@
     android:minWidth="25px"
     android:minHeight="25px">
     <RelativeLayout
-        android:background="#FF00FF"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_alignParentTop="true"
@@ -15,13 +14,13 @@
         android:minHeight="25px"
         local:MvxBind="Click GoToInteractiveMapCommand">
         <ImageView
-            android:src="@android:drawable/ic_menu_gallery"
+            android:src="@drawable/mapbutton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/imageView1" />
+            android:id="@+id/imageView1"
+            android:scaleType="fitXY" />
     </RelativeLayout>
     <RelativeLayout
-        android:background="#FF00FF"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_alignParentTop="true"
@@ -30,13 +29,13 @@
         android:minHeight="25px"
         local:MvxBind="Click GoToCustomLocationCommand">
         <ImageView
-            android:src="@android:drawable/ic_menu_gallery"
+            android:src="@drawable/waypointbutton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/imageView2" />
+            android:id="@+id/imageView2"
+            android:scaleType="fitXY" />
     </RelativeLayout>
     <RelativeLayout
-        android:background="#FF00FF"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_alignParentBottom="true"
@@ -45,13 +44,13 @@
         android:minHeight="25px"
         local:MvxBind="Click InformationCommand">
         <ImageView
-            android:src="@android:drawable/ic_menu_gallery"
+            android:src="@drawable/infobutton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/imageView3" />
+            android:id="@+id/imageView3"
+            android:scaleType="fitXY" />
     </RelativeLayout>
     <RelativeLayout
-        android:background="#FF00FF"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_alignParentBottom="true"
@@ -60,24 +59,23 @@
         android:minHeight="25px"
         local:MvxBind="Click GoToGameCommand">
         <ImageView
-            android:src="@android:drawable/ic_menu_gallery"
+            android:src="@drawable/gamebutton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/imageView4" />
+            android:id="@+id/imageView4"
+            android:scaleType="fitXY" />
     </RelativeLayout>
     <LinearLayout
-        android:background="#FF00FF"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp">
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp">
         <LinearLayout
             android:orientation="horizontal"
             android:minWidth="25px"
             android:minHeight="25px"
-            android:background="#FF030F"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:id="@+id/linearLayout1">
@@ -87,13 +85,14 @@
                 android:layout_height="match_parent"
                 android:id="@+id/checkBox1"
                 local:MvxBind="Text NoFlyText;Checked NoFlyIsOkay"
-                android:editable="true" />
+                android:editable="false"
+                android:clickable="false"
+                android:textColor="@color/black_color" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
             android:minWidth="25px"
             android:minHeight="25px"
-            android:background="#02030F"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:id="@+id/linearLayout2">
@@ -103,13 +102,14 @@
                 android:layout_height="match_parent"
                 android:id="@+id/checkBox2"
                 local:MvxBind="Text BirdsText;Checked BirdsIsOkay"
-                android:editable="true" />
+                android:editable="false"
+                android:clickable="false"
+                android:textColor="@color/black_color" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
             android:minWidth="25px"
             android:minHeight="25px"
-            android:background="#020FFF"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:id="@+id/linearLayout3">
@@ -118,14 +118,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:id="@+id/checkBox3"
+                android:clickable="false"
                 local:MvxBind="Text PlanesText;Checked PlanesIsOkay"
-                android:editable="true" />
+                android:editable="false"
+                android:textColor="@color/black_color" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
             android:minWidth="25px"
             android:minHeight="25px"
-            android:background="#020FFF"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:id="@+id/linearLayout4">
@@ -135,23 +136,42 @@
                 android:layout_height="match_parent"
                 android:id="@+id/checkBox4"
                 local:MvxBind="Text WeatherText;Checked WeatherIsOkay"
-                android:editable="true" />
+                android:clickable="false"
+                android:editable="false"
+                android:textColor="@color/black_color" />
         </LinearLayout>
     </LinearLayout>
     <RelativeLayout
-        android:background="#FFFFFF"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_alignParentBottom="true"
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="70dp"
         local:MvxBind="Click PreFlightCheckCommand">
         <ImageView
-            android:src="@android:drawable/ic_menu_gallery"
+            android:src="@drawable/redbutton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/imageView4" />
+            android:id="@+id/imageView4"
+            local:MvxBind="DrawableId PreFlightStatus,Converter=EPreFlightStatusToImage" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:background="@color/white_color"
+        android:layout_width="match_parent"
+        android:layout_margin="60dp"
+        android:layout_height="match_parent"
+        local:MvxBind="Click InformationCommand;Visibility ShowInformation,Converter=Visibility"
+        android:id="@+id/linearLayout8">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            local:MvxBind="Text WelcomeText"
+            android:textColor="@color/black_color"
+            android:layout_centerInParent="true"
+            android:layout_margin="10dp" />
     </RelativeLayout>
 </RelativeLayout>

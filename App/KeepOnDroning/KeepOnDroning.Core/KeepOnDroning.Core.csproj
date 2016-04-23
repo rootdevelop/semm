@@ -36,6 +36,7 @@
     <Compile Include="ViewModels\GameViewModel.cs" />
     <Compile Include="ViewModels\InteractiveMapViewModel.cs" />
     <Compile Include="ViewModels\CustomLocationViewModel.cs" />
+    <Compile Include="Enums\EPreFlightStatus.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
@@ -77,5 +78,6 @@
   <ItemGroup>
     <Folder Include="Services\" />
     <Folder Include="Services\Interfaces\" />
+    <Folder Include="Enums\" />
   </ItemGroup>
 </Project>

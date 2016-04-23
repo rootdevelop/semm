@@ -12,7 +12,7 @@ namespace KeepOnDroning.Api.Controllers
     {
         // GET: api/values
         [HttpGet]
-        public async Task<ActionResult> Weahter(float latitude, float longitude)
+        public async Task<ActionResult> Weather(float latitude, float longitude)
         {
             return null;
         }

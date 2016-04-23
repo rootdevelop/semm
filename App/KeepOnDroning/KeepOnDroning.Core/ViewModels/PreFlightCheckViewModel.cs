@@ -201,13 +201,15 @@ namespace KeepOnDroning.Core.ViewModels
 		private bool _weatherIsOkay;
 		private bool _isLoading;
 		private bool _showInformation = true;
+		private EPreFlightStatus _preFlightStatus;
 
 		public PreFlightCheckViewModel()
 		{
-			NoFlyText = "Retrieving information...";
-			BirdsText = "Retrieving information...";
-			WeatherText = "Retrieving information...";
-			PlanesText = "Retrieving information...";
+			NoFlyText = "Interact with Start Button for info";
+			BirdsText = "Interact with Start Button for info";
+			WeatherText = "Interact with Start Button for info";
+			PlanesText = "Interact with Start Button for info";
+			PreFlightStatus = EPreFlightStatus.Red;
 		}
 
 		public ICommand GoToInteractiveMapCommand
@@ -250,6 +252,11 @@ namespace KeepOnDroning.Core.ViewModels
 				return new MvxCommand(async() =>
 					{
 						IsLoading = true;
+						Reset();
+						await Task.Delay(500);
+						PreFlightStatus = EPreFlightStatus.Orange;
+
+
 						// Do checks
 						NoFlyIsOkay = true;
 						NoFlyText = "You are not in a no-fly zone!";
@@ -263,17 +270,23 @@ namespace KeepOnDroning.Core.ViewModels
 						WeatherIsOkay = true;
 						WeatherText = "There is no bad weather, only wrong clothing!";
 
+						PreFlightStatus = EPreFlightStatus.Green;
 						IsLoading = false;
 					});
 			}
 		}
 
-		public string WelcomeText
+		private void Reset()
 		{
-			get
-			{
-				return "Welcome to KeepOnDroning!";
-			}
+			PreFlightStatus = EPreFlightStatus.Red;
+			NoFlyText = "Retrieving information...";
+			BirdsText = "Retrieving information...";
+			WeatherText = "Retrieving information...";
+			PlanesText = "Retrieving information...";
+			PlanesIsOkay = false;
+			BirdsIsOkay = false;
+			WeatherIsOkay = false;
+			NoFlyIsOkay = false;
 		}
 
 		public ICommand InformationCommand
@@ -286,6 +299,14 @@ namespace KeepOnDroning.Core.ViewModels
 					});
 			}
 		}
+
+		public string WelcomeText
+		{
+			get
+			{
+				return "Welcome to KeepOnDroning!";
+			}
+		}
 		public bool IsLoading
 		{
 			get {return _isLoading; }
@@ -293,6 +314,16 @@ namespace KeepOnDroning.Core.ViewModels
 			{
 				_isLoading = value;
 				RaisePropertyChanged (() => IsLoading);
+			}
+		}
+
+		public EPreFlightStatus PreFlightStatus
+		{
+			get {return _preFlightStatus; }
+			set
+			{
+				_preFlightStatus = value;
+				RaisePropertyChanged (() => PreFlightStatus);
 			}
 		}
 		public bool ShowInformation
