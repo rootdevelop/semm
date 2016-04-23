@@ -28,12 +28,12 @@ namespace CrashDrone.Common
                 // Of course you're free to have a finer set of image resolutions e.g (ld, hd, super-hd)
                 if (width < viewSize.Width)
                 {
-                    contentSearchPaths.Add("Images/Collision");
+                    //contentSearchPaths.Add("Images/Collision");
                     CCSprite.DefaultTexelToContentSizeRatio = 2.0f;
                 }
                 else
                 {
-                    contentSearchPaths.Add("Images/Periphery");
+                    //contentSearchPaths.Add("Images/Periphery");
                     CCSprite.DefaultTexelToContentSizeRatio = 1.0f;
                 }
 

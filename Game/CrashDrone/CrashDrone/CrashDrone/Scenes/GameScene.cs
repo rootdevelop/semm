@@ -28,8 +28,8 @@ namespace CrashDrone.Common
             
 
             this.AddLayer(new CollisionLayer());
-            this.AddLayer(new DroneLayer());
             this.AddLayer(new HudLayer());
+            this.AddLayer(new DroneLayer());
         }
 
         private void CreatePeripherySpawner()
