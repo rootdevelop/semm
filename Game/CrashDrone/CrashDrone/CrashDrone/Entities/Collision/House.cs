@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CrashDrone.Entities
+namespace CrashDrone.Common.Entities
 {
-    class House : CollisionEntity
+    public class House : CollisionEntity
     {
+        public House() : base("house.png")
+        {
+        }
     }
 }

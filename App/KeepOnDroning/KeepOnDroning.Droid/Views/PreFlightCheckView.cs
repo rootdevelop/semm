@@ -5,14 +5,13 @@ using Android.Views;
 
 namespace KeepOnDroning.Droid.Views
 {
-	[Activity(Label = "View for PreFlightCheckViewModel")]
+	[Activity(
+		Label = "View for PreFlightCheckViewModel",
+		Theme = "@style/Theme.Main")]
     public class PreFlightCheckView : MvxActivity
     {
         protected override void OnCreate(Bundle bundle)
         {
-			RequestWindowFeature(WindowFeatures.NoTitle);
-			Window.AddFlags(WindowManagerFlags.Fullscreen);
-
             base.OnCreate(bundle);
 			SetContentView(Resource.Layout.PreFlightCheckView);
         }

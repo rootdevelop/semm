@@ -1,5 +1,6 @@
 ﻿using System;
 using MvvmCross.Core.ViewModels;
+using System.Windows.Input;
 
 namespace KeepOnDroning.Core
 {
@@ -7,6 +8,17 @@ namespace KeepOnDroning.Core
 	{
 		public GameViewModel ()
 		{
+		}
+
+		public ICommand GoBackCommand
+		{
+			get
+			{
+				return new MvxCommand(() =>
+					{
+						Close(this);
+					});
+			}
 		}
 	}
 }
