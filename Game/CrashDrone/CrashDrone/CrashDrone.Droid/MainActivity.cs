@@ -14,7 +14,7 @@ using CrashDrone;
 
 namespace CrashDrone.Droid
 {
-    [Activity(Label = "CrashDrone.Droid", MainLauncher = true, Icon = "@drawable/icon", 
+    [Activity(Label = "CrashDrone.Droid", MainLauncher = true, Icon = "@drawable/icon", ScreenOrientation = ScreenOrientation.Landscape,
         AlwaysRetainTaskState = true,
         LaunchMode = LaunchMode.SingleInstance,
         ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize | ConfigChanges.Keyboard | ConfigChanges.KeyboardHidden)]
