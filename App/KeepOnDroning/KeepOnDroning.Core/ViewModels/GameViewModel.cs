@@ -2,24 +2,24 @@
 using MvvmCross.Core.ViewModels;
 using System.Windows.Input;
 
-namespace KeepOnDroning.Core
+namespace KeepOnDroning.Core.ViewModels
 {
-	public class GameViewModel : MvxViewModel
-	{
-		public GameViewModel ()
-		{
-		}
+    public class GameViewModel : MvxViewModel
+    {
+        public GameViewModel()
+        {
+        }
 
-		public ICommand GoBackCommand
-		{
-			get
-			{
-				return new MvxCommand(() =>
-					{
-						Close(this);
-					});
-			}
-		}
-	}
+        public ICommand GoBackCommand
+        {
+            get
+            {
+                return new MvxCommand(() =>
+                    {
+                        Close(this);
+                    });
+            }
+        }
+    }
 }
 

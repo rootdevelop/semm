@@ -107,6 +107,9 @@
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
     <InterfaceDefinition Include="Views\PreFlightCheckView.xib" />
+    <InterfaceDefinition Include="LaunchScreen.xib" />
+    <InterfaceDefinition Include="Views\InteractiveMapView.xib" />
+    <InterfaceDefinition Include="Views\CustomLocationView.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -122,6 +125,14 @@
     <Compile Include="Views\PreFlightCheckView.cs" />
     <Compile Include="Views\PreFlightCheckView.designer.cs">
       <DependentUpon>PreFlightCheckView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomLocationView.cs" />
+    <Compile Include="Views\CustomLocationView.designer.cs">
+      <DependentUpon>CustomLocationView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InteractiveMapView.cs" />
+    <Compile Include="Views\InteractiveMapView.designer.cs">
+      <DependentUpon>InteractiveMapView.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
@@ -145,5 +156,6 @@
     <BundleResource Include="Resources\MapButton.png" />
     <BundleResource Include="Resources\OK.png" />
     <BundleResource Include="Resources\WaypointButton.png" />
+    <BundleResource Include="Resources\LaunchScreen.png" />
   </ItemGroup>
 </Project>

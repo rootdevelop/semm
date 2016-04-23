@@ -1,11 +1,11 @@
 ﻿using System;
 
-namespace KeepOnDroning.Core
+namespace KeepOnDroning.Core.Enums
 {
-	public enum EPreFlightStatus
-	{
-		Red,
-		Orange,
-		Green
-	}
+    public enum EPreFlightStatus
+    {
+        Red,
+        Orange,
+        Green
+    }
 }
