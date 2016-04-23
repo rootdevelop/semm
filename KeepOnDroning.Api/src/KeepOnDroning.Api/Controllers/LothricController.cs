@@ -9,7 +9,7 @@ using Microsoft.AspNet.Mvc;
 namespace KeepOnDroning.Api.Controllers
 {
     [Route("api/lothric")]
-    public class LothricController
+    public class LothricController : Controller
     {
         private DancerBusiness _dancerBusiness;
 
@@ -18,7 +18,7 @@ namespace KeepOnDroning.Api.Controllers
             _dancerBusiness = dancerBusiness;
         }
 
-        [Route("Estus")]
+        [Route("Estus/{latitude}/{longitude}")]
         public async Task<DancerResponse> Estus(float latitude, float longitude)
         {
             var dancer = await _dancerBusiness.Dancing(latitude, longitude);
