@@ -27,5 +27,59 @@ namespace KeepOnDroning.Api.Business
                 return JsonConvert.DeserializeObject<WeatherResult>(resultAsString, _jsonSerializerSettings);
             }
         }
+
+        public async Task<DancerResponse> Dancing(float latitude, float longitude)
+        {
+            var weather = await GetWeather(latitude, longitude);
+
+
+
+            var random = new Random();
+            var randomBirds = random.Next(100) < 10;
+
+            var dancer = new DancerResponse()
+            {
+                HasBirds = randomBirds,
+                Weather = new WeatherResponse()
+                {
+                    WindDegree = weather.Wind.Deg,
+                    WindSpeed = weather.Wind.Speed
+                },
+                MaxHeight = 1000,
+                HasDangerDanger = IsDangerDanger(weather),
+            };
+            return dancer;
+        }
+
+        private bool IsDangerDanger(WeatherResult weather)
+        {
+            int weatherCode;
+            try
+            {
+                weatherCode = int.Parse(weather.WeatherCode.ToString("N"));
+            }
+            catch (Exception)
+            {
+                return true;
+            }
+            
+            if (weatherCode >= 232 && weatherCode <= 501)
+            {
+                return true;
+            }
+            if (weatherCode <= 500 && weatherCode <= 781)
+            {
+                return true;
+            }
+            if (weatherCode <= 900 && weatherCode <= 902)
+            {
+                return true;
+            }
+            if (weatherCode <= 957)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

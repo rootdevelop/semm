@@ -79,14 +79,19 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:id="@+id/linearLayout1">
-            <CheckBox
+            <Mvx.MvxImageView
+                android:src="@drawable/ok"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/imageView5"
+                local:MvxBind="DrawableId NoFlyIsOkay,Converter=BooleanToImage"
+                android:layout_marginRight="10dp" />
+            <TextView
                 android:text="CheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:id="@+id/checkBox1"
-                local:MvxBind="Text NoFlyText;Checked NoFlyIsOkay"
-                android:editable="false"
-                android:clickable="false"
+                local:MvxBind="Text NoFlyText"
                 android:textColor="@color/black_color" />
         </LinearLayout>
         <LinearLayout
@@ -96,14 +101,19 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:id="@+id/linearLayout2">
-            <CheckBox
+            <Mvx.MvxImageView
+                android:src="@drawable/ok"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/imageView5"
+                local:MvxBind="DrawableId BirdsIsOkay,Converter=BooleanToImage"
+                android:layout_marginRight="10dp" />
+            <TextView
                 android:text="CheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:id="@+id/checkBox2"
-                local:MvxBind="Text BirdsText;Checked BirdsIsOkay"
-                android:editable="false"
-                android:clickable="false"
+                local:MvxBind="Text BirdsText"
                 android:textColor="@color/black_color" />
         </LinearLayout>
         <LinearLayout
@@ -113,14 +123,19 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:id="@+id/linearLayout3">
-            <CheckBox
+            <Mvx.MvxImageView
+                android:src="@drawable/ok"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/imageView5"
+                local:MvxBind="DrawableId PlanesIsOkay,Converter=BooleanToImage"
+                android:layout_marginRight="10dp" />
+            <TextView
                 android:text="CheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:id="@+id/checkBox3"
-                android:clickable="false"
-                local:MvxBind="Text PlanesText;Checked PlanesIsOkay"
-                android:editable="false"
+                local:MvxBind="Text PlanesText"
                 android:textColor="@color/black_color" />
         </LinearLayout>
         <LinearLayout
@@ -130,14 +145,19 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:id="@+id/linearLayout4">
-            <CheckBox
+            <Mvx.MvxImageView
+                android:src="@drawable/ok"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                local:MvxBind="DrawableId WeatherIsOkay,Converter=BooleanToImage"
+                android:id="@+id/imageView5"
+                android:layout_marginRight="10dp" />
+            <TextView
                 android:text="CheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:id="@+id/checkBox4"
-                local:MvxBind="Text WeatherText;Checked WeatherIsOkay"
-                android:clickable="false"
-                android:editable="false"
+                local:MvxBind="Text WeatherText"
                 android:textColor="@color/black_color" />
         </LinearLayout>
     </LinearLayout>
@@ -165,7 +185,8 @@
         android:layout_margin="60dp"
         android:layout_height="match_parent"
         local:MvxBind="Click InformationCommand;Visibility ShowInformation,Converter=Visibility"
-        android:id="@+id/linearLayout8">
+        android:id="@+id/linearLayout8"
+        android:visibility="gone">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

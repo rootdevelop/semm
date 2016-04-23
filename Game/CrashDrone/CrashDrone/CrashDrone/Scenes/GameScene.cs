@@ -12,6 +12,7 @@ namespace CrashDrone.Common
     {
         private PeripheryLayer _peripheryLayer;
         private PeripherySpawner _peripherySpawner;
+        private List<PeripheryEntity> _peripheryList;
     
         public GameScene(CCGameView gameview) : base(gameview)
         {
@@ -25,7 +26,9 @@ namespace CrashDrone.Common
             _peripheryLayer = new PeripheryLayer();
             CreatePeripherySpawner();
             this.AddLayer(_peripheryLayer);
-            
+
+            _peripheryList = new List<PeripheryEntity>();
+
 
             this.AddLayer(new CollisionLayer());
             this.AddLayer(new HudLayer());
@@ -37,12 +40,22 @@ namespace CrashDrone.Common
             _peripherySpawner = new PeripherySpawner(_peripheryLayer);
             _peripherySpawner.EntitySpawned += HandlePeripheryAdded;
         }
-
+        
 
         private void HandlePeripheryAdded(PeripheryEntity perEntity)
         {
+            _peripheryList.Add(perEntity);
             _peripheryLayer.AddChild(perEntity);
         }
 
+        private void Activity(float frameTimeInSeconds)
+        {
+            foreach (var pe in _peripheryList)
+            {
+                pe.Activity(frameTimeInSeconds);
+            }
+
+            //spawner.Activity(frameTimeInSeconds);       
+        }
     }
 }
