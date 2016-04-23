@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PreFlightCheckView">
             <connections>
+                <outlet property="btnCustom" destination="n0P-y1-s60" id="biq-bc-H1m"/>
+                <outlet property="btnGame" destination="cGT-jJ-PSp" id="6uP-pq-GkM"/>
+                <outlet property="btnInfo" destination="iWV-g0-cVF" id="Bbq-fZ-vjv"/>
+                <outlet property="btnMap" destination="b8I-qG-Uh7" id="oXa-rW-AHr"/>
+                <outlet property="btnStart" destination="aSG-gc-PWA" id="jfS-5v-E3z"/>
                 <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
             </connections>
         </placeholder>
@@ -23,7 +27,7 @@
                         <constraint firstAttribute="width" constant="46" id="er8-ug-bHT"/>
                         <constraint firstAttribute="height" constant="30" id="puP-AX-cyF"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
+                    <state key="normal" title="Info"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGT-jJ-PSp">
                     <rect key="frame" x="0.0" y="570" width="46" height="30"/>
@@ -31,33 +35,33 @@
                         <constraint firstAttribute="height" constant="30" id="AfQ-Gc-VVN"/>
                         <constraint firstAttribute="width" constant="46" id="YKE-UG-6ih"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
+                    <state key="normal" title="Game"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n0P-y1-s60">
-                    <rect key="frame" x="0.0" y="32" width="46" height="30"/>
+                    <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="46" id="BRp-Lk-22n"/>
                         <constraint firstAttribute="height" constant="30" id="LIb-vo-hhM"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
+                    <state key="normal" title="Custom"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8I-qG-Uh7">
-                    <rect key="frame" x="554" y="32" width="46" height="30"/>
+                    <rect key="frame" x="554" y="0.0" width="46" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="ZRb-qj-ifQ"/>
                         <constraint firstAttribute="width" constant="46" id="rpC-pj-cWo"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
+                    <state key="normal" title="Map"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSG-gc-PWA">
-                    <rect key="frame" x="277" y="446" width="46" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSG-gc-PWA">
+                    <rect key="frame" x="258" y="446" width="85" height="86"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="46" id="MkL-9r-77C"/>
-                        <constraint firstAttribute="height" constant="30" id="ReY-Vk-acK"/>
+                        <constraint firstAttribute="width" constant="85" id="MkL-9r-77C"/>
+                        <constraint firstAttribute="height" constant="86" id="ReY-Vk-acK"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
+                    <state key="normal" backgroundImage="StartGreenButton.png"/>
                 </button>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dVO-5A-vdF">
+                <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="tvInfo" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dVO-5A-vdF">
                     <rect key="frame" x="57" y="95" width="486" height="315"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -70,13 +74,14 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="b8I-qG-Uh7" firstAttribute="top" secondItem="2" secondAttribute="top" constant="32" id="2TC-n1-J6e"/>
+                <constraint firstItem="b8I-qG-Uh7" firstAttribute="top" secondItem="2" secondAttribute="top" id="2TC-n1-J6e"/>
+                <constraint firstItem="aSG-gc-PWA" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="2uW-vy-gA5"/>
                 <constraint firstAttribute="trailing" secondItem="b8I-qG-Uh7" secondAttribute="trailing" id="4q6-kL-dac"/>
                 <constraint firstAttribute="trailing" secondItem="I0a-xl-ADY" secondAttribute="trailing" id="68N-XG-uye"/>
                 <constraint firstItem="aSG-gc-PWA" firstAttribute="top" secondItem="dVO-5A-vdF" secondAttribute="bottom" constant="36" id="7Iz-RI-nnW"/>
                 <constraint firstItem="cGT-jJ-PSp" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="7SG-SP-70a"/>
                 <constraint firstAttribute="trailing" secondItem="iWV-g0-cVF" secondAttribute="trailing" id="Mfb-S5-Vk5"/>
-                <constraint firstItem="aSG-gc-PWA" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="N8i-kU-Rjr"/>
+                <constraint firstItem="aSG-gc-PWA" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" constant="19.5" id="N8i-kU-Rjr"/>
                 <constraint firstItem="dVO-5A-vdF" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="NUe-2a-kKX"/>
                 <constraint firstAttribute="bottom" secondItem="I0a-xl-ADY" secondAttribute="bottom" id="TvI-tI-3Kc"/>
                 <constraint firstAttribute="bottom" secondItem="cGT-jJ-PSp" secondAttribute="bottom" id="VXY-vW-4CZ"/>
@@ -84,10 +89,19 @@
                 <constraint firstItem="dVO-5A-vdF" firstAttribute="top" secondItem="2" secondAttribute="top" constant="95" id="jIg-yF-zqx"/>
                 <constraint firstAttribute="bottom" secondItem="iWV-g0-cVF" secondAttribute="bottom" id="pHQ-h7-4Mp"/>
                 <constraint firstItem="I0a-xl-ADY" firstAttribute="top" secondItem="2" secondAttribute="top" id="qwF-hd-ZSG"/>
-                <constraint firstAttribute="bottom" secondItem="aSG-gc-PWA" secondAttribute="bottom" constant="124" id="xMD-Dt-8BP"/>
-                <constraint firstItem="n0P-y1-s60" firstAttribute="top" secondItem="2" secondAttribute="top" constant="32" id="zKC-Xf-1DS"/>
+                <constraint firstAttribute="bottom" secondItem="aSG-gc-PWA" secondAttribute="bottom" constant="68" id="xMD-Dt-8BP"/>
+                <constraint firstItem="n0P-y1-s60" firstAttribute="top" secondItem="2" secondAttribute="top" id="zKC-Xf-1DS"/>
                 <constraint firstItem="I0a-xl-ADY" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="zhO-Uh-MJO"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="N8i-kU-Rjr"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="279" y="414"/>
         </view>
     </objects>
+    <resources>
+        <image name="StartGreenButton.png" width="433" height="428"/>
+    </resources>
 </document>
