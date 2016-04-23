@@ -125,6 +125,7 @@
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json">
       <InProject>false</InProject>
     </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Image.imageset\BackButton.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
@@ -167,6 +168,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Views\" />
+    <Folder Include="Resources\Images.xcassets\BackButton.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\StartGreenButton.png" />
@@ -188,6 +190,7 @@
     <BundleResource Include="Content\Images\Periphery\cloud1.png" />
     <BundleResource Include="Content\Images\Periphery\cloud2.png" />
     <BundleResource Include="Content\Images\Periphery\forest.png" />
+    <BundleResource Include="Resources\BackButton.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KeepOnDroning.Core\KeepOnDroning.Core.csproj">
