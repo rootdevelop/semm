@@ -41,6 +41,7 @@
     <Compile Include="Entities\Periphery\Forest.cs" />
     <Compile Include="Entities\Periphery\PeripheryEntity.cs" />
     <Compile Include="Entities\Periphery\RoastedChicken.cs" />
+    <Compile Include="Enums\CollisionEffect.cs" />
     <Compile Include="GameDelegate.cs" />
     <Compile Include="Layers\CollisionLayer.cs" />
     <Compile Include="Layers\HudLayer.cs" />

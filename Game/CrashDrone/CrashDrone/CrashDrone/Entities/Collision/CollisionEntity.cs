@@ -5,9 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using CocosSharp;
 
-namespace CrashDrone.Entities
+namespace CrashDrone.Common.Entities
 {
     abstract class CollisionEntity : CCNode
     {
+        public float Speed { get; set; }
+        public CollisionEffect CollisionEffect { get; set; }
     }
 }

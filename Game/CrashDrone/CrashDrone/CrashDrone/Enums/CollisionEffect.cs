@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CrashDrone.Common.Entities
+namespace CrashDrone.Common
 {
-    class PeripherySpawner
+    public enum CollisionEffect
     {
+        GameOver = 0,
+        LoseEnergy,
+        GainEnergy
     }
 }
