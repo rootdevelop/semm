@@ -1,5 +1,5 @@
 using MvvmCross.Platform.IoC;
-using KeepOnDroning.Core.ViewModels.ViewModels;
+using KeepOnDroning.Core.ViewModels;
 
 namespace KeepOnDroning.Core
 {
