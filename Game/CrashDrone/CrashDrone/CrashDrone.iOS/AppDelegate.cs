@@ -18,10 +18,18 @@ namespace CrashDrone.iOS
 
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
-            // Override point for customization after application launch.
-            // If not required for your application you can safely delete this method
+			Window = new UIWindow(UIScreen.MainScreen.Bounds);
 
-            return true;
+			var controller = new ViewController();
+
+			//var navController = new UINavigationController(controller);
+
+			Window.RootViewController = controller;
+
+			// make the window visible
+			Window.MakeKeyAndVisible();
+
+			return true;
         }
 
         public override void OnResignActivation(UIApplication application)
