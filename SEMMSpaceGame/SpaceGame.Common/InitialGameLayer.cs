@@ -28,7 +28,7 @@ namespace SpaceGame.Common
 			base.AddedToScene ();
 			CCPoint center = new CCPoint (ContentSize.Width/2, ContentSize.Height/2);
 
-			tileMap = new CCTileMap ("tilemaps/level0.tmx");
+			tileMap = new CCTileMap ("tilemaps/Background_Level_0.tmx");
 			this.AddChild (tileMap);
 
 

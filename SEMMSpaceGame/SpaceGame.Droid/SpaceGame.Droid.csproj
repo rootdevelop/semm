@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -59,6 +59,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidAsset Include="Assets\Content\tilemaps\Background_Level_0.tmx" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml" />
     <None Include="Assets\AboutAssets.txt" />
@@ -87,8 +88,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\Content\tilemaps\level0.jpg" />
+    <AndroidAsset Include="Assets\Content\tilemaps\dungeon.tmx" />
+    <AndroidAsset Include="Assets\Content\tilemaps\dungeon_1.png" />
     <AndroidAsset Include="Assets\Content\tilemaps\level0.tmx" />
+    <AndroidAsset Include="Assets\Content\tilemaps\level0.png" />
     <AndroidAsset Include="Assets\Content\Images\monkey.png" />
+
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Content\tilemaps\level0_500x500.jpg" />
   </ItemGroup>
 </Project>
