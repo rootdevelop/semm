@@ -31,12 +31,30 @@ namespace CrashDrone.Common
 
         public void MoveUp()
         {
-            drone.HandleInput(drone.Position.Offset(0, +100));
+            CCPoint newLocation;
+            if (drone.PositionY + 100 > 720)
+            {
+                newLocation = new CCPoint(drone.PositionX, 720);
+            }
+            else
+            {
+                newLocation = drone.Position.Offset(0, +100);
+            }
+            drone.HandleInput(newLocation);
         }
 
         public void MoveDown()
         {
-            drone.HandleInput(drone.Position.Offset(0, -100));
+            CCPoint newLocation;
+            if (drone.PositionY - 100 < 120)
+            {
+                newLocation = new CCPoint(drone.PositionX, 120);
+            }
+            else
+            {
+                newLocation = drone.Position.Offset(0, -100);
+            }
+            drone.HandleInput(newLocation);
         }
     }
 }
