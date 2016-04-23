@@ -7,17 +7,14 @@ using CocosSharp;
 
 namespace CrashDrone.Common.Entities
 {
-    public abstract class PeripheryEntity : CCSprite
+    public abstract class PeripheryEntity : CCNode
     {
         public float Speed { get; set; }
 
-        public PeripheryEntity(string filename) : base(filename)
+        public PeripheryEntity()
         {
         }
 
-        public void Activity(float frameTimeInSeconds)
-        {
-            this.Position.Offset(Speed * frameTimeInSeconds, 0);
-        }
+        public abstract void Activity(float frameTimeInSeconds);
     }
 }

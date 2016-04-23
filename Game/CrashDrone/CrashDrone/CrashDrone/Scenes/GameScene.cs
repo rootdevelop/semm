@@ -33,6 +33,8 @@ namespace CrashDrone.Common
             this.AddLayer(new CollisionLayer());
             this.AddLayer(new HudLayer());
             this.AddLayer(new DroneLayer());
+
+            Schedule(Activity);
         }
 
         private void CreatePeripherySpawner()
@@ -54,8 +56,8 @@ namespace CrashDrone.Common
             {
                 pe.Activity(frameTimeInSeconds);
             }
-
-            //spawner.Activity(frameTimeInSeconds);       
+            
+            _peripherySpawner.Activity(frameTimeInSeconds);       
         }
     }
 }

@@ -6,19 +6,24 @@ namespace CrashDrone.Common.Entities
     public class PeripherySpawner
     {
         private PeripheryLayer _layer;
-        private bool IsSpawning;
+        private bool _isSpawning;
 
         public Action<PeripheryEntity> EntitySpawned; 
 
         public PeripherySpawner(PeripheryLayer periphery)
         {
-            IsSpawning = true;
+            _isSpawning = false;
             _layer = periphery;
-            Spawn();
         }
 
         public void Activity(float frameTime)
         {
+            if (!_isSpawning)
+            {
+                _isSpawning = true;
+                Spawn();
+            }
+
             //if (IsSpawning)
             //{
             //    SpawningActivity(frameTime);
@@ -42,9 +47,6 @@ namespace CrashDrone.Common.Entities
         private void Spawn()
         {
             var peripheryEntity = new Forest();
-
-            peripheryEntity.PositionX = 0;
-            peripheryEntity.PositionY = _layer.ContentSize.Height - peripheryEntity.SpriteFrame.ContentSize.Height;
 
             if (EntitySpawned != null)
             {
