@@ -1,6 +1,7 @@
 ﻿using System;
 using CocosSharp;
 using Microsoft.Xna.Framework.Graphics;
+using System.Collections.Generic;
 
 namespace SpaceGame.Common
 {
@@ -8,29 +9,34 @@ namespace SpaceGame.Common
 	{
 		CCLabel helloLabel;
 		CCTileMap tileMap;
-		CCSprite playerSprite;
+		CoreStation stationCore;
 
 		public InitialGameLayer () : base (CCColor4B.Blue)
 		{
+			CreateTouchListener();
+
 			Schedule (RunGameLogic);
 		}
 
 		void RunGameLogic(float frameTimeInSeconds)
 		{
-			// Game loop
+			stationCore.Activity(frameTimeInSeconds);
 		}
 
 		protected override void AddedToScene ()
 		{
 			base.AddedToScene ();
+			CCPoint center = new CCPoint (ContentSize.Width/2, ContentSize.Height/2);
 
 			tileMap = new CCTileMap ("tilemaps/level0.tmx");
 			this.AddChild (tileMap);
 
-			playerSprite = new CCSprite ("Images/monkey.png");
-			playerSprite.PositionX = ContentSize.Width/2;
-			playerSprite.PositionY = ContentSize.Height/2;
-			AddChild (playerSprite);
+
+			stationCore = new CoreStation();
+			stationCore.PositionX = center.X / 2.0f;
+			stationCore.PositionY = center.Y / 2.0f;
+			stationCore.SetDesiredPositionToCurrentPosition();
+			AddChild(stationCore);
 
 			/*
 			helloLabel = new CCLabel("Hello Space Apps!", "Arial", 30, CCLabelFormat.SystemFont);
@@ -42,6 +48,19 @@ namespace SpaceGame.Common
 
 			// Use the bounds to layout the positioning of our drawable assets
 			CCRect bounds = VisibleBoundsWorldspace;
+		}
+
+		private void HandleTouchesBegan(List<CCTouch> touches, CCEvent touchEvent)
+		{
+			var locationOnScreen = touches [0].Location;
+			stationCore.HandleInput (locationOnScreen);
+		}
+
+		private void CreateTouchListener()
+		{
+			var touchListener = new CCEventListenerTouchAllAtOnce();
+			touchListener.OnTouchesBegan = HandleTouchesBegan;
+			AddEventListener(touchListener);
 		}
 	}
 }

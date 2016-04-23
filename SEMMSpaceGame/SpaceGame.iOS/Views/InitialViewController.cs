@@ -52,7 +52,6 @@ namespace SpaceGame.iOS
 				// Set world dimensions
 
 				gameView.DesignResolution = new CCSizeI (viewSize.Width, viewSize.Height);
-				//gameView.ResolutionPolicy = CCViewResolutionPolicy.ExactFit;
 
 
 				// Determine whether to use the high or low def versions of our images
