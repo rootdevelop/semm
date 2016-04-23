@@ -8,9 +8,10 @@ using KeepOnDroning.Api.Data;
 namespace KeepOnDroning.Api.Migrations
 {
     [DbContext(typeof(DroningDbContext))]
-    partial class DroningDbContextModelSnapshot : ModelSnapshot
+    [Migration("20160423223704_AddOoi")]
+    partial class AddOoi
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.0-rc1-16348")
