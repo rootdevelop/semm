@@ -5,17 +5,17 @@ using Microsoft.Xna.Framework;
 
 namespace CrashDrone.Common
 {
-    public class BackgroundLayer : CCLayerColor
+    public class HudLayer : CCLayerColor
     {
 
         // Define a label variable
         CCLabel label;
 
-        public BackgroundLayer() : base(CCColor4B.Blue)
+        public HudLayer() : base(CCColor4B.Transparent)
         {
 
             // create and initialize a Label
-            label = new CCLabel("Background", "Fonts/MarkerFelt", 22, CCLabelFormat.SpriteFont);
+            label = new CCLabel("Hud", "Fonts/MarkerFelt", 22, CCLabelFormat.SpriteFont);
 
             // add the label as a child to this Layer
             AddChild(label);
