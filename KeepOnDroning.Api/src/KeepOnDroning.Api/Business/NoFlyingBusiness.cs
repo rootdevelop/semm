@@ -19,6 +19,32 @@ namespace KeepOnDroning.Api.Business
             _dbContext = dbContext;
         }
 
+        public async Task<NoFlyResult> NoFlyResult(float latitude, float longitude)
+        {
+            var oois = await GetOois(latitude, longitude);
+            var zones = await NoFlyZones(latitude, longitude);
+
+            return new NoFlyResult()
+            {
+                NoFlyZones = zones.Count > 0 ? zones : null,
+                Oois = oois.Count > 0 ? oois : null
+            };
+        }
+
+        public async Task<List<Ooi>> GetOois(float latitude, float longitude)
+        {
+            var ooisEntities = await (from a in _dbContext.Set<Domain.Ooi>()
+                                       where distance(a.CurrentLat, a.CurrentLng, latitude, longitude, 'K') < 50 || distance(a.DestinationLat, a.DestinationLng, latitude, longitude, 'K') < 50
+                                       select a).ToListAsync();
+
+            if (ooisEntities.Count > 0)
+            {
+                return null;
+            }
+
+            return ooisEntities;
+        }
+
         public async Task<List<ServiceNoFlyZone>> NoFlyZones(float latitude, float longitude)
         {
             var noFlyEntities = await (from a in _dbContext.Set<Domain.Airport>()
