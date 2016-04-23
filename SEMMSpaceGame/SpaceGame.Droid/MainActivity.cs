@@ -5,10 +5,11 @@ using CocosSharp;
 using System;
 using System.Collections.Generic;
 using SpaceGame.Common;
+using Android.Content.PM;
 
 namespace SpaceGame.Droid
 {
-	[Activity (Label = "SpaceGame.Droid", MainLauncher = true, Icon = "@mipmap/icon")]
+	[Activity (Label = "SpaceGame.Droid", MainLauncher = true, Icon = "@mipmap/icon", ScreenOrientation = ScreenOrientation.Landscape)]
 	public class MainActivity : Activity
 	{
 		protected override void OnCreate (Bundle savedInstanceState)
@@ -30,12 +31,9 @@ namespace SpaceGame.Droid
 				var contentSearchPaths = new List<string> () { "Fonts", "Sounds" };
 				CCSizeI viewSize = gameView.ViewSize;
 
-				int width = 600;
-				int height = 400;
-
 				// Set world dimensions
-				gameView.DesignResolution = new CCSizeI (width, height);
-				gameView.ResolutionPolicy = CCViewResolutionPolicy.ExactFit;
+
+				gameView.DesignResolution = new CCSizeI (viewSize.Width, viewSize.Height);
 
 				// Determine whether to use the high or low def versions of our images
 				// Make sure the default texel to content size ratio is set correctly

@@ -121,6 +121,7 @@
     <Folder Include="Views\" />
     <Folder Include="Content\" />
     <Folder Include="Content\tilemaps\" />
+    <Folder Include="Content\Images\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SpaceGame.Common\SpaceGame.Common.csproj">
@@ -129,9 +130,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Content\tilemaps\dungeon_1.png" />
-    <BundleResource Include="Content\tilemaps\dungeon.tmx" />
     <BundleResource Include="Content\tilemaps\level0.jpg" />
     <BundleResource Include="Content\tilemaps\level0.tmx" />
+    <BundleResource Include="Content\Images\monkey.png" />
   </ItemGroup>
 </Project>

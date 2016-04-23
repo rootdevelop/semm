@@ -76,6 +76,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
+    <Folder Include="Assets\Content\" />
+    <Folder Include="Assets\Content\tilemaps\" />
+    <Folder Include="Assets\Content\Images\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ItemGroup>
@@ -87,8 +90,10 @@
   <ItemGroup>
     <AndroidAsset Include="Assets\Content\tilemaps\dungeon.tmx" />
     <AndroidAsset Include="Assets\Content\tilemaps\dungeon_1.png" />
-    <AndroidAsset Include="Assets\Content\tilemaps\level0.jpg" />
     <AndroidAsset Include="Assets\Content\tilemaps\level0.tmx" />
+    <AndroidAsset Include="Assets\Content\tilemaps\level0.png" />
+    <AndroidAsset Include="Assets\Content\Images\monkey.png" />
+
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Content\tilemaps\level0_500x500.jpg" />

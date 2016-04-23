@@ -49,13 +49,10 @@ namespace SpaceGame.iOS
 				var contentSearchPaths = new List<string> () { "Fonts", "Sounds" };
 				CCSizeI viewSize = gameView.ViewSize;
 
-				int width = 600;
-				int height = 400;
-
 				// Set world dimensions
 
-				gameView.DesignResolution = new CCSizeI (width, height);
-				gameView.ResolutionPolicy = CCViewResolutionPolicy.ExactFit;
+				gameView.DesignResolution = new CCSizeI (viewSize.Width, viewSize.Height);
+				//gameView.ResolutionPolicy = CCViewResolutionPolicy.ExactFit;
 
 
 				// Determine whether to use the high or low def versions of our images
