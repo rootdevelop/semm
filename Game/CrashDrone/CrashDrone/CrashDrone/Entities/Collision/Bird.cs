@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CrashDrone.Common.Entities
 {
-    class Bird : CollisionEntity
+    public class Bird : CollisionEntity
     {
         public Bird() : base("bird.png")
         {

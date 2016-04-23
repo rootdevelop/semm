@@ -7,7 +7,7 @@ using CocosSharp;
 
 namespace CrashDrone.Common.Entities
 {
-    abstract class CollisionEntity : CCSprite
+    public abstract class CollisionEntity : CCSprite
     {
         public float Speed { get; set; }
         public CollisionEffect CollisionEffect { get; set; }

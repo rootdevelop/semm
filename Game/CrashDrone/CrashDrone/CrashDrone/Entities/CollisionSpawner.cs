@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace CrashDrone.Common.Entities
 {
-    class CollisionSpawner
+    public class CollisionSpawner
     {
+
     }
 }

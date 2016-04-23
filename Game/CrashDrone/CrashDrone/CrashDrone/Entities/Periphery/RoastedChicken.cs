@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CrashDrone.Common.Entities
 {
-    class RoastedChicken : PeripheryEntity
+    public class RoastedChicken : PeripheryEntity
     {
         public RoastedChicken() : base("roastedChicken.png")
         {
