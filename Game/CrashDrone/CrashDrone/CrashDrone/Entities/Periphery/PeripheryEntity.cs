@@ -5,9 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using CocosSharp;
 
-namespace CrashDrone.Entities
+namespace CrashDrone.Common.Entities
 {
-    abstract class PeripheryEntity : CCNode
+    public abstract class PeripheryEntity : CCSprite
     {
+        public PeripheryEntity(string filename) : base(filename)
+        {
+        }
     }
 }

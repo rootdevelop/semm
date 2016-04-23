@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CrashDrone.Entities
+namespace CrashDrone.Common.Entities
 {
-    class CollisionSpawner
+    public class CollisionSpawner
     {
+
     }
 }
