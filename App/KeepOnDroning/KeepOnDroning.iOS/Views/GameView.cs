@@ -2,6 +2,7 @@
 
 using UIKit;
 using MvvmCross.iOS.Views;
+using CrashDrone.Common;
 
 namespace KeepOnDroning.iOS
 {
@@ -18,7 +19,7 @@ namespace KeepOnDroning.iOS
 			if (GameUIView != null)
 			{
 				// Set loading event to be called once game view is fully initialised
-				//GameUIView.ViewCreated += GameDelegate.LoadGame;
+				GameUIView.ViewCreated += GameDelegate.LoadGame;
 			}
 		}
 
