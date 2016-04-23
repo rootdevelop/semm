@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using KeepOnDroning.Api.Domain;
 using Microsoft.Data.Entity;
 
 namespace KeepOnDroning.Api.Data
 {
     public class DroningDbContext : DbContext
     {
-
+        public DbSet<Airport> Airports { get; set; } 
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
