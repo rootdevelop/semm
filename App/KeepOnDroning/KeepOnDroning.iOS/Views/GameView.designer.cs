@@ -13,6 +13,12 @@ namespace KeepOnDroning.iOS
 	partial class GameView
 	{
 		[Outlet]
+		UIKit.UIButton BackButton { get; set; }
+
+		[Outlet]
+		UIKit.UIImageView BackImage { get; set; }
+
+		[Outlet]
 		CocosSharp.CCGameView GameUIView { get; set; }
 		
 		void ReleaseDesignerOutlets ()
@@ -20,6 +26,16 @@ namespace KeepOnDroning.iOS
 			if (GameUIView != null) {
 				GameUIView.Dispose ();
 				GameUIView = null;
+			}
+
+			if (BackImage != null) {
+				BackImage.Dispose ();
+				BackImage = null;
+			}
+
+			if (BackButton != null) {
+				BackButton.Dispose ();
+				BackButton = null;
 			}
 		}
 	}

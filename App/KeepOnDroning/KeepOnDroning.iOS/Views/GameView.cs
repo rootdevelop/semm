@@ -3,6 +3,8 @@
 using UIKit;
 using MvvmCross.iOS.Views;
 using CrashDrone.Common;
+using MvvmCross.Binding.BindingContext;
+using KeepOnDroning.Core.ViewModels;
 
 namespace KeepOnDroning.iOS
 {
@@ -15,6 +17,10 @@ namespace KeepOnDroning.iOS
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+
+			var set = this.CreateBindingSet<GameView, GameViewModel>();
+			set.Bind(BackButton).To(ViewModel => ViewModel.GoBackCommand);
+			set.Apply();
 
 			if (GameUIView != null)
 			{
@@ -40,5 +46,3 @@ namespace KeepOnDroning.iOS
 		}
 	}
 }
-
-
