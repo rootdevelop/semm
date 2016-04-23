@@ -60,7 +60,7 @@ namespace KeepOnDroning.Api.Business
                     WindSpeed = weather.Wind.Speed
                 },
                 HasDangerDanger = IsDangerDanger(weather),
-                HasNoFlyZone = await _noFlyingBusiness.IsInNoFlightZone(latitude, longitude),
+                HasNoFlyZone = await _noFlyingBusiness.IsInNoFlyZone(latitude, longitude),
                 MaxHeight = 1000,
                 
             };

@@ -29,10 +29,12 @@ namespace CrashDrone.Common
 
             _peripheryList = new List<PeripheryEntity>();
 
-
             this.AddLayer(new CollisionLayer());
-            this.AddLayer(new HudLayer());
-            this.AddLayer(new DroneLayer());
+            var droneLayer = new DroneLayer();
+            var hudLayer = new HudLayer(droneLayer.MoveUp, droneLayer.MoveDown);
+            this.AddLayer(hudLayer);
+            this.AddLayer(droneLayer);
+            Schedule(Activity);
         }
 
         private void CreatePeripherySpawner()
@@ -54,8 +56,8 @@ namespace CrashDrone.Common
             {
                 pe.Activity(frameTimeInSeconds);
             }
-
-            //spawner.Activity(frameTimeInSeconds);       
+            
+            _peripherySpawner.Activity(frameTimeInSeconds);       
         }
     }
 }
