@@ -14,6 +14,7 @@ namespace KeepOnDroning.Core.ViewModels
 		private bool _birdsIsOkay;
 		private bool _planesIsOkay;
 		private bool _weatherIsOkay;
+		private bool _isLoading;
 		private bool _showInformation = true;
 
 		public PreFlightCheckViewModel()
@@ -63,6 +64,7 @@ namespace KeepOnDroning.Core.ViewModels
 			{
 				return new MvxCommand(async() =>
 					{
+						IsLoading = true;
 						// Do checks
 						NoFlyIsOkay = true;
 						NoFlyText = "You are not in a no-fly zone!";
@@ -75,6 +77,8 @@ namespace KeepOnDroning.Core.ViewModels
 						await Task.Delay(1000);
 						WeatherIsOkay = true;
 						WeatherText = "There is no bad weather, only wrong clothing!";
+
+						IsLoading = false;
 					});
 			}
 		}
@@ -95,6 +99,15 @@ namespace KeepOnDroning.Core.ViewModels
 					{
 						ShowInformation = !ShowInformation ? true : false;
 					});
+			}
+		}
+		public bool IsLoading
+		{
+			get {return _isLoading; }
+			set
+			{
+				_isLoading = value;
+				RaisePropertyChanged (() => IsLoading);
 			}
 		}
 		public bool ShowInformation

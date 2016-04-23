@@ -6,14 +6,12 @@ using Android.Views;
 
 namespace KeepOnDroning.Droid.Views
 {
-	[Activity(Label = "View for CustomLocationView")]
+	[Activity(Label = "View for CustomLocationViewModel",
+		Theme = "@style/Theme.Main")]
 	public class CustomLocationView : MvxActivity
     {
         protected override void OnCreate(Bundle bundle)
         {
-			RequestWindowFeature(WindowFeatures.NoTitle);
-			Window.AddFlags(WindowManagerFlags.Fullscreen);
-			
             base.OnCreate(bundle);
 			SetContentView(Resource.Layout.CustomLocationView);
         }
