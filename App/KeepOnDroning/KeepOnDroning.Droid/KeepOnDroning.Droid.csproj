@@ -218,5 +218,6 @@
     <AndroidAsset Include="Assets\Content\Images\Hud\red_block_battery.png" />
     <AndroidAsset Include="Assets\Content\Images\Hud\white_block_battery.png" />
     <AndroidAsset Include="Assets\Content\Images\crashed_drone.png" />
+    <AndroidAsset Include="Assets\Content\Images\Collision\bird_wingsup.png" />
   </ItemGroup>
 </Project>

@@ -258,6 +258,7 @@
     <BundleResource Include="Content\Images\Collision\battery_up_plop.png" />
     <BundleResource Include="Content\Images\Collision\battery_up.png" />
     <BundleResource Include="Content\Images\crashed_drone.png" />
+    <BundleResource Include="Content\Images\Collision\bird_wingsup.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KeepOnDroning.Core\KeepOnDroning.Core.csproj">
