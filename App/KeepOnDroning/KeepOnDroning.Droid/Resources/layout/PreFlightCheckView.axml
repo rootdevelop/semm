@@ -5,61 +5,74 @@
     android:layout_height="match_parent"
     android:minWidth="25px"
     android:minHeight="25px">
-    <RelativeLayout
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+    <ImageView
+        android:src="@drawable/img_logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageView43"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
+        android:layout_marginTop="20dp" />
+    <RelativeLayout
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
         android:minWidth="25px"
         android:minHeight="25px"
-        local:MvxBind="Click GoToInteractiveMapCommand">
+        local:MvxBind="Click GoToInteractiveMapCommand"
+        android:layout_centerHorizontal="true">
         <ImageView
-            android:src="@drawable/mapbutton"
+            android:src="@drawable/img_map_view_button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/imageView1"
             android:scaleType="fitXY" />
     </RelativeLayout>
     <RelativeLayout
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_alignParentTop="true"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
         android:layout_alignParentLeft="true"
         android:minWidth="25px"
         android:minHeight="25px"
         local:MvxBind="Click GoToCustomLocationCommand">
         <ImageView
-            android:src="@drawable/waypointbutton"
+            android:src="@drawable/img_waypoints_button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/imageView2"
             android:scaleType="fitXY" />
     </RelativeLayout>
     <RelativeLayout
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_alignParentBottom="true"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:minWidth="25px"
         android:minHeight="25px"
         local:MvxBind="Click InformationCommand">
         <ImageView
-            android:src="@drawable/infobutton"
+            android:src="@drawable/img_info_button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/imageView3"
             android:scaleType="fitXY" />
     </RelativeLayout>
     <RelativeLayout
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="20dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
         android:minWidth="25px"
         android:minHeight="25px"
         local:MvxBind="Click GoToGameCommand">
         <ImageView
-            android:src="@drawable/gamebutton"
+            android:src="@drawable/img_game_button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/imageView4"
@@ -164,14 +177,13 @@
     <RelativeLayout
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_alignParentBottom="true"
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="70dp"
+        android:layout_centerVertical="true"
         local:MvxBind="Click PreFlightCheckCommand">
         <ImageView
-            android:src="@drawable/redbutton"
+            android:src="@drawable/img_check_button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/imageView4"

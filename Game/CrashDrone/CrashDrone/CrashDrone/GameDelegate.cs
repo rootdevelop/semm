@@ -22,10 +22,12 @@ namespace CrashDrone.Common
 
                 // Set world dimensions
                 gameView.DesignResolution = new CCSizeI(width, height);
+				gameView.ResolutionPolicy = CCViewResolutionPolicy.ExactFit;
 
                 // Determine whether to use the high or low def versions of our images
                 // Make sure the default texel to content size ratio is set correctly
                 // Of course you're free to have a finer set of image resolutions e.g (ld, hd, super-hd)
+
                 if (width < viewSize.Width)
                 {
                     //contentSearchPaths.Add("Images/Collision");
@@ -36,6 +38,7 @@ namespace CrashDrone.Common
                     //contentSearchPaths.Add("Images/Periphery");
                     CCSprite.DefaultTexelToContentSizeRatio = 1.0f;
                 }
+                
 
                 gameView.ContentManager.SearchPaths = contentSearchPaths;
 

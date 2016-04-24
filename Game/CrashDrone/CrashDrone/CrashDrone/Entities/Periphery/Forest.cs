@@ -22,7 +22,7 @@ namespace CrashDrone.Common.Entities
         {
             _graphic = new CCSprite("/Assets/Content/Images/Periphery/forest.png");
             _graphic.IsAntialiased = false;
-            _graphic.Position = new CCPoint(_graphic.ContentSize.Width* 0.5f, _graphic.ContentSize.Height / 2);
+            _graphic.Position = new CCPoint(_graphic.ContentSize.Width * 0.5f, _graphic.ContentSize.Height / 2);
             _graphic.AnchorPoint = new CCPoint(0.0f, 0.0f);
             AddChild(_graphic);
 
