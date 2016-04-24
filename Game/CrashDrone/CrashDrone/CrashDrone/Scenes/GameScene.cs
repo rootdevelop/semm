@@ -83,13 +83,11 @@ namespace CrashDrone.Common
                     if (energyChange < 0)
                     {
                         _hudLayer.RemoveEnergy(energyChange);
-                        //lose energy
                         //temporary label for loss
                     }
                     else if (energyChange > 0)
                     {
                         _hudLayer.AddEnergy(energyChange);
-                        //gain energy
                         //temporary label for gain
                     }
                 }

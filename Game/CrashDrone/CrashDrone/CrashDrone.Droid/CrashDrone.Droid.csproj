@@ -136,6 +136,18 @@
   <ItemGroup>
     <AndroidAsset Include="Assets\Content\Images\Collision\collide.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Content\Images\Hud\green_block_battery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Content\Images\Hud\orange_block_battery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Content\Images\Hud\red_block_battery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Content\Images\Hud\white_block_battery.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
      Other similar extension points exist, see Microsoft.Common.targets.
