@@ -10,9 +10,12 @@ namespace CrashDrone.Common.Entities
     public class Bird : CollisionEntity
     {
         public bool IsRoasted { get; set; }
+        private bool falling;
+        public float collideLasts { get; private set; }
         public Bird()
         {
             this.Speed = CCRandom.GetRandomFloat(200f, 500f);
+            this.collideLasts = 1f;
             InitGraphic();
         }
 
@@ -28,15 +31,21 @@ namespace CrashDrone.Common.Entities
 
         public override void Activity(float frameTimeInSeconds)
         {
+
             if (IsRoasted)
             {
-                Speed += 1f;
+                if (!falling)
+                    Speed += 1f;
                 Graphic.PositionY -= Speed * frameTimeInSeconds;
-                if (Speed == 20f)
+                this.collideLasts -= frameTimeInSeconds;
+                if (!falling && collideLasts <= 0)
                 {
+                    falling = true;
                     var position = Graphic.Position;
+                    Graphic.Visible = false;
                     this.Children.Remove(Graphic);
                     this.Graphic = new CCSprite("/Assets/Content/Images/Periphery/bird_baked.png");
+                    Graphic.Scale = 0.5f;
                     Graphic.Position = position;
                     this.AddChild(Graphic);
                 }
@@ -49,13 +58,18 @@ namespace CrashDrone.Common.Entities
 
         public override void Collide()
         {
-            this.Speed = 0f;
-            var position = Graphic.Position;
-            this.Children.Remove(Graphic);
-            this.Graphic = new CCSprite("/Assets/Content/Images/Collision/collide.png");
-            Graphic.Position = position;
-            this.AddChild(Graphic);
-            this.IsRoasted = true;
+            if (!IsRoasted)
+            {
+                this.Speed = 0f;
+                var position = Graphic.Position;
+                Graphic.Visible = false;
+                this.Children.Remove(Graphic);
+                this.Graphic = new CCSprite("/Assets/Content/Images/Collision/collide.png");
+                Graphic.Scale = 0.5f;
+                Graphic.Position = position;
+                this.AddChild(Graphic);
+                this.IsRoasted = true;
+            }
         }
     }
 }
