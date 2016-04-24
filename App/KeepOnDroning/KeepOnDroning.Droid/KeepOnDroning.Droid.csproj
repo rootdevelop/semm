@@ -147,7 +147,6 @@
     <Compile Include="Bootstrap\VisibilityPluginBootstrap.cs" />
     <Compile Include="Converters\BooleanToImageConverter.cs" />
     <Compile Include="Bootstrap\LocationPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\UserDialogsPluginBootstrap.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

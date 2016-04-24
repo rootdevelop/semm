@@ -201,7 +201,6 @@
       <DependentUpon>GameView.cs</DependentUpon>
     </Compile>
     <Compile Include="Bootstrap\LocationPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\UserDialogsPluginBootstrap.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
