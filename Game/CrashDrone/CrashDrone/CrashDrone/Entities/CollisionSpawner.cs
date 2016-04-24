@@ -94,7 +94,7 @@ namespace CrashDrone.Common.Entities
 
         private void SpawnBird()
         {
-            TimeInbetweenBirdSpawns = CCRandom.GetRandomFloat(1.6f, 5f);
+            TimeInbetweenBirdSpawns = CCRandom.GetRandomFloat(0.6f, 3f);
 
             var collisionEntity = new Bird();
             collisionEntity.PositionX = _layer.VisibleBoundsWorldspace.MaxX + collisionEntity.GraphicWidth * 0.5f;

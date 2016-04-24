@@ -9,6 +9,8 @@ namespace CrashDrone.Common.Entities
 {
     public class Bird : CollisionEntity
     {
+        private float timeSinceLastFlap;
+        private bool FlapUp = false;
         public bool IsRoasted { get; set; }
         private bool falling;
         public float collideLasts { get; private set; }
@@ -29,11 +31,11 @@ namespace CrashDrone.Common.Entities
             Graphic.AnchorPoint = new CCPoint(0.0f, 0.0f);
             this.SetCollisionBounds();
             AddChild(Graphic);
+            timeSinceLastFlap = 0.0f;
         }
 
         public override void Activity(float frameTimeInSeconds)
         {
-
             if (IsRoasted)
             {
                 if (falling)
@@ -54,7 +56,32 @@ namespace CrashDrone.Common.Entities
             }
             else
             {
+                timeSinceLastFlap += frameTimeInSeconds;
                 Graphic.PositionX -= Speed * frameTimeInSeconds;
+                if(FlapUp && timeSinceLastFlap > 0.5f)
+                {
+                    timeSinceLastFlap = 0.0f;
+                    var position = Graphic.Position;
+                    Graphic.Visible = false;
+                    this.Children.Remove(Graphic);
+                    this.Graphic = new CCSprite("/Assets/Content/Images/Collision/bird.png");
+                    Graphic.Scale = 0.5f;
+                    Graphic.Position = position;
+                    this.AddChild(Graphic);
+                    FlapUp = false;
+                }
+                else if (timeSinceLastFlap > 0.5f)
+                {
+                    timeSinceLastFlap = 0.0f;
+                    var position = Graphic.Position;
+                    Graphic.Visible = false;
+                    this.Children.Remove(Graphic);
+                    this.Graphic = new CCSprite("/Assets/Content/Images/Collision/bird_wingsup.png");
+                    Graphic.Scale = 0.5f;
+                    Graphic.Position = position;
+                    this.AddChild(Graphic);
+                    FlapUp = true;
+                }
             }
         }
 
