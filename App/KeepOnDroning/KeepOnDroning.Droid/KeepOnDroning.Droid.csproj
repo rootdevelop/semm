@@ -109,7 +109,6 @@
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml" />
-    <None Include="Assets\AboutAssets.txt" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -121,7 +120,6 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
     <AndroidResource Include="Resources\layout\SplashScreen.axml" />
     <AndroidResource Include="Resources\values\SplashStyle.xml" />
-    <AndroidResource Include="Resources\drawable\splash.png" />
     <AndroidResource Include="Resources\layout\PreFlightCheckView.axml" />
     <AndroidResource Include="Resources\layout\InteractiveMapView.axml" />
     <AndroidResource Include="Resources\layout\GameView.axml" />
@@ -137,6 +135,25 @@
     <AndroidResource Include="Resources\drawable\OK.png" />
     <AndroidResource Include="Resources\drawable\ComputerSaysNo.png" />
     <AndroidResource Include="Resources\drawable\BackButton.png" />
+    <AndroidResource Include="Resources\drawable\LaunchScreen.png" />
+    <AndroidResource Include="Resources\drawable\IMG_wind.png" />
+    <AndroidResource Include="Resources\drawable\IMG_weather_positive.png" />
+    <AndroidResource Include="Resources\drawable\IMG_weather_negative.png" />
+    <AndroidResource Include="Resources\drawable\IMG_waypoints_button.png" />
+    <AndroidResource Include="Resources\drawable\IMG_otherobjects_positive.png" />
+    <AndroidResource Include="Resources\drawable\IMG_otherobjects_negative.png" />
+    <AndroidResource Include="Resources\drawable\IMG_noflyzones_positive.png" />
+    <AndroidResource Include="Resources\drawable\IMG_noflyzones_negative.png" />
+    <AndroidResource Include="Resources\drawable\IMG_map_view_button.png" />
+    <AndroidResource Include="Resources\drawable\IMG_logo.png" />
+    <AndroidResource Include="Resources\drawable\IMG_info_button.png" />
+    <AndroidResource Include="Resources\drawable\IMG_game_button.png" />
+    <AndroidResource Include="Resources\drawable\IMG_check_button.png" />
+    <AndroidResource Include="Resources\drawable\IMG_birds_positive.png" />
+    <AndroidResource Include="Resources\drawable\IMG_birds_negative.png" />
+    <AndroidResource Include="Resources\drawable\IMG_background.png" />
+    <AndroidResource Include="Resources\drawable\Background.png" />
+    <AndroidResource Include="Resources\drawable\splash.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
@@ -154,14 +171,44 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\Content\Fonts\MarkerFelt-22.xnb" />
-    <AndroidAsset Include="Assets\Content\Images\drone.png" />
-    <AndroidAsset Include="Assets\Content\Images\Collision\house.png" />
-    <AndroidAsset Include="Assets\Content\Images\Collision\radar.png" />
-    <AndroidAsset Include="Assets\Content\Images\Collision\tree.png" />
-    <AndroidAsset Include="Assets\Content\Images\Hud\battery.png" />
-    <AndroidAsset Include="Assets\Content\Images\Periphery\cloud1.png" />
-    <AndroidAsset Include="Assets\Content\Images\Periphery\cloud2.png" />
-    <AndroidAsset Include="Assets\Content\Images\Periphery\forest.png" />
+    <AndroidAsset Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\AboutAssets.txt">
+      <Link>Assets\AboutAssets.txt</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Fonts\MarkerFelt-22.xnb">
+      <Link>Assets\Content\Fonts\MarkerFelt-22.xnb</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\button_down.png">
+      <Link>Assets\Content\Images\button_down.png</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\button_up.png">
+      <Link>Assets\Content\Images\button_up.png</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\drone.png">
+      <Link>Assets\Content\Images\drone.png</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\Collision\house.png">
+      <Link>Assets\Content\Images\Collision\house.png</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\Collision\radar.png">
+      <Link>Assets\Content\Images\Collision\radar.png</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\Collision\tree.png">
+      <Link>Assets\Content\Images\Collision\tree.png</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\Hud\battery.png">
+      <Link>Assets\Content\Images\Hud\battery.png</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\Periphery\bird_baked.png">
+      <Link>Assets\Content\Images\Periphery\bird_baked.png</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\Periphery\cloud1.png">
+      <Link>Assets\Content\Images\Periphery\cloud1.png</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\Periphery\cloud2.png">
+      <Link>Assets\Content\Images\Periphery\cloud2.png</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\Periphery\forest.png">
+      <Link>Assets\Content\Images\Periphery\forest.png</Link>
+    </AndroidAsset>
   </ItemGroup>
 </Project>

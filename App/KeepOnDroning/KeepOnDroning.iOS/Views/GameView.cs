@@ -49,5 +49,15 @@ namespace KeepOnDroning.iOS
 		{
 			return true;
 		}
+
+		public override UIInterfaceOrientationMask GetSupportedInterfaceOrientations ()
+		{
+			return UIInterfaceOrientationMask.Landscape;
+		}
+
+		public override bool ShouldAutorotateToInterfaceOrientation (UIInterfaceOrientation toInterfaceOrientation)
+		{
+			return toInterfaceOrientation == UIInterfaceOrientation.LandscapeLeft;
+		}
 	}
 }
