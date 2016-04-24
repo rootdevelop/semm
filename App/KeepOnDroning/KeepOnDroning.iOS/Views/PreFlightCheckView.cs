@@ -24,19 +24,19 @@ namespace KeepOnDroning.iOS
             set.Bind(btnInfo).To(ViewModel => ViewModel.InformationCommand);
             set.Bind(btnMap).To(ViewModel => ViewModel.GoToInteractiveMapCommand);
             set.Bind(btnStart).To(ViewModel => ViewModel.PreFlightCheckCommand);
+            set.Bind(viewResults).For(x => x.Hidden).To(vm => vm.WaitingForStart);
+            set.Bind(btnStart).For(x => x.Hidden).To(vm => vm.IsLoading);
+            set.Bind(lblWindHeading).To(vm => vm.WindHeadingText);
+            set.Bind(lblWindSpeed).To(vm => vm.WindSpeedText);
 
-			set.Bind (lblNoFlyZone).To (ViewModel => ViewModel.NoFlyText);
-			set.Bind (lblBirds).To (ViewModel => ViewModel.BirdsText);
-			set.Bind (lblPlains).To (ViewModel => ViewModel.PlanesText);
-			set.Bind (lblWeather).To (ViewModel => ViewModel.WeatherText);
 
-			// Bool to image converter
-			//set.Bind (imgCheckNoFly).To (ViewModel => ViewModel.NoFlyIsOkay);
-			//set.Bind (imgCheckBirds).To (ViewModel => ViewModel.BirdsIsOkay);
-			//set.Bind (imgCheckPlains).To (ViewModel => ViewModel.PlanesIsOkay);
-			//set.Bind (imgCheckWeather).To (ViewModel => ViewModel.WeatherIsOkay);
-			set.Apply();
-		}
+            // Bool to image converter
+            //set.Bind (imgCheckNoFly).To (ViewModel => ViewModel.NoFlyIsOkay);
+            //set.Bind (imgCheckBirds).To (ViewModel => ViewModel.BirdsIsOkay);
+            //set.Bind (imgCheckPlains).To (ViewModel => ViewModel.PlanesIsOkay);
+            //set.Bind (imgCheckWeather).To (ViewModel => ViewModel.WeatherIsOkay);
+            set.Apply();
+        }
 
 
         public override bool PrefersStatusBarHidden()
