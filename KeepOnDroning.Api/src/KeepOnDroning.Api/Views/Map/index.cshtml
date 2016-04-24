@@ -21,22 +21,28 @@
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAREXqULdhvZomG8DjBZ_IdCnxLRiJh9iw&callback=initMap"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>">
 <script>
-
-    var latI = 52.142244;//urlParam("lat");
-    var lngI = 4.418725;//urlParam("lng");
-
-    var url = "api/Cornyx/Corny/"+latI+"/"+lngI;
+    
+    var latI = urlParam("lat");
+    var lngI = urlParam("lng");
+    var pathname = window.location.href;
+    var newName = pathname.split("/Map");
+    var url = newName[0] + "/api/Cornyx/Corny/" + latI + "/" + lngI;
     var airports;
+    var oois;
 
-    $.get(url, function(data) {
-        airports = data;
+    $(document).ready(function() {
+        $.get(url, function(data) {
+            airports = data.NoFlyZones;
+            oois = data.Oois;
+            initMap();
+        });
     });
 
     function initMap() {
         // Create the map.
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 12,
-            center: { lat: latI, lng: lngI },
+            center: { lat: parseFloat(latI), lng: parseFloat(lngI) },
             mapTypeId: google.maps.MapTypeId.TERRAIN
         });
 
@@ -44,21 +50,35 @@
         // Note: We scale the area of the circle based on the population.
         for (var airport in airports) {
             // Add the circle for this city to the map.
-            var cityCircle = new google.maps.Circle({
+            var airportCircle = new google.maps.Circle({
                 strokeColor: '#FF0000',
                 strokeOpacity: 0.7,
                 strokeWeight: 2,
                 fillColor: '#FF0000',
                 fillOpacity: 0.20,
                 map: map,
-                center: airports[airport].center,
-                radius: Math.sqrt(airports[airport].size) * 100
+                center: { lat: airports[airport].Latitude, lng: airports[airport].Longitude },
+                radius: Math.sqrt(airports[airport].Size) * 100
+            });
+        }
+
+        for (var airport in oois) {
+            // Add the circle for this city to the map.
+            var airportCircle = new google.maps.Circle({
+                strokeColor: '#FF0000',
+                strokeOpacity: 0.7,
+                strokeWeight: 2,
+                fillColor: '#FF0000',
+                fillOpacity: 0.60,
+                map: map,
+                center: { lat: airports[airport].CurrentLat, lng: airports[airport].CurrentLng },
+                radius: Math.sqrt(10) * 100
             });
         }
     }
 
 function urlParam(name) {
-        var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+        var results = new RegExp('[\/?&]' + name + '=([^&#]*)').exec(window.location.href);
         if (results == null) {
             return null;
         } else {

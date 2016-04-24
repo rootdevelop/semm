@@ -17,7 +17,12 @@ namespace KeepOnDroning.Api.Controllers
         {
             _noFlyingBusiness = noFlyingBusiness;
         }
-
+        /// <summary>
+        ///  Return a NoFlyResult with No Fly Zones and other flying Object in a range of 50km.
+        /// </summary>
+        /// <param name="latitude"></param>
+        /// <param name="longitude"></param>
+        /// <returns></returns>
         [Route("Corny/{latitude}/{longitude}")]
         [HttpGet]
         public async Task<NoFlyResult> Corny(float latitude, float longitude)
