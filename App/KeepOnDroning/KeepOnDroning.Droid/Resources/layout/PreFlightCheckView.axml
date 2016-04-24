@@ -95,8 +95,8 @@
             android:id="@+id/linearLayout1">
             <Mvx.MvxImageView
                 android:src="@drawable/ok"
-                android:layout_width="150dp"
-                android:layout_height="30dp"
+                android:layout_width="160dp"
+                android:layout_height="35dp"
                 android:id="@+id/imageView5"
                 local:MvxBind="DrawableId NoFlyIsOkay,Converter=BooleanToImage,ConverterParameter=nofly"
                 android:layout_marginRight="10dp"
@@ -111,8 +111,8 @@
             android:id="@+id/linearLayout2">
             <Mvx.MvxImageView
                 android:src="@drawable/ok"
-                android:layout_width="150dp"
-                android:layout_height="30dp"
+                android:layout_width="160dp"
+                android:layout_height="35dp"
                 android:id="@+id/imageView5"
                 local:MvxBind="DrawableId BirdsIsOkay,Converter=BooleanToImage,ConverterParameter=birds"
                 android:layout_marginRight="10dp"
@@ -127,8 +127,8 @@
             android:id="@+id/linearLayout3">
             <Mvx.MvxImageView
                 android:src="@drawable/ok"
-                android:layout_width="150dp"
-                android:layout_height="30dp"
+                android:layout_width="160dp"
+                android:layout_height="35dp"
                 android:id="@+id/imageView5"
                 local:MvxBind="DrawableId PlanesIsOkay,Converter=BooleanToImage,ConverterParameter=planes"
                 android:layout_marginRight="10dp"
@@ -143,8 +143,8 @@
             android:id="@+id/linearLayout4">
             <Mvx.MvxImageView
                 android:src="@drawable/ok"
-                android:layout_width="150dp"
-                android:layout_height="30dp"
+                android:layout_width="160dp"
+                android:layout_height="35dp"
                 local:MvxBind="DrawableId WeatherIsOkay,Converter=BooleanToImage,ConverterParameter=weather"
                 android:id="@+id/imageView5"
                 android:layout_marginRight="10dp"
