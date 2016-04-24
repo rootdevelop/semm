@@ -5,7 +5,7 @@ using MvvmCross.Droid.Views;
 namespace KeepOnDroning.Droid
 {
     [Activity(
-        Label = "KeepOnDroning.Droid"
+        Label = "Keep On Droning"
         , MainLauncher = true
         , Icon = "@mipmap/icon"
         , Theme = "@style/Theme.Splash"

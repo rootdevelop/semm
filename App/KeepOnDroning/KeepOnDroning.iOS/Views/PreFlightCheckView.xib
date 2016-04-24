@@ -19,6 +19,7 @@
                 <outlet property="lblWindSpeed" destination="Izr-nj-IYd" id="9bF-fo-SD2"/>
                 <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
                 <outlet property="viewResults" destination="7DC-6h-HMP" id="Uv3-dN-c9x"/>
+                <outlet property="btnReset" destination="9" id="name-outlet-9"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -85,7 +86,7 @@
                         <constraint firstAttribute="width" constant="353" id="RQb-C1-NgC"/>
                     </constraints>
                 </view>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7DC-6h-HMP">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7DC-6h-HMP">
                     <rect key="frame" x="124" y="174" width="353" height="300"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_noflyzones_negative.png" translatesAutoresizingMaskIntoConstraints="NO" id="Efn-6W-xQK">
@@ -143,13 +144,13 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 km/h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Izr-nj-IYd">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 km/h" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Izr-nj-IYd">
                             <rect key="frame" x="247" y="153" width="67" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="67" id="2IL-vU-twQ"/>
                                 <constraint firstAttribute="height" constant="21" id="Mlo-5k-oG1"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -175,6 +176,16 @@
                         <constraint firstAttribute="trailing" secondItem="UVe-6D-07I" secondAttribute="trailing" constant="14" id="ssm-6K-Wdo"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9" translatesAutoresizingMaskIntoConstraints="NO">
+                    <rect key="frame" x="240" y="37" width="120" height="117"/>
+                    <state key="normal">
+                        <color key="titleShadowColor" colorSpace="calibratedWhite" white="0" alpha="0"/>
+                    </state>
+                    <constraints>
+                        <constraint id="24" firstAttribute="width" constant="120"/>
+                        <constraint id="25" firstAttribute="height" constant="117"/>
+                    </constraints>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -201,6 +212,9 @@
                 <constraint firstItem="iWV-g0-cVF" firstAttribute="top" secondItem="2" secondAttribute="top" constant="30" id="u6X-38-QLb"/>
                 <constraint firstItem="7DC-6h-HMP" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="uJR-pe-oen"/>
                 <constraint firstAttribute="bottom" secondItem="I0a-xl-ADY" secondAttribute="bottom" id="ylQ-eG-Ny8"/>
+                <constraint id="23" firstItem="9" firstAttribute="top" secondItem="2" secondAttribute="top" constant="37"/>
+                <constraint id="26" firstItem="9" firstAttribute="centerY" secondItem="gUc-Z2-MX3" secondAttribute="centerY"/>
+                <constraint id="27" firstItem="9" firstAttribute="centerX" secondItem="gUc-Z2-MX3" secondAttribute="centerX"/>
             </constraints>
             <point key="canvasLocation" x="217" y="455"/>
         </view>
@@ -218,5 +232,34 @@
         <image name="IMG_waypoints_button.png" width="222" height="265"/>
         <image name="IMG_weather_positive.png" width="375" height="90"/>
         <image name="IMG_wind.png" width="275" height="276"/>
+        <image name="Image" width="696" height="607"/>
+        <image name="StartGreenButton.png" width="433" height="428"/>
+        <image name="StartRedButton.png" width="432" height="428"/>
+        <image name="StartOrangeButton.png" width="432" height="427"/>
+        <image name="Background.png" width="602" height="601"/>
+        <image name="ComputerSaysNo.png" width="192" height="196"/>
+        <image name="GameButton.png" width="242" height="226"/>
+        <image name="InfoButton.png" width="244" height="225"/>
+        <image name="MapButton.png" width="244" height="228"/>
+        <image name="OK.png" width="192" height="196"/>
+        <image name="WaypointButton.png" width="241" height="230"/>
+        <image name="LaunchScreen.png" width="800" height="1280"/>
+        <image name="BackButton.png" width="696" height="607"/>
+        <image name="Content/Images/button_down.png" width="193" height="223"/>
+        <image name="Content/Images/button_up.png" width="192" height="222"/>
+        <image name="Content/Images/drone.png" width="387" height="192"/>
+        <image name="Content/Images/Collision/bird.png" width="320" height="136"/>
+        <image name="Content/Images/Collision/house.png" width="495" height="282"/>
+        <image name="Content/Images/Collision/radar.png" width="340" height="316"/>
+        <image name="Content/Images/Collision/tree.png" width="574" height="477"/>
+        <image name="Content/Images/Hud/battery.png" width="300" height="93"/>
+        <image name="Content/Images/Periphery/bird_baked.png" width="372" height="220"/>
+        <image name="Content/Images/Periphery/cloud1.png" width="628" height="186"/>
+        <image name="Content/Images/Periphery/cloud2.png" width="330" height="149"/>
+        <image name="Content/Images/Periphery/forest.png" width="2187" height="150"/>
+        <image name="IMG_birds_negative.png" width="375" height="90"/>
+        <image name="IMG_noflyzones_positive.png" width="375" height="90"/>
+        <image name="IMG_otherobjects_negative.png" width="375" height="90"/>
+        <image name="IMG_weather_negative.png" width="375" height="90"/>
     </resources>
 </document>
