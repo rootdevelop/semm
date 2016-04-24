@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CocosSharp;
 
-namespace CrashDrone.Common
+namespace CrashDrone.Common.Entities
 {
     public class Drone : CCNode
     {

@@ -10,6 +10,7 @@ namespace CrashDrone.Common
 {
     class GameScene : CCScene
     {
+        private Drone _drone;
         private PeripheryLayer _peripheryLayer;
         private CollisionLayer _collisionLayer;
         private PeripherySpawner _peripherySpawner;
@@ -35,6 +36,7 @@ namespace CrashDrone.Common
             this.AddLayer(_collisionLayer);
             _collisionList = new List<CollisionEntity>();
             var droneLayer = new DroneLayer();
+            _drone = droneLayer.Drone;
             var hudLayer = new HudLayer(droneLayer.MoveUp, droneLayer.MoveDown);
             this.AddLayer(hudLayer);
             this.AddLayer(droneLayer);
@@ -74,6 +76,10 @@ namespace CrashDrone.Common
             foreach (var co in _collisionList)
             {
                 co.Activity(frameTimeInSeconds);
+                if (co.BoundingBoxTransformedToWorld.IntersectsRect(_drone.BoundingBoxTransformedToWorld))
+                {
+
+                }
             }
             
             _peripherySpawner.Activity(frameTimeInSeconds);

@@ -1,24 +1,25 @@
 using System;
 using System.Collections.Generic;
 using CocosSharp;
+using CrashDrone.Common.Entities;
 using Microsoft.Xna.Framework;
 
 namespace CrashDrone.Common
 {
     public class DroneLayer : CCLayerColor
     {
-        Drone drone;
+        public Drone Drone;
 
         public DroneLayer() : base(CCColor4B.Transparent)
         {
-            drone = new Drone();
-            AddChild(drone);
+            Drone = new Drone();
+            AddChild(Drone);
             Schedule(RunGameLogic);
         }
 
         void RunGameLogic(float frameTimeInSeconds)
         {
-            drone.Activity(frameTimeInSeconds);
+            Drone.Activity(frameTimeInSeconds);
         }
 
         protected override void AddedToScene()
@@ -26,35 +27,35 @@ namespace CrashDrone.Common
             base.AddedToScene();
 
             var bounds = VisibleBoundsWorldspace;
-            drone.SetStartPosition(new CCPoint(bounds.MaxX * 0.2f, bounds.MidY));
+            Drone.SetStartPosition(new CCPoint(bounds.MaxX * 0.2f, bounds.MidY));
         }
 
         public void MoveUp()
         {
             CCPoint newLocation;
-            if (drone.PositionY + 100 > 720)
+            if (Drone.PositionY + 100 > 720)
             {
-                newLocation = new CCPoint(drone.PositionX, 720);
+                newLocation = new CCPoint(Drone.PositionX, 720);
             }
             else
             {
-                newLocation = drone.Position.Offset(0, +100);
+                newLocation = Drone.Position.Offset(0, +100);
             }
-            drone.HandleInput(newLocation);
+            Drone.HandleInput(newLocation);
         }
 
         public void MoveDown()
         {
             CCPoint newLocation;
-            if (drone.PositionY - 100 < 120)
+            if (Drone.PositionY - 100 < 120)
             {
-                newLocation = new CCPoint(drone.PositionX, 120);
+                newLocation = new CCPoint(Drone.PositionX, 120);
             }
             else
             {
-                newLocation = drone.Position.Offset(0, -100);
+                newLocation = Drone.Position.Offset(0, -100);
             }
-            drone.HandleInput(newLocation);
+            Drone.HandleInput(newLocation);
         }
     }
 }
