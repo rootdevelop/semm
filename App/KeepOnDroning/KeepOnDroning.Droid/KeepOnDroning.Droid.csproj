@@ -89,6 +89,48 @@
     <Reference Include="MvvmCross.Plugins.Location.Droid">
       <HintPath>..\packages\MvvmCross.Plugin.Location.4.1.4\lib\MonoAndroid\MvvmCross.Plugins.Location.Droid.dll</HintPath>
     </Reference>
+    <Reference Include="MvvmCross.Plugins.AlertDialog">
+      <HintPath>..\_references\MvvmCross.Plugins.AlertDialog.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.AlertDialog.Droid">
+      <HintPath>..\_references\MvvmCross.Plugins.AlertDialog.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.CrossCore.Droid">
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.5.1\lib\MonoAndroid\Cirrious.CrossCore.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Binding.Droid">
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.5.1\lib\MonoAndroid\Cirrious.MvvmCross.Binding.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.CrossCore">
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.5.1\lib\MonoAndroid\Cirrious.CrossCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Binding">
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.5.1\lib\MonoAndroid\Cirrious.MvvmCross.Binding.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Localization">
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.5.1\lib\MonoAndroid\Cirrious.MvvmCross.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="Splat">
+      <HintPath>..\packages\Splat.1.6.2\lib\monoandroid\Splat.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.Support.Android">
+      <HintPath>..\packages\Acr.Support.1.0.0\lib\MonoAndroid10\Acr.Support.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.UserDialogs">
+      <HintPath>..\packages\Acr.UserDialogs.4.1.0\lib\MonoAndroid10\Acr.UserDialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.UserDialogs.Interface">
+      <HintPath>..\packages\Acr.UserDialogs.4.1.0\lib\MonoAndroid10\Acr.UserDialogs.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="AndHUD">
+      <HintPath>..\packages\Acr.UserDialogs.4.1.0\lib\MonoAndroid10\AndHUD.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.MvvmCross.Plugins.UserDialogs">
+      <HintPath>..\packages\Acr.MvvmCross.Plugins.UserDialogs.4.1.0\lib\MonoAndroid10\Acr.MvvmCross.Plugins.UserDialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.MvvmCross.Plugins.UserDialogs.Droid">
+      <HintPath>..\packages\Acr.MvvmCross.Plugins.UserDialogs.4.1.0\lib\MonoAndroid10\Acr.MvvmCross.Plugins.UserDialogs.Droid.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
@@ -158,6 +200,7 @@
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
     <Folder Include="Converters\" />
+    <Folder Include="Assets\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ItemGroup>
@@ -171,44 +214,18 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\AboutAssets.txt">
-      <Link>Assets\AboutAssets.txt</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Fonts\MarkerFelt-22.xnb">
-      <Link>Assets\Content\Fonts\MarkerFelt-22.xnb</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\button_down.png">
-      <Link>Assets\Content\Images\button_down.png</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\button_up.png">
-      <Link>Assets\Content\Images\button_up.png</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\drone.png">
-      <Link>Assets\Content\Images\drone.png</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\Collision\house.png">
-      <Link>Assets\Content\Images\Collision\house.png</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\Collision\radar.png">
-      <Link>Assets\Content\Images\Collision\radar.png</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\Collision\tree.png">
-      <Link>Assets\Content\Images\Collision\tree.png</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\Hud\battery.png">
-      <Link>Assets\Content\Images\Hud\battery.png</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\Periphery\bird_baked.png">
-      <Link>Assets\Content\Images\Periphery\bird_baked.png</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\Periphery\cloud1.png">
-      <Link>Assets\Content\Images\Periphery\cloud1.png</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\Periphery\cloud2.png">
-      <Link>Assets\Content\Images\Periphery\cloud2.png</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\Periphery\forest.png">
-      <Link>Assets\Content\Images\Periphery\forest.png</Link>
-    </AndroidAsset>
+    <AndroidAsset Include="Assets\Content\Fonts\MarkerFelt-22.xnb" />
+    <AndroidAsset Include="Assets\Content\Images\button_down.png" />
+    <AndroidAsset Include="Assets\Content\Images\button_up.png" />
+    <AndroidAsset Include="Assets\Content\Images\drone.png" />
+    <AndroidAsset Include="Assets\Content\Images\Collision\bird.png" />
+    <AndroidAsset Include="Assets\Content\Images\Collision\house.png" />
+    <AndroidAsset Include="Assets\Content\Images\Collision\radar.png" />
+    <AndroidAsset Include="Assets\Content\Images\Collision\tree.png" />
+    <AndroidAsset Include="Assets\Content\Images\Hud\battery.png" />
+    <AndroidAsset Include="Assets\Content\Images\Periphery\bird_baked.png" />
+    <AndroidAsset Include="Assets\Content\Images\Periphery\cloud1.png" />
+    <AndroidAsset Include="Assets\Content\Images\Periphery\cloud2.png" />
+    <AndroidAsset Include="Assets\Content\Images\Periphery\forest.png" />
   </ItemGroup>
 </Project>

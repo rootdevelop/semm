@@ -8,6 +8,7 @@ using MvvmCross.Plugins.Location;
 using MvvmCross.Platform.UI;
 using System.Diagnostics;
 using System;
+using Acr.UserDialogs;
 
 namespace KeepOnDroning.Core.ViewModels
 {
@@ -17,30 +18,27 @@ namespace KeepOnDroning.Core.ViewModels
         private string _birdsText;
         private string _planesText;
         private string _weatherText;
+
+        private string _windHeadingText;
+        private string _windSpeedText;
+
+        private bool _isLoading;
+
         private bool _noFlyIsOkay;
         private bool _birdsIsOkay;
         private bool _planesIsOkay;
         private bool _weatherIsOkay;
-        private bool _isLoading;
-        private bool _showInformation = true;
+        private bool _showInformation;
+        private bool _waitingForStart;
         private EPreFlightStatus _preFlightStatus;
         private MvxGeoLocation _loc;
 
         public PreFlightCheckViewModel()
         {
+            WaitingForStart = true;
+            IsLoading = false;
 
-            Mvx.Resolve<IMvxLocationWatcher>().Start(new MvxLocationOptions()
-                {
-                    Accuracy = MvxLocationAccuracy.Fine,
-                    TrackingMode = MvxLocationTrackingMode.Foreground
-                }, (location) =>
-                {
-                    _loc = location;
-                },
-                (error) =>
-                {
-                    Debug.WriteLine(error);
-                });
+        
 
             NoFlyText = "Interact with Start Button for info";
             BirdsText = "Interact with Start Button for info";
@@ -82,19 +80,27 @@ namespace KeepOnDroning.Core.ViewModels
             }
         }
 
+      
+
         public ICommand PreFlightCheckCommand
         {
             get
             {
                 return new MvxCommand(async() =>
                     {
+                        WaitingForStart = false;
                         IsLoading = true;
 
                         try
                         {
                             _loc = Mvx.Resolve<IMvxLocationWatcher>().CurrentLocation;
 
-                            var res = await Mvx.Resolve<IToDroneOrNotToDroneOrMaybeShouldCouldIDroneTodayOrNotBecauseILikeDroningSoMuchPleaseYesService>().TellMe(_loc.Coordinates.Latitude, _loc.Coordinates.Longitude); //TODO add GPS lat long
+                            if (_loc == null)
+                            {
+                                _loc = new MvxGeoLocation() { Coordinates = new MvxCoordinates() { Latitude = 1, Longitude = 1 } };
+                            }
+
+                            var res = await Mvx.Resolve<IToDroneOrNotToDroneOrMaybeShouldCouldIDroneTodayOrNotBecauseILikeDroningSoMuchPleaseYesService>().TellMe(_loc.Coordinates.Latitude, _loc.Coordinates.Longitude);
 
                             Reset();
                             await Task.Delay(500);
@@ -140,13 +146,16 @@ namespace KeepOnDroning.Core.ViewModels
 
                             if (WeatherIsOkay && BirdsIsOkay && NoFlyIsOkay && PlanesIsOkay)
                                 PreFlightStatus = EPreFlightStatus.Green;
-                            IsLoading = false;
                               
                         }
                         catch (Exception ex)
                         {
                             Debug.WriteLine("No gps?");
+                            WaitingForStart = true;
                             IsLoading = false;
+
+                            Mvx.Resolve<IUserDialogs>().ShowError("Unable to retrieve current location, is GPS turned on?");
+
                         }
                   
                     });
@@ -155,11 +164,6 @@ namespace KeepOnDroning.Core.ViewModels
 
         private void Reset()
         {
-            PreFlightStatus = EPreFlightStatus.Red;
-            NoFlyText = "Retrieving information...";
-            BirdsText = "Retrieving information...";
-            WeatherText = "Retrieving information...";
-            PlanesText = "Retrieving information...";
             PlanesIsOkay = false;
             BirdsIsOkay = false;
             WeatherIsOkay = false;
@@ -185,13 +189,13 @@ namespace KeepOnDroning.Core.ViewModels
             }
         }
 
-        public bool IsLoading
+        public bool WaitingForStart
         {
-            get { return _isLoading; }
+            get { return _waitingForStart; }
             set
             {
-                _isLoading = value;
-                RaisePropertyChanged(() => IsLoading);
+                _waitingForStart = value;
+                RaisePropertyChanged(() => WaitingForStart);
             }
         }
 
@@ -202,6 +206,16 @@ namespace KeepOnDroning.Core.ViewModels
             {
                 _preFlightStatus = value;
                 RaisePropertyChanged(() => PreFlightStatus);
+            }
+        }
+
+        public bool IsLoading
+        {
+            get { return _isLoading; }
+            set
+            {
+                _isLoading = value;
+                RaisePropertyChanged(() => IsLoading);
             }
         }
 
@@ -254,6 +268,27 @@ namespace KeepOnDroning.Core.ViewModels
                 RaisePropertyChanged(() => WeatherIsOkay);
             }
         }
+
+        public string WindHeadingText
+        {
+            get { return _windHeadingText; }
+            set
+            {
+                _windHeadingText = value;
+                RaisePropertyChanged(() => WindHeadingText);
+            }
+        }
+
+        public string WindSpeedText
+        {
+            get { return _windSpeedText; }
+            set
+            {
+                _windSpeedText = value;
+                RaisePropertyChanged(() => WindSpeedText);
+            }
+        }
+
 
         public string NoFlyText
         {
