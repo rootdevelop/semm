@@ -11,6 +11,7 @@ namespace CrashDrone.Common.Entities
     {
         public float Speed { get; set; }
         public CollisionEffect CollisionEffect { get; set; }
+        public int MyProperty { get; set; }
 
         public abstract void Activity(float frameTimeInSeconds);
     }
