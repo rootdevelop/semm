@@ -19,6 +19,7 @@ namespace KeepOnDroning.Api.Controllers
         }
 
         [Route("Estus/{latitude}/{longitude}")]
+        [HttpGet]
         public async Task<DancerResponse> Estus(float latitude, float longitude)
         {
             var dancer = await _dancerBusiness.Dancing(latitude, longitude);
