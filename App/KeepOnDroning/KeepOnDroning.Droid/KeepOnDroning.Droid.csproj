@@ -89,6 +89,48 @@
     <Reference Include="MvvmCross.Plugins.Location.Droid">
       <HintPath>..\packages\MvvmCross.Plugin.Location.4.1.4\lib\MonoAndroid\MvvmCross.Plugins.Location.Droid.dll</HintPath>
     </Reference>
+    <Reference Include="MvvmCross.Plugins.AlertDialog">
+      <HintPath>..\_references\MvvmCross.Plugins.AlertDialog.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.AlertDialog.Droid">
+      <HintPath>..\_references\MvvmCross.Plugins.AlertDialog.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.CrossCore.Droid">
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.5.1\lib\MonoAndroid\Cirrious.CrossCore.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Binding.Droid">
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.5.1\lib\MonoAndroid\Cirrious.MvvmCross.Binding.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.CrossCore">
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.5.1\lib\MonoAndroid\Cirrious.CrossCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Binding">
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.5.1\lib\MonoAndroid\Cirrious.MvvmCross.Binding.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Localization">
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.5.1\lib\MonoAndroid\Cirrious.MvvmCross.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="Splat">
+      <HintPath>..\packages\Splat.1.6.2\lib\monoandroid\Splat.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.Support.Android">
+      <HintPath>..\packages\Acr.Support.1.0.0\lib\MonoAndroid10\Acr.Support.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.UserDialogs">
+      <HintPath>..\packages\Acr.UserDialogs.4.1.0\lib\MonoAndroid10\Acr.UserDialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.UserDialogs.Interface">
+      <HintPath>..\packages\Acr.UserDialogs.4.1.0\lib\MonoAndroid10\Acr.UserDialogs.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="AndHUD">
+      <HintPath>..\packages\Acr.UserDialogs.4.1.0\lib\MonoAndroid10\AndHUD.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.MvvmCross.Plugins.UserDialogs">
+      <HintPath>..\packages\Acr.MvvmCross.Plugins.UserDialogs.4.1.0\lib\MonoAndroid10\Acr.MvvmCross.Plugins.UserDialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.MvvmCross.Plugins.UserDialogs.Droid">
+      <HintPath>..\packages\Acr.MvvmCross.Plugins.UserDialogs.4.1.0\lib\MonoAndroid10\Acr.MvvmCross.Plugins.UserDialogs.Droid.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
@@ -105,6 +147,7 @@
     <Compile Include="Bootstrap\VisibilityPluginBootstrap.cs" />
     <Compile Include="Converters\BooleanToImageConverter.cs" />
     <Compile Include="Bootstrap\LocationPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\UserDialogsPluginBootstrap.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

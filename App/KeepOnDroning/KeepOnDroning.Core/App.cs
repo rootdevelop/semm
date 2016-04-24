@@ -1,5 +1,9 @@
 using MvvmCross.Platform.IoC;
 using KeepOnDroning.Core.ViewModels;
+using MvvmCross.Platform;
+using MvvmCross.Plugins.Location;
+using System.Diagnostics;
+using Acr.UserDialogs;
 
 namespace KeepOnDroning.Core
 {
@@ -11,6 +15,20 @@ namespace KeepOnDroning.Core
                 .EndingWith("Service")
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
+
+
+            Mvx.Resolve<IMvxLocationWatcher>().Start(new MvxLocationOptions()
+                {
+                    Accuracy = MvxLocationAccuracy.Fine,
+                    TrackingMode = MvxLocationTrackingMode.Foreground
+                }, (location) =>
+                {
+                    Debug.WriteLine(location);
+                },
+                (error) =>
+                {
+                    Debug.WriteLine(error);
+                });
 
             RegisterAppStart<PreFlightCheckViewModel>();
         }
