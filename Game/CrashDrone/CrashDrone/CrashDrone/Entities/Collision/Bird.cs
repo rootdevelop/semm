@@ -15,7 +15,9 @@ namespace CrashDrone.Common.Entities
         public Bird()
         {
             this.Speed = CCRandom.GetRandomFloat(200f, 500f);
-            this.collideLasts = 1f;
+            CollisionEffect = CollisionEffect.LoseEnergy;
+            EnergyChange = -10;
+            this.collideLasts = 0.5f;
             InitGraphic();
         }
 
@@ -34,8 +36,8 @@ namespace CrashDrone.Common.Entities
 
             if (IsRoasted)
             {
-                if (!falling)
-                    Speed += 1f;
+                if (falling)
+                    Speed += 10f;
                 Graphic.PositionY -= Speed * frameTimeInSeconds;
                 this.collideLasts -= frameTimeInSeconds;
                 if (!falling && collideLasts <= 0)
@@ -56,7 +58,7 @@ namespace CrashDrone.Common.Entities
             }
         }
 
-        public override void Collide()
+        public override int Collide()
         {
             if (!IsRoasted)
             {
@@ -69,7 +71,9 @@ namespace CrashDrone.Common.Entities
                 Graphic.Position = position;
                 this.AddChild(Graphic);
                 this.IsRoasted = true;
+                return EnergyChange;
             }
+            return 0;
         }
     }
 }

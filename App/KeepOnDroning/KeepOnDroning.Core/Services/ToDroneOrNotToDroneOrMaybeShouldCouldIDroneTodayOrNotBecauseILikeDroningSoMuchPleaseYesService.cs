@@ -14,31 +14,26 @@ namespace KeepOnDroning.Core.Services
         {
             try
             {
-                #if DEBUG
-                return new ToDroneOrNotToDroneResponse()
-                {
-                    HasBirds = false,
-                    CrossingFlightpaths = false,
-                    HasNoFlyZone = false,
-                    HasDangerDanger = false,
-                    MaxHeight = 100,
-                    Weather = new WeatherResponse()
-                    {
-                        WindDegree = 0.45f,
-                        WindSpeed = 20,
-                        WindDirection = "NW"
-                    }
-                };
-
-                #else
-                var res = await UncommonRequestHelper.ProcessGetRequestAsync<ToDroneOrNotToDroneResponse>(string.Format("http://keepondroning.azurewebsites.net/api/lothric/estus/{0}/{1}", lat, lng));
+                var res = await UncommonRequestHelper.ProcessGetRequestAsync<ToDroneOrNotToDroneResponse>(string.Format("http://keepondroningnew.azurewebsites.net/api/lothric/estus/{0}/{1}", lat, lng));
                 return res.Result;
-                #endif
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(ex);
-                return new ToDroneOrNotToDroneResponse();
+                return new ToDroneOrNotToDroneResponse()
+                {
+                    HasBirds = true,
+                    CrossingFlightpaths = false,
+                    HasNoFlyZone = false,
+                    HasDangerDanger = true,
+                    MaxHeight = 100,
+                    Weather = new WeatherResponse()
+                    {
+                        WindDegree = 0.45f,
+                        WindSpeed = 94,
+                        WindDirection = "ZO"
+                    }
+                };
             }
 
 

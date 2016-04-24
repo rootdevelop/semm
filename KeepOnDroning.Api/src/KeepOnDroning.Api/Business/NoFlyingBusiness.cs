@@ -19,6 +19,12 @@ namespace KeepOnDroning.Api.Business
             _dbContext = dbContext;
         }
 
+        /// <summary>
+        ///     Takes coordinates and returns a NoFlyResult <see cref="NoFlyResult"/>
+        /// </summary>
+        /// <param name="latitude"></param>
+        /// <param name="longitude"></param>
+        /// <returns><see cref="NoFlyResult"/></returns>
         public async Task<NoFlyResult> NoFlyResult(float latitude, float longitude)
         {
             var oois = await GetOois(latitude, longitude);
@@ -31,6 +37,12 @@ namespace KeepOnDroning.Api.Business
             };
         }
 
+        /// <summary>
+        ///     Takes Coordinates, Returns a list of Object of Interest <see cref="Ooi"/>
+        /// </summary>
+        /// <param name="latitude"></param>
+        /// <param name="longitude"></param>
+        /// <returns></returns>
         public async Task<List<Ooi>> GetOois(float latitude, float longitude)
         {
             var ooisEntities = await (from a in _dbContext.Set<Domain.Ooi>()
@@ -45,6 +57,12 @@ namespace KeepOnDroning.Api.Business
             return ooisEntities;
         }
 
+        /// <summary>
+        ///     Takes Coordinates, Returns a list of No Fly Zones and their range <see cref="ServiceNoFlyZone"/>
+        /// </summary>
+        /// <param name="latitude"></param>
+        /// <param name="longitude"></param>
+        /// <returns></returns>
         public async Task<List<ServiceNoFlyZone>> NoFlyZones(float latitude, float longitude)
         {
             var noFlyEntities = await (from a in _dbContext.Set<Domain.Airport>()
@@ -64,13 +82,19 @@ namespace KeepOnDroning.Api.Business
                     Type = ENoFlyZoneType.Airport,
                     Latitude = x.Lat,
                     Longitude = x.Lng,
-                    Size = 7000,
+                    Size = 10000,
                 };
             }).ToList();
 
             return noFlyZones;
         }
 
+        /// <summary>
+        ///     Check whether the coordinates supplied are within a no flight zone 
+        /// </summary>
+        /// <param name="latitude"></param>
+        /// <param name="longitude"></param>
+        /// <returns></returns>
         public async Task<bool> IsInNoFlyZone(float latitude, float longitude)
         {
             var noFlyZones = await (from a in _dbContext.Set<Domain.Airport>()

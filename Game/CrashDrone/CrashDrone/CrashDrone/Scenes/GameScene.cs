@@ -11,6 +11,7 @@ namespace CrashDrone.Common
     class GameScene : CCScene
     {
         private Drone _drone;
+        private HudLayer _hudLayer;
         private PeripheryLayer _peripheryLayer;
         private CollisionLayer _collisionLayer;
         private PeripherySpawner _peripherySpawner;
@@ -37,8 +38,8 @@ namespace CrashDrone.Common
             _collisionList = new List<CollisionEntity>();
             var droneLayer = new DroneLayer();
             _drone = droneLayer.Drone;
-            var hudLayer = new HudLayer(droneLayer.MoveUp, droneLayer.MoveDown);
-            this.AddLayer(hudLayer);
+            this._hudLayer = new HudLayer(droneLayer.MoveUp, droneLayer.MoveDown);
+            this.AddLayer(_hudLayer);
             this.AddLayer(droneLayer);
             Schedule(Activity);
         }
@@ -78,7 +79,17 @@ namespace CrashDrone.Common
                 co.Activity(frameTimeInSeconds);
                 if (co.CollisionBounds.IntersectsRect(_drone.CollisionBounds))
                 {
-                    co.Collide();
+                    int energyChange = co.Collide();
+                    if (energyChange < 0)
+                    {
+                        _hudLayer.RemoveEnergy(energyChange);
+                        //temporary label for loss
+                    }
+                    else if (energyChange > 0)
+                    {
+                        _hudLayer.AddEnergy(energyChange);
+                        //temporary label for gain
+                    }
                 }
             }
             

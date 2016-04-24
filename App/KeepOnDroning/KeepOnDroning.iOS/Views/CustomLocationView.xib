@@ -15,13 +15,13 @@
         <view contentMode="scaleToFill" id="2">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HdH-Bh-1h3">
+                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HdH-Bh-1h3">
                     <rect key="frame" x="0.0" y="29" width="113" height="69"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="69" id="hGG-U4-wyl"/>
                         <constraint firstAttribute="width" constant="113" id="vUR-Ng-GLP"/>
                     </constraints>
-                    <state key="normal" backgroundImage="BackButton.png"/>
+                    <state key="normal" backgroundImage="IMG_back_button.png"/>
                 </button>
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="yWo-IT-TyC">
                     <rect key="frame" x="0.0" y="169" width="600" height="431"/>
@@ -39,6 +39,6 @@
         </view>
     </objects>
     <resources>
-        <image name="BackButton.png" width="696" height="607"/>
+        <image name="IMG_back_button.png" width="123" height="38"/>
     </resources>
 </document>
