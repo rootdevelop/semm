@@ -50,6 +50,10 @@ namespace KeepOnDroning.iOS
 		[Outlet]
 		UIKit.UIView viewResults { get; set; }
 
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UIButton btnReset { get; set; }
+
 		void ReleaseDesignerOutlets ()
 		{
 			if (btnCustom != null) {
@@ -67,6 +71,10 @@ namespace KeepOnDroning.iOS
 			if (btnMap != null) {
 				btnMap.Dispose ();
 				btnMap = null;
+			}
+			if (btnReset != null) {
+				btnReset.Dispose ();
+				btnReset = null;
 			}
 			if (btnStart != null) {
 				btnStart.Dispose ();
