@@ -5,59 +5,69 @@ using MvvmCross.iOS.Views;
 using CrashDrone.Common;
 using MvvmCross.Binding.BindingContext;
 using KeepOnDroning.Core.ViewModels;
+using Foundation;
 
 namespace KeepOnDroning.iOS
 {
-	public partial class GameView : MvxViewController
-	{
-		public GameView () : base ("GameView", null)
-		{
-		}
+    public partial class GameView : MvxViewController
+    {
+        public GameView()
+            : base("GameView", null)
+        {
+        }
 
-		public override void ViewDidLoad ()
-		{
-			base.ViewDidLoad ();
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
 
-			var set = this.CreateBindingSet<GameView, GameViewModel>();
-			set.Bind(BackButton).To(ViewModel => ViewModel.GoBackCommand);
-			set.Apply();
+            var set = this.CreateBindingSet<GameView, GameViewModel>();
+            set.Bind(BackButton).To(ViewModel => ViewModel.GoBackCommand);
+            set.Apply();
 
-			if (GameUIView != null)
-			{
-				// Set loading event to be called once game view is fully initialised
-				GameUIView.ViewCreated += GameDelegate.LoadGame;
-			}
-		}
+            if (GameUIView != null)
+            {
+                // Set loading event to be called once game view is fully initialised
+                GameUIView.ViewCreated += GameDelegate.LoadGame;
+            }
+        }
 
-		public override void ViewWillDisappear (bool animated)
-		{
-			base.ViewWillDisappear (animated);
+        public override void ViewWillAppear(bool animated)
+        {
+            base.ViewWillAppear(animated);
 
-			if (GameUIView != null)
-				GameUIView.Paused = true;
-		}
+            UIDevice.CurrentDevice.SetValueForKey(new NSNumber((int)PreferredInterfaceOrientationForPresentation()), new NSString("orientation"));
 
-		public override void ViewDidAppear (bool animated)
-		{
-			base.ViewDidAppear (animated);
+        }
 
-			if (GameUIView != null)
-				GameUIView.Paused = false;
-		}
+        public override void ViewWillDisappear(bool animated)
+        {
+            base.ViewWillDisappear(animated);
 
-		public override bool PrefersStatusBarHidden()
-		{
-			return true;
-		}
+            if (GameUIView != null)
+                GameUIView.Paused = true;
+        }
 
-		public override UIInterfaceOrientationMask GetSupportedInterfaceOrientations ()
-		{
-			return UIInterfaceOrientationMask.Landscape;
-		}
+        public override void ViewDidAppear(bool animated)
+        {
+            base.ViewDidAppear(animated);
 
-		public override bool ShouldAutorotateToInterfaceOrientation (UIInterfaceOrientation toInterfaceOrientation)
-		{
-			return toInterfaceOrientation == UIInterfaceOrientation.LandscapeLeft;
-		}
-	}
+            if (GameUIView != null)
+                GameUIView.Paused = false;
+        }
+
+        public override bool PrefersStatusBarHidden()
+        {
+            return true;
+        }
+
+        public override UIInterfaceOrientationMask GetSupportedInterfaceOrientations()
+        {
+            return UIInterfaceOrientationMask.Landscape;
+        }
+
+        public override bool ShouldAutorotateToInterfaceOrientation(UIInterfaceOrientation toInterfaceOrientation)
+        {
+            return toInterfaceOrientation == UIInterfaceOrientation.LandscapeLeft;
+        }
+    }
 }
