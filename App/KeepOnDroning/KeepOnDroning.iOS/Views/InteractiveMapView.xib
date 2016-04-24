@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InteractiveMapView">
             <connections>
                 <outlet property="BtnBack" destination="5" id="name-outlet-5"/>
+                <outlet property="WebView" destination="Jnr-Mm-Lfr" id="vNW-by-aQa"/>
                 <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
             </connections>
         </placeholder>
@@ -15,75 +16,47 @@
         <view contentMode="scaleToFill" id="2">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5">
-                    <rect key="frame" x="0.0" y="29" width="113" height="96"/>
+                <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jnr-Mm-Lfr">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                </webView>
+                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5">
+                    <rect key="frame" x="8" y="8" width="60" height="60"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="96" id="8"/>
                         <constraint firstAttribute="width" constant="113" id="9"/>
+                        <constraint firstAttribute="height" constant="60" id="g3X-6o-dgA"/>
+                        <constraint firstAttribute="width" constant="60" id="u2g-NV-abc"/>
                     </constraints>
-                    <state key="normal" backgroundImage="BackButton.png">
+                    <state key="normal" backgroundImage="IMG_back_button.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                </button>
-                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Zwa-mU-gch">
-                    <rect key="frame" x="0.0" y="169" width="600" height="431"/>
-                    <variation key="widthClass=compact" misplaced="YES">
-                        <rect key="frame" x="0.0" y="126" width="400" height="474"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="8"/>
+                            <exclude reference="9"/>
+                        </mask>
                     </variation>
-                </mapView>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="5" firstAttribute="leading" secondItem="Zwa-mU-gch" secondAttribute="leading" id="Dty-TH-ciq"/>
-                <constraint firstAttribute="trailing" secondItem="Zwa-mU-gch" secondAttribute="trailing" id="Ljr-u9-rYS"/>
-                <constraint firstItem="Zwa-mU-gch" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="RaR-ck-GQ3"/>
-                <constraint firstItem="Zwa-mU-gch" firstAttribute="top" secondItem="5" secondAttribute="bottom" constant="44" id="VhK-s5-pup"/>
+                <constraint firstAttribute="trailing" secondItem="Jnr-Mm-Lfr" secondAttribute="trailing" id="CIv-GV-moz"/>
+                <constraint firstItem="5" firstAttribute="top" secondItem="2" secondAttribute="top" constant="8" id="VSb-ag-QTb"/>
                 <constraint firstItem="5" firstAttribute="top" secondItem="2" secondAttribute="top" constant="29" id="WVw-Kv-g0l"/>
-                <constraint firstAttribute="bottom" secondItem="Zwa-mU-gch" secondAttribute="bottom" id="c0b-nN-IMC"/>
+                <constraint firstItem="Jnr-Mm-Lfr" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="aga-C2-3di"/>
+                <constraint firstItem="Jnr-Mm-Lfr" firstAttribute="top" secondItem="2" secondAttribute="top" id="e94-s3-Qsh"/>
+                <constraint firstAttribute="bottom" secondItem="Jnr-Mm-Lfr" secondAttribute="bottom" id="eMQ-br-As7"/>
+                <constraint firstItem="5" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="8" id="qlO-c0-MM5"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="WVw-Kv-g0l"/>
+                </mask>
+            </variation>
         </view>
     </objects>
     <resources>
-        <image name="BackButton.png" width="696" height="607"/>
-        <image name="Image" width="696" height="607"/>
-        <image name="StartGreenButton.png" width="433" height="428"/>
-        <image name="StartRedButton.png" width="432" height="428"/>
-        <image name="StartOrangeButton.png" width="432" height="427"/>
-        <image name="Background.png" width="602" height="601"/>
-        <image name="ComputerSaysNo.png" width="192" height="196"/>
-        <image name="GameButton.png" width="242" height="226"/>
-        <image name="InfoButton.png" width="244" height="225"/>
-        <image name="MapButton.png" width="244" height="228"/>
-        <image name="OK.png" width="192" height="196"/>
-        <image name="WaypointButton.png" width="241" height="230"/>
-        <image name="LaunchScreen.png" width="800" height="1280"/>
-        <image name="Content/Images/button_down.png" width="193" height="223"/>
-        <image name="Content/Images/button_up.png" width="192" height="222"/>
-        <image name="Content/Images/drone.png" width="387" height="192"/>
-        <image name="Content/Images/Collision/bird.png" width="320" height="136"/>
-        <image name="Content/Images/Collision/house.png" width="495" height="282"/>
-        <image name="Content/Images/Collision/radar.png" width="340" height="316"/>
-        <image name="Content/Images/Collision/tree.png" width="574" height="477"/>
-        <image name="Content/Images/Hud/battery.png" width="300" height="93"/>
-        <image name="Content/Images/Periphery/bird_baked.png" width="372" height="220"/>
-        <image name="Content/Images/Periphery/cloud1.png" width="628" height="186"/>
-        <image name="Content/Images/Periphery/cloud2.png" width="330" height="149"/>
-        <image name="Content/Images/Periphery/forest.png" width="2187" height="150"/>
-        <image name="IMG_background.png" width="750" height="1334"/>
-        <image name="IMG_birds_negative.png" width="375" height="90"/>
-        <image name="IMG_birds_positive.png" width="375" height="90"/>
-        <image name="IMG_check_button.png" width="368" height="363"/>
-        <image name="IMG_game_button.png" width="222" height="265"/>
-        <image name="IMG_info_button.png" width="44" height="44"/>
-        <image name="IMG_logo.png" width="480" height="467"/>
-        <image name="IMG_map_view_button.png" width="222" height="265"/>
-        <image name="IMG_noflyzones_negative.png" width="375" height="90"/>
-        <image name="IMG_noflyzones_positive.png" width="375" height="90"/>
-        <image name="IMG_otherobjects_negative.png" width="375" height="90"/>
-        <image name="IMG_otherobjects_positive.png" width="375" height="90"/>
-        <image name="IMG_waypoints_button.png" width="222" height="265"/>
-        <image name="IMG_weather_negative.png" width="375" height="90"/>
-        <image name="IMG_weather_positive.png" width="375" height="90"/>
-        <image name="IMG_wind.png" width="275" height="276"/>
+        <image name="IMG_back_button.png" width="123" height="38"/>
     </resources>
 </document>
