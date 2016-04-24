@@ -18,6 +18,11 @@ namespace KeepOnDroning.Api.Controllers
             _eternityBusiness = eternityBusiness;
         }
 
+        /// <summary>
+        ///  An Autonomous drone can post its location to the service by a <see cref="OoiRequest"/>
+        /// </summary>
+        /// <param><see cref="OoiRequest"/></param>
+        /// <returns></returns>
         [Route("Azshara")]
         [HttpPost]
         public async Task Azshara([FromBody] OoiRequest legion)
