@@ -198,10 +198,10 @@ namespace KeepOnDroning.Core.ViewModels
         {
             get
             {
-                return new MvxCommand(() =>
-                    {
-                        ShowInformation = !ShowInformation ? true : false;
-                    });
+				return new MvxCommand(() =>
+					{
+						ShowViewModel<InfoViewModel>();
+					});
             }
         }
 
