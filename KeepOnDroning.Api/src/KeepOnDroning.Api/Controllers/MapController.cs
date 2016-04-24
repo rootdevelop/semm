@@ -6,7 +6,7 @@ using Microsoft.AspNet.Mvc;
 
 namespace KeepOnDroning.Api.Controllers
 {
-    [Route("View/Map")]
+    [Route("Map")]
     public class MapController : Controller
     {
 
