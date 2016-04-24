@@ -145,7 +145,9 @@
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
     <None Include="packages.config" />
-    <None Include="Content\Fonts\MarkerFelt-22.xnb" />
+    <None Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Fonts\MarkerFelt-22.xnb">
+      <Link>Content\Fonts\MarkerFelt-22.xnb</Link>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -188,31 +190,40 @@
     <BundleResource Include="Resources\OK.png" />
     <BundleResource Include="Resources\WaypointButton.png" />
     <BundleResource Include="Resources\LaunchScreen.png" />
-    <BundleResource Include="Content\Images\drone.png" />
-    <BundleResource Include="Content\Images\Collision\house.png" />
-    <BundleResource Include="Content\Images\Collision\radar.png" />
-    <BundleResource Include="Content\Images\Collision\tree.png" />
-    <BundleResource Include="Content\Images\Hud\battery.png" />
-    <BundleResource Include="Content\Images\Periphery\cloud1.png" />
-    <BundleResource Include="Content\Images\Periphery\cloud2.png" />
-    <BundleResource Include="Content\Images\Periphery\forest.png" />
     <BundleResource Include="Resources\BackButton.png" />
-    <BundleResource Include="Resources\IMG_background.png" />
-    <BundleResource Include="Resources\IMG_birds_negative.png" />
-    <BundleResource Include="Resources\IMG_birds_positive.png" />
-    <BundleResource Include="Resources\IMG_check_button.png" />
-    <BundleResource Include="Resources\IMG_game_button.png" />
-    <BundleResource Include="Resources\IMG_info_button.png" />
-    <BundleResource Include="Resources\IMG_logo.png" />
-    <BundleResource Include="Resources\IMG_map_view_button.png" />
-    <BundleResource Include="Resources\IMG_noflyzones_negative.png" />
-    <BundleResource Include="Resources\IMG_noflyzones_positive.png" />
-    <BundleResource Include="Resources\IMG_otherobjects_negative.png" />
-    <BundleResource Include="Resources\IMG_otherobjects_positive.png" />
-    <BundleResource Include="Resources\IMG_waypoints_button.png" />
-    <BundleResource Include="Resources\IMG_weather_negative.png" />
-    <BundleResource Include="Resources\IMG_weather_positive.png" />
-    <BundleResource Include="Resources\IMG_wind.png" />
+    <BundleResource Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\button_down.png">
+      <Link>Content\Images\button_down.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\button_up.png">
+      <Link>Content\Images\button_up.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\drone.png">
+      <Link>Content\Images\drone.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\Collision\house.png">
+      <Link>Content\Images\Collision\house.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\Collision\radar.png">
+      <Link>Content\Images\Collision\radar.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\Collision\tree.png">
+      <Link>Content\Images\Collision\tree.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\Hud\battery.png">
+      <Link>Content\Images\Hud\battery.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\Periphery\bird_baked.png">
+      <Link>Content\Images\Periphery\bird_baked.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\Periphery\cloud1.png">
+      <Link>Content\Images\Periphery\cloud1.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\Periphery\cloud2.png">
+      <Link>Content\Images\Periphery\cloud2.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\Periphery\forest.png">
+      <Link>Content\Images\Periphery\forest.png</Link>
+    </BundleResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KeepOnDroning.Core\KeepOnDroning.Core.csproj">
