@@ -58,25 +58,25 @@ namespace KeepOnDroning.Api
             services.AddMvc();
 
             //var pathToDoc = Configuration["Swagger:Path"];
-            services.AddSwaggerGen();
+            //services.AddSwaggerGen();
 
-            services.ConfigureSwaggerDocument(options =>
-            {
-                options.SingleApiVersion(new Info
-                {
-                    Version = "v1",
-                    Title = "Droning API",
-                    Description = "Things for droning",
-                    TermsOfService = "None"
-                });
-                options.OperationFilter(new Swashbuckle.SwaggerGen.XmlComments.ApplyXmlActionComments(GetXmlCommentPath()));
-            });
+            //services.ConfigureSwaggerDocument(options =>
+            //{
+            //    options.SingleApiVersion(new Info
+            //    {
+            //        Version = "v1",
+            //        Title = "Droning API",
+            //        Description = "Things for droning",
+            //        TermsOfService = "None"
+            //    });
+            //    options.OperationFilter(new Swashbuckle.SwaggerGen.XmlComments.ApplyXmlActionComments(GetXmlCommentPath()));
+            //});
 
-            services.ConfigureSwaggerSchema(options =>
-            {
-                options.DescribeAllEnumsAsStrings = true;
-                options.ModelFilter(new Swashbuckle.SwaggerGen.XmlComments.ApplyXmlTypeComments(GetXmlCommentPath()));
-            });
+            //services.ConfigureSwaggerSchema(options =>
+            //{
+            //    options.DescribeAllEnumsAsStrings = true;
+            //    options.ModelFilter(new Swashbuckle.SwaggerGen.XmlComments.ApplyXmlTypeComments(GetXmlCommentPath()));
+            //});
 
             //services.AddScoped<ISearchProvider, SearchProvider>();
 
