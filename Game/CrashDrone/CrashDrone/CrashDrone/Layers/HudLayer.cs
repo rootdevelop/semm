@@ -20,7 +20,7 @@ namespace CrashDrone.Common
         CCSprite Battery100;
 
         CCSprite energySprite;
-        int energy;
+        public int energy;
         CCLabel energyLabel;
 
         NavigateButton buttonUp;
@@ -141,7 +141,7 @@ namespace CrashDrone.Common
             }
             else if (this.energy >= 30)
             {
-                energyLabel.Color = CCColor3B.Orange;
+                energyLabel.Color = CCColor3B.Yellow;
             }
             else if (this.energy >= 10)
             {

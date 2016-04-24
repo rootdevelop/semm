@@ -11,6 +11,7 @@ namespace CrashDrone.Common
     class GameScene : CCScene
     {
         private Drone _drone;
+        private DroneLayer _droneLayer;
         private HudLayer _hudLayer;
         private PeripheryLayer _peripheryLayer;
         private CollisionLayer _collisionLayer;
@@ -18,6 +19,7 @@ namespace CrashDrone.Common
         private CollisionSpawner _collisionSpawner;
         private List<PeripheryEntity> _peripheryList;
         private List<CollisionEntity> _collisionList;
+        private List<CCLabel> _collisionLabelList;
 
         public GameScene(CCGameView gameview) : base(gameview)
         {
@@ -27,7 +29,7 @@ namespace CrashDrone.Common
         private void Init()
         {
             this.AddLayer(new BackgroundLayer());
-
+            _collisionLabelList = new List<CCLabel>();
             _peripheryLayer = new PeripheryLayer();
             CreatePeripherySpawner();
             this.AddLayer(_peripheryLayer);
@@ -36,11 +38,11 @@ namespace CrashDrone.Common
             CreateCollisionSpawner();
             this.AddLayer(_collisionLayer);
             _collisionList = new List<CollisionEntity>();
-            var droneLayer = new DroneLayer();
-            _drone = droneLayer.Drone;
-            this._hudLayer = new HudLayer(droneLayer.MoveUp, droneLayer.MoveDown);
+            _droneLayer = new DroneLayer();
+            _drone = _droneLayer.Drone;
+            this._hudLayer = new HudLayer(_droneLayer.MoveUp, _droneLayer.MoveDown);
             this.AddLayer(_hudLayer);
-            this.AddLayer(droneLayer);
+            this.AddLayer(_droneLayer);
             Schedule(Activity);
         }
 
@@ -74,21 +76,52 @@ namespace CrashDrone.Common
             {
                 pe.Activity(frameTimeInSeconds);
             }
+            foreach (var lbl in _collisionLabelList)
+            {
+                if (lbl.Opacity >= 5)
+                {
+                    lbl.Opacity -= 5;
+                }
+                else
+                {
+                    lbl.Opacity = 0;
+                }
+            }
+            var toRemove = _collisionLabelList.Where(l => l.Opacity == 0).ToList();
+            foreach (var lb in toRemove)
+            {
+                _collisionLabelList.Remove(lb);
+                _hudLayer.RemoveChild(lb);
+            }
+
             foreach (var co in _collisionList)
             {
                 co.Activity(frameTimeInSeconds);
                 if (co.CollisionBounds.IntersectsRect(_drone.CollisionBounds))
                 {
+                    var collisionCenter = co.CollisionBounds.Intersection(_drone.CollisionBounds).Center;
                     int energyChange = co.Collide();
                     if (energyChange < 0)
                     {
                         _hudLayer.RemoveEnergy(energyChange);
-                        //temporary label for loss
+                        var label = new CCLabel(string.Format("{0}", energyChange), "Fonts/MarkerFelt", 22, CCLabelFormat.SpriteFont);
+                        label.Position = collisionCenter.Offset(0, -150f);
+                        label.Color = CCColor3B.Red;
+                        _hudLayer.AddChild(label);
+                        _collisionLabelList.Add(label);
                     }
-                    else if (energyChange > 0)
+                    else if (energyChange > 0 && !_droneLayer.crashed)
                     {
                         _hudLayer.AddEnergy(energyChange);
-                        //temporary label for gain
+                        var label = new CCLabel(string.Format("+{0}", energyChange), "Fonts/MarkerFelt", 22, CCLabelFormat.SpriteFont);
+                        label.Color = CCColor3B.Green;
+                        label.Position = collisionCenter.Offset(0, -150f);
+                        _hudLayer.AddChild(label);
+                        _collisionLabelList.Add(label);
+                    }
+                    if (_hudLayer.energy <= 0)
+                    {
+                        _droneLayer.Crash();
                     }
                 }
             }
