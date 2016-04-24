@@ -209,5 +209,6 @@
     <AndroidAsset Include="Assets\Content\Images\Periphery\cloud1.png" />
     <AndroidAsset Include="Assets\Content\Images\Periphery\cloud2.png" />
     <AndroidAsset Include="Assets\Content\Images\Periphery\forest.png" />
+    <AndroidAsset Include="Assets\Content\Images\Collision\collide.png" />
   </ItemGroup>
 </Project>

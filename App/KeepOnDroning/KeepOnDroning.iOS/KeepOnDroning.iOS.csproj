@@ -150,12 +150,6 @@
       <InProject>false</InProject>
     </ImageAsset>
     <ImageAsset Include="Resources\Images.xcassets\Image.imageset\BackButton.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Keep on droning_iOS_AppIcon_180.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Keep on droning_iOS_AppIcon_120.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Keep on droning_iOS_AppIcon_114.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Keep on droning_iOS_AppIcon_57.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Keep on droning_iOS_AppIcon_144.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Keep on droning_iOS_AppIcon_72.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
@@ -195,12 +189,10 @@
       <DependentUpon>GameView.cs</DependentUpon>
     </Compile>
     <Compile Include="Bootstrap\LocationPluginBootstrap.cs" />
-    <Compile Include="Converters\BooleanToImageConverter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Views\" />
-    <Folder Include="Converters\" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\StartGreenButton.png" />
@@ -243,6 +235,7 @@
     <BundleResource Include="Resources\IMG_weather_negative.png" />
     <BundleResource Include="Resources\IMG_weather_positive.png" />
     <BundleResource Include="Resources\IMG_wind.png" />
+    <BundleResource Include="Content\Images\Collision\collide.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KeepOnDroning.Core\KeepOnDroning.Core.csproj">
