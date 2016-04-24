@@ -11,6 +11,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
+      "launchUrl": "Map/Index/lat=52.142244&lng=4.418725",
       "environmentVariables": {
         "Hosting:Environment": "Development"
       },

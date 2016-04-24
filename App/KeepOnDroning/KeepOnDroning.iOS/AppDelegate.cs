@@ -35,5 +35,3 @@ namespace KeepOnDroning.iOS
 		}
 	}
 }
-
-
