@@ -11,7 +11,18 @@ namespace CrashDrone.Common.Entities
     {
         CCPoint desiredLocation;
         public CCPoint Velocity;
-        public CCSprite graphic { get; set; }
+        private CCSprite _graphic;
+        public CCSprite Graphic
+        {
+            get
+            {
+                return _graphic;
+            }
+            set
+            {
+                _graphic = value;
+            }
+        }
 
         public Drone()
         {
@@ -20,10 +31,11 @@ namespace CrashDrone.Common.Entities
 
         private void CreateSpriteGraphic()
         {
-            graphic = new CCSprite("/Asset/Content/Images/drone.png");
-            graphic.IsAntialiased = false;
-            this.graphic.Scale = 0.3f;
-            AddChild(graphic);
+            _graphic = new CCSprite("/Asset/Content/Images/drone.png");
+            _graphic.IsAntialiased = false;
+            this._graphic.Scale = 0.3f;
+            this.SetCollisionBounds();
+            AddChild(_graphic);
         }
 
         public void HandleInput(CCPoint touchPoint)
@@ -31,9 +43,15 @@ namespace CrashDrone.Common.Entities
             desiredLocation = touchPoint;
         }
 
+        protected void SetCollisionBounds()
+        {
+            //var graphicBounds = _graphic.BoundingBoxTransformedToWorld;
+            //this.CollisionBounds = new CCRect(graphicBounds.MinX + 10, graphicBounds.MinY + 10, graphicBounds.MaxX - graphicBounds.MinX - 20, graphicBounds.MaxY - graphicBounds.MinY - 20);
+        }
+
         public void Activity(float frameTimeInSeconds)
         {
-            const float velocityCoefficient = 1;
+            const float velocityCoefficient = 3;
 
             Velocity = (desiredLocation - this.Position) * velocityCoefficient;
 
@@ -44,6 +62,15 @@ namespace CrashDrone.Common.Entities
         {
             this.Position = position;
             this.desiredLocation = position;
+        }
+
+        public CCRect CollisionBounds
+        {
+            get
+            {
+                var graphicBounds = _graphic.BoundingBoxTransformedToWorld;
+                return new CCRect(graphicBounds.MinX + 7, graphicBounds.MinY + 7, graphicBounds.MaxX - graphicBounds.MinX - 14, graphicBounds.MaxY - graphicBounds.MinY - 14);
+            }
         }
     }
 }

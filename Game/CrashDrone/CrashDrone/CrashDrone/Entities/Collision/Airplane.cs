@@ -17,16 +17,21 @@ namespace CrashDrone.Common.Entities
 
         protected override void InitGraphic()
         {
-            _graphic = new CCSprite("/Assets/Content/Images/Collision/airplane.png");
-            _graphic.IsAntialiased = false;
-            _graphic.Position = new CCPoint(this.Layer.VisibleBoundsWorldspace.MaxX + _graphic.ContentSize.Width * 0.5f, this.Layer.VisibleBoundsWorldspace.MinY + _graphic.ContentSize.Height * 0.5f);
-            _graphic.AnchorPoint = new CCPoint(0.0f, 0.0f);
-            AddChild(_graphic);
+            Graphic = new CCSprite("/Assets/Content/Images/Collision/airplane.png");
+            Graphic.IsAntialiased = false;
+            Graphic.Position = new CCPoint(this.Layer.VisibleBoundsWorldspace.MaxX + Graphic.ContentSize.Width * 0.5f, this.Layer.VisibleBoundsWorldspace.MinY + Graphic.ContentSize.Height * 0.5f);
+            Graphic.AnchorPoint = new CCPoint(0.0f, 0.0f);
+            AddChild(Graphic);
         }
 
         public override void Activity(float frameTimeInSeconds)
         {
-            _graphic.PositionX -= Speed * frameTimeInSeconds;
+            Graphic.PositionX -= Speed * frameTimeInSeconds;
+        }
+
+        public override int Collide()
+        {
+            throw new NotImplementedException();
         }
     }
 }

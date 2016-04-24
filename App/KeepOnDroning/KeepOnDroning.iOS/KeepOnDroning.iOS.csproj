@@ -144,18 +144,24 @@
     <Reference Include="Splat">
       <HintPath>..\packages\Splat.1.6.2\lib\Xamarin.iOS10\Splat.dll</HintPath>
     </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\Xamarin.iOS10\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\Xamarin.iOS10\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Xciles.Uncommon">
+      <HintPath>..\packages\Xciles.Uncommon.1.4.0\lib\portable-win+net45+wp8+win8+wpa81\Xciles.Uncommon.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json">
       <InProject>false</InProject>
     </ImageAsset>
     <ImageAsset Include="Resources\Images.xcassets\Image.imageset\BackButton.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Keep on droning_iOS_AppIcon_180.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Keep on droning_iOS_AppIcon_120.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Keep on droning_iOS_AppIcon_114.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Keep on droning_iOS_AppIcon_57.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Keep on droning_iOS_AppIcon_144.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Keep on droning_iOS_AppIcon_72.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
@@ -198,9 +204,9 @@
     <Compile Include="Converters\BooleanToImageConverter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <ItemGroup>
     <Folder Include="Views\" />
-    <Folder Include="Converters\" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\StartGreenButton.png" />
@@ -243,6 +249,7 @@
     <BundleResource Include="Resources\IMG_weather_negative.png" />
     <BundleResource Include="Resources\IMG_weather_positive.png" />
     <BundleResource Include="Resources\IMG_wind.png" />
+    <BundleResource Include="Content\Images\Collision\collide.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KeepOnDroning.Core\KeepOnDroning.Core.csproj">

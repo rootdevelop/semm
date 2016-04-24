@@ -14,10 +14,10 @@ namespace KeepOnDroning.Core.Services
         {
             try
             {
-                #if !DEBUG
+                #if DEBUG
                 return new ToDroneOrNotToDroneResponse()
                 {
-                    HasBirds = true,
+                    HasBirds = false,
                     CrossingFlightpaths = false,
                     HasNoFlyZone = false,
                     HasDangerDanger = false,
@@ -25,7 +25,8 @@ namespace KeepOnDroning.Core.Services
                     Weather = new WeatherResponse()
                     {
                         WindDegree = 0.45f,
-                        WindSpeed = 50
+                        WindSpeed = 20,
+                        WindDirection = "NW"
                     }
                 };
 

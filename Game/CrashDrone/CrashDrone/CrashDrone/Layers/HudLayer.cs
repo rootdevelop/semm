@@ -18,6 +18,7 @@ namespace CrashDrone.Common
 
         public HudLayer(Action up, Action down) : base(CCColor4B.Transparent)
         {
+            energy = 100;
             energySprite = new CCSprite("/Assets/Content/Images/Hud/battery.png");
             energySprite.Scale = 0.5f;
             AddChild(energySprite);
@@ -46,12 +47,14 @@ namespace CrashDrone.Common
 
         public void AddEnergy(int addedAmount)
         {
+            addedAmount = Math.Abs(addedAmount);
             energy = energy + addedAmount;
             energyLabel.Text = energy + "%";
         }
 
         public void RemoveEnergy(int removedAmount)
         {
+            removedAmount = Math.Abs(removedAmount);
             energy = energy - removedAmount;
             energyLabel.Text = energy + "%";
         }
