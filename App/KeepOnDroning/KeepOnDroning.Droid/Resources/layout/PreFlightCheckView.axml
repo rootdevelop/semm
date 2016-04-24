@@ -179,6 +179,23 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/imageView419" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            local:MvxBind="Text WindHeadingText"
+            android:textSize="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:textColor="@color/white_color"
+            android:layout_marginBottom="10dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            local:MvxBind="Text WindSpeedText"
+            android:textSize="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:textColor="@color/white_color" />
     </RelativeLayout>
     <RelativeLayout
         android:minWidth="25px"
