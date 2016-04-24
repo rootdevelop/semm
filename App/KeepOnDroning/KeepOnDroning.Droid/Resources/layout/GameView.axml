@@ -11,16 +11,17 @@
         android:layout_height="match_parent" />
     <RelativeLayout
         android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_height="50dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:minWidth="25px"
         android:minHeight="25px"
+        android:layout_margin="10dp"
         local:MvxBind="Click GoBackCommand">
         <ImageView
-            android:src="@drawable/backbutton"
+            android:src="@drawable/img_back_button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/imageView7" />
+            android:id="@+id/imageView61" />
     </RelativeLayout>
 </RelativeLayout>

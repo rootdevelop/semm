@@ -145,76 +145,79 @@ namespace KeepOnDroning.Droid
 			public const int GreenButton = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int IMG_background = 2130837509;
+			public const int IMG_back_button = 2130837509;
 			
 			// aapt resource value: 0x7f020006
-			public const int IMG_birds_negative = 2130837510;
+			public const int IMG_background = 2130837510;
 			
 			// aapt resource value: 0x7f020007
-			public const int IMG_birds_positive = 2130837511;
+			public const int IMG_birds_negative = 2130837511;
 			
 			// aapt resource value: 0x7f020008
-			public const int IMG_check_button = 2130837512;
+			public const int IMG_birds_positive = 2130837512;
 			
 			// aapt resource value: 0x7f020009
-			public const int IMG_game_button = 2130837513;
+			public const int IMG_check_button = 2130837513;
 			
 			// aapt resource value: 0x7f02000a
-			public const int IMG_info_button = 2130837514;
+			public const int IMG_game_button = 2130837514;
 			
 			// aapt resource value: 0x7f02000b
-			public const int IMG_logo = 2130837515;
+			public const int IMG_info_button = 2130837515;
 			
 			// aapt resource value: 0x7f02000c
-			public const int IMG_map_view_button = 2130837516;
+			public const int IMG_logo = 2130837516;
 			
 			// aapt resource value: 0x7f02000d
-			public const int IMG_noflyzones_negative = 2130837517;
+			public const int IMG_map_view_button = 2130837517;
 			
 			// aapt resource value: 0x7f02000e
-			public const int IMG_noflyzones_positive = 2130837518;
+			public const int IMG_noflyzones_negative = 2130837518;
 			
 			// aapt resource value: 0x7f02000f
-			public const int IMG_otherobjects_negative = 2130837519;
+			public const int IMG_noflyzones_positive = 2130837519;
 			
 			// aapt resource value: 0x7f020010
-			public const int IMG_otherobjects_positive = 2130837520;
+			public const int IMG_otherobjects_negative = 2130837520;
 			
 			// aapt resource value: 0x7f020011
-			public const int IMG_waypoints_button = 2130837521;
+			public const int IMG_otherobjects_positive = 2130837521;
 			
 			// aapt resource value: 0x7f020012
-			public const int IMG_weather_negative = 2130837522;
+			public const int IMG_waypoints_button = 2130837522;
 			
 			// aapt resource value: 0x7f020013
-			public const int IMG_weather_positive = 2130837523;
+			public const int IMG_weather_negative = 2130837523;
 			
 			// aapt resource value: 0x7f020014
-			public const int IMG_wind = 2130837524;
+			public const int IMG_weather_positive = 2130837524;
 			
 			// aapt resource value: 0x7f020015
-			public const int InfoButton = 2130837525;
+			public const int IMG_wind = 2130837525;
 			
 			// aapt resource value: 0x7f020016
-			public const int LaunchScreen = 2130837526;
+			public const int InfoButton = 2130837526;
 			
 			// aapt resource value: 0x7f020017
-			public const int MapButton = 2130837527;
+			public const int LaunchScreen = 2130837527;
 			
 			// aapt resource value: 0x7f020018
-			public const int OK = 2130837528;
+			public const int MapButton = 2130837528;
 			
 			// aapt resource value: 0x7f020019
-			public const int OrangeButton = 2130837529;
+			public const int OK = 2130837529;
 			
 			// aapt resource value: 0x7f02001a
-			public const int RedButton = 2130837530;
+			public const int OrangeButton = 2130837530;
 			
 			// aapt resource value: 0x7f02001b
-			public const int splash = 2130837531;
+			public const int RedButton = 2130837531;
 			
 			// aapt resource value: 0x7f02001c
-			public const int WaypointButton = 2130837532;
+			public const int splash = 2130837532;
+			
+			// aapt resource value: 0x7f02001d
+			public const int WaypointButton = 2130837533;
 			
 			static Drawable()
 			{
@@ -229,8 +232,8 @@ namespace KeepOnDroning.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050003
-			public const int GameView = 2131034115;
+			// aapt resource value: 0x7f050004
+			public const int GameView = 2131034116;
 			
 			// aapt resource value: 0x7f050000
 			public const int MvvmCrossTagId = 2131034112;
@@ -238,47 +241,53 @@ namespace KeepOnDroning.Droid
 			// aapt resource value: 0x7f050001
 			public const int MvxBindingTagUnique = 2131034113;
 			
-			// aapt resource value: 0x7f050007
-			public const int imageView1 = 2131034119;
-			
 			// aapt resource value: 0x7f050008
-			public const int imageView2 = 2131034120;
+			public const int imageView1 = 2131034120;
 			
 			// aapt resource value: 0x7f050009
-			public const int imageView3 = 2131034121;
+			public const int imageView2 = 2131034121;
 			
 			// aapt resource value: 0x7f05000a
-			public const int imageView4 = 2131034122;
-			
-			// aapt resource value: 0x7f05000f
-			public const int imageView419 = 2131034127;
-			
-			// aapt resource value: 0x7f050006
-			public const int imageView43 = 2131034118;
-			
-			// aapt resource value: 0x7f050005
-			public const int imageView5 = 2131034117;
-			
-			// aapt resource value: 0x7f050002
-			public const int imageView6 = 2131034114;
-			
-			// aapt resource value: 0x7f050004
-			public const int imageView7 = 2131034116;
+			public const int imageView3 = 2131034122;
 			
 			// aapt resource value: 0x7f05000b
-			public const int linearLayout1 = 2131034123;
+			public const int imageView4 = 2131034123;
 			
-			// aapt resource value: 0x7f05000c
-			public const int linearLayout2 = 2131034124;
+			// aapt resource value: 0x7f050011
+			public const int imageView419 = 2131034129;
+			
+			// aapt resource value: 0x7f050007
+			public const int imageView43 = 2131034119;
 			
 			// aapt resource value: 0x7f05000d
-			public const int linearLayout3 = 2131034125;
+			public const int imageView5 = 2131034125;
+			
+			// aapt resource value: 0x7f050003
+			public const int imageView6 = 2131034115;
+			
+			// aapt resource value: 0x7f050005
+			public const int imageView61 = 2131034117;
+			
+			// aapt resource value: 0x7f050006
+			public const int imageView9 = 2131034118;
+			
+			// aapt resource value: 0x7f05000c
+			public const int linearLayout1 = 2131034124;
 			
 			// aapt resource value: 0x7f05000e
-			public const int linearLayout4 = 2131034126;
+			public const int linearLayout2 = 2131034126;
+			
+			// aapt resource value: 0x7f05000f
+			public const int linearLayout3 = 2131034127;
 			
 			// aapt resource value: 0x7f050010
-			public const int linearLayout8 = 2131034128;
+			public const int linearLayout4 = 2131034128;
+			
+			// aapt resource value: 0x7f050012
+			public const int linearLayout8 = 2131034130;
+			
+			// aapt resource value: 0x7f050002
+			public const int webview = 2131034114;
 			
 			static Id()
 			{
