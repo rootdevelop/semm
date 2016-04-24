@@ -15,7 +15,7 @@
         android:layout_marginTop="20dp" />
     <RelativeLayout
         android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_height="120dp"
         android:layout_alignParentBottom="true"
         android:layout_margin="20dp"
         android:minWidth="25px"
@@ -31,7 +31,7 @@
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_height="120dp"
         android:layout_alignParentBottom="true"
         android:layout_margin="20dp"
         android:layout_alignParentLeft="true"
@@ -64,7 +64,7 @@
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_height="120dp"
         android:layout_margin="20dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
@@ -80,11 +80,12 @@
     </RelativeLayout>
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginRight="60dp">
+        android:layout_width="150dp"
+        android:layout_marginLeft="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        local:MvxBind="Visibility WaitingForStart,Converter=InvertedVisibility"
+        android:layout_height="wrap_content">
         <LinearLayout
             android:orientation="horizontal"
             android:minWidth="25px"
@@ -94,18 +95,12 @@
             android:id="@+id/linearLayout1">
             <Mvx.MvxImageView
                 android:src="@drawable/ok"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="150dp"
+                android:layout_height="30dp"
                 android:id="@+id/imageView5"
-                local:MvxBind="DrawableId NoFlyIsOkay,Converter=BooleanToImage"
-                android:layout_marginRight="10dp" />
-            <TextView
-                android:text="CheckBox"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:id="@+id/checkBox1"
-                local:MvxBind="Text NoFlyText"
-                android:textColor="@color/black_color" />
+                local:MvxBind="DrawableId NoFlyIsOkay,Converter=BooleanToImage,ConverterParameter=nofly"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="center_vertical" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -116,18 +111,12 @@
             android:id="@+id/linearLayout2">
             <Mvx.MvxImageView
                 android:src="@drawable/ok"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="150dp"
+                android:layout_height="30dp"
                 android:id="@+id/imageView5"
-                local:MvxBind="DrawableId BirdsIsOkay,Converter=BooleanToImage"
-                android:layout_marginRight="10dp" />
-            <TextView
-                android:text="CheckBox"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:id="@+id/checkBox2"
-                local:MvxBind="Text BirdsText"
-                android:textColor="@color/black_color" />
+                local:MvxBind="DrawableId BirdsIsOkay,Converter=BooleanToImage,ConverterParameter=birds"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="center_vertical" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -138,18 +127,12 @@
             android:id="@+id/linearLayout3">
             <Mvx.MvxImageView
                 android:src="@drawable/ok"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="150dp"
+                android:layout_height="30dp"
                 android:id="@+id/imageView5"
-                local:MvxBind="DrawableId PlanesIsOkay,Converter=BooleanToImage"
-                android:layout_marginRight="10dp" />
-            <TextView
-                android:text="CheckBox"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:id="@+id/checkBox3"
-                local:MvxBind="Text PlanesText"
-                android:textColor="@color/black_color" />
+                local:MvxBind="DrawableId PlanesIsOkay,Converter=BooleanToImage,ConverterParameter=planes"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="center_vertical" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -160,18 +143,12 @@
             android:id="@+id/linearLayout4">
             <Mvx.MvxImageView
                 android:src="@drawable/ok"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                local:MvxBind="DrawableId WeatherIsOkay,Converter=BooleanToImage"
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                local:MvxBind="DrawableId WeatherIsOkay,Converter=BooleanToImage,ConverterParameter=weather"
                 android:id="@+id/imageView5"
-                android:layout_marginRight="10dp" />
-            <TextView
-                android:text="CheckBox"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:id="@+id/checkBox4"
-                local:MvxBind="Text WeatherText"
-                android:textColor="@color/black_color" />
+                android:layout_marginRight="10dp"
+                android:layout_gravity="center_vertical" />
         </LinearLayout>
     </LinearLayout>
     <RelativeLayout
@@ -181,20 +158,33 @@
         android:minHeight="25px"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        local:MvxBind="Click PreFlightCheckCommand">
+        local:MvxBind="Click PreFlightCheckCommand;Visibility IsLoading,Converter=InvertedVisibility">
         <ImageView
             android:src="@drawable/img_check_button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/imageView4"
-            local:MvxBind="DrawableId PreFlightStatus,Converter=EPreFlightStatusToImage" />
+            android:id="@+id/imageView4" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentRight="true"
+        local:MvxBind="Visibility WaitingForStart,Converter=InvertedVisibility"
+        android:layout_centerVertical="true">
+        <ImageView
+            android:src="@drawable/img_wind"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView419" />
     </RelativeLayout>
     <RelativeLayout
         android:minWidth="25px"
         android:minHeight="25px"
-        android:background="@color/white_color"
+        android:background="@drawable/img_background"
         android:layout_width="match_parent"
-        android:layout_margin="60dp"
         android:layout_height="match_parent"
         local:MvxBind="Click InformationCommand;Visibility ShowInformation,Converter=Visibility"
         android:id="@+id/linearLayout8"
@@ -203,7 +193,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             local:MvxBind="Text WelcomeText"
-            android:textColor="@color/black_color"
+            android:textColor="@color/white_color"
             android:layout_centerInParent="true"
             android:layout_margin="10dp" />
     </RelativeLayout>

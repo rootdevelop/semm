@@ -42,16 +42,13 @@ namespace KeepOnDroning.iOS
 		UIKit.UIImageView imgCheckWeather { get; set; }
 
 		[Outlet]
-		UIKit.UILabel lblBirds { get; set; }
+		UIKit.UILabel lblWindHeading { get; set; }
 
 		[Outlet]
-		UIKit.UILabel lblNoFlyZone { get; set; }
+		UIKit.UILabel lblWindSpeed { get; set; }
 
 		[Outlet]
-		UIKit.UILabel lblPlains { get; set; }
-
-		[Outlet]
-		UIKit.UILabel lblWeather { get; set; }
+		UIKit.UIView viewResults { get; set; }
 
 		void ReleaseDesignerOutlets ()
 		{
@@ -91,21 +88,17 @@ namespace KeepOnDroning.iOS
 				imgCheckWeather.Dispose ();
 				imgCheckWeather = null;
 			}
-			if (lblBirds != null) {
-				lblBirds.Dispose ();
-				lblBirds = null;
+			if (lblWindHeading != null) {
+				lblWindHeading.Dispose ();
+				lblWindHeading = null;
 			}
-			if (lblNoFlyZone != null) {
-				lblNoFlyZone.Dispose ();
-				lblNoFlyZone = null;
+			if (lblWindSpeed != null) {
+				lblWindSpeed.Dispose ();
+				lblWindSpeed = null;
 			}
-			if (lblPlains != null) {
-				lblPlains.Dispose ();
-				lblPlains = null;
-			}
-			if (lblWeather != null) {
-				lblWeather.Dispose ();
-				lblWeather = null;
+			if (viewResults != null) {
+				viewResults.Dispose ();
+				viewResults = null;
 			}
 		}
 	}

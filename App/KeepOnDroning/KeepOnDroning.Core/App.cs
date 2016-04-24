@@ -1,5 +1,9 @@
 using MvvmCross.Platform.IoC;
 using KeepOnDroning.Core.ViewModels;
+using MvvmCross.Platform;
+using MvvmCross.Plugins.Location;
+using System.Diagnostics;
+
 
 namespace KeepOnDroning.Core
 {
@@ -11,6 +15,8 @@ namespace KeepOnDroning.Core
                 .EndingWith("Service")
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
+
+		
 
             RegisterAppStart<PreFlightCheckViewModel>();
         }

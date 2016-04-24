@@ -19,6 +19,7 @@ namespace KeepOnDroning.Api.Controllers
         }
 
         [Route("Corny/{latitude}/{longitude}")]
+        [HttpGet]
         public async Task<NoFlyResult> Corny(float latitude, float longitude)
         {
             return await _noFlyingBusiness.NoFlyResult(latitude, longitude);

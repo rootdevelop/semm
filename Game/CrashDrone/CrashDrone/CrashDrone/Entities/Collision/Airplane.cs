@@ -9,14 +9,13 @@ namespace CrashDrone.Common.Entities
 {
     public class Airplane : CollisionEntity
     {
-        private CCSprite _graphic;
         public Airplane()
         {
             this.Speed = 50f;
             InitGraphic();
         }
 
-        private void InitGraphic()
+        protected override void InitGraphic()
         {
             _graphic = new CCSprite("/Assets/Content/Images/Collision/airplane.png");
             _graphic.IsAntialiased = false;
