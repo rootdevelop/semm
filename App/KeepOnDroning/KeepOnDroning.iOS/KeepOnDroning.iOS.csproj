@@ -166,6 +166,7 @@
     <InterfaceDefinition Include="Views\CustomLocationView.xib" />
     <InterfaceDefinition Include="Views\GameView.xib" />
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
+    <InterfaceDefinition Include="Views\InfoView.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -198,6 +199,10 @@
     </Compile>
     <Compile Include="Bootstrap\LocationPluginBootstrap.cs" />
     <Compile Include="Converters\BooleanToImageConverter.cs" />
+    <Compile Include="Views\InfoView.cs" />
+    <Compile Include="Views\InfoView.designer.cs">
+      <DependentUpon>InfoView.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
