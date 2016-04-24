@@ -22,7 +22,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="IMG_back_button.png" translatesAutoresizingMaskIntoConstraints="NO" id="9Y6-JR-kb4">
-                    <rect key="frame" x="180" y="236" width="240" height="128"/>
+                    <rect key="frame" x="180" y="236" width="70" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="2AP-W8-WX0"/>
                         <constraint firstAttribute="width" constant="60" id="DNU-cc-43M"/>
@@ -50,6 +50,6 @@
         </view>
     </objects>
     <resources>
-        <image name="IMG_back_button.png" width="123" height="38"/>
+        <image name="IMG_back_button.png" width="139" height="60"/>
     </resources>
 </document>

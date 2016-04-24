@@ -16,10 +16,10 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HdH-Bh-1h3">
-                    <rect key="frame" x="0.0" y="29" width="113" height="69"/>
+                    <rect key="frame" x="10" y="29" width="70" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="69" id="hGG-U4-wyl"/>
-                        <constraint firstAttribute="width" constant="113" id="vUR-Ng-GLP"/>
+                        <constraint firstAttribute="height" constant="30" id="hGG-U4-wyl"/>
+                        <constraint firstAttribute="width" constant="70" id="vUR-Ng-GLP"/>
                     </constraints>
                     <state key="normal" backgroundImage="IMG_back_button.png"/>
                 </button>
@@ -29,8 +29,8 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="yWo-IT-TyC" firstAttribute="top" secondItem="HdH-Bh-1h3" secondAttribute="bottom" constant="71" id="Bog-9w-dRw"/>
-                <constraint firstItem="HdH-Bh-1h3" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="IJF-r8-UPx"/>
+                <constraint firstItem="yWo-IT-TyC" firstAttribute="top" secondItem="HdH-Bh-1h3" secondAttribute="bottom" constant="110" id="Bog-9w-dRw"/>
+                <constraint firstItem="HdH-Bh-1h3" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="10" id="IJF-r8-UPx"/>
                 <constraint firstItem="yWo-IT-TyC" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="LQE-ce-a06"/>
                 <constraint firstItem="HdH-Bh-1h3" firstAttribute="top" secondItem="2" secondAttribute="top" constant="29" id="SYC-zS-8lT"/>
                 <constraint firstAttribute="bottom" secondItem="yWo-IT-TyC" secondAttribute="bottom" id="q2G-fG-AZY"/>
@@ -39,6 +39,6 @@
         </view>
     </objects>
     <resources>
-        <image name="IMG_back_button.png" width="123" height="38"/>
+        <image name="IMG_back_button.png" width="139" height="60"/>
     </resources>
 </document>
