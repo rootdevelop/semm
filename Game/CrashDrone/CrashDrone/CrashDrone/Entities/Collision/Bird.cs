@@ -9,14 +9,13 @@ namespace CrashDrone.Common.Entities
 {
     public class Bird : CollisionEntity
     {
-        private CCSprite _graphic;
         public Bird()
         {
             this.Speed = CCRandom.GetRandomFloat(200f, 500f);
             InitGraphic();
         }
 
-        private void InitGraphic()
+        protected override void InitGraphic()
         {
             _graphic = new CCSprite("/Assets/Content/Images/Collision/bird.png");
             _graphic.IsAntialiased = false;
@@ -29,8 +28,5 @@ namespace CrashDrone.Common.Entities
         {
             _graphic.PositionX -= Speed * frameTimeInSeconds;
         }
-
-        public float GraphicWidth { get { return _graphic.ContentSize.Width; } }
-        public float GraphicHeight { get { return _graphic.ContentSize.Height; } }
     }
 }
