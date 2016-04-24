@@ -9,6 +9,7 @@ namespace CrashDrone.Common.Entities
 {
     public class Drone : CCNode
     {
+        float velocityCoefficient = 3;
         CCPoint desiredLocation;
         public CCPoint Velocity;
         private CCSprite _graphic;
@@ -34,8 +35,18 @@ namespace CrashDrone.Common.Entities
             _graphic = new CCSprite("/Asset/Content/Images/drone.png");
             _graphic.IsAntialiased = false;
             this._graphic.Scale = 0.3f;
-            this.SetCollisionBounds();
             AddChild(_graphic);
+        }
+
+        private void CreateCrashedGraphic()
+        {
+            var position = _graphic.Position;
+            _graphic.Visible = false;
+            this.Children.Remove(_graphic);
+            this._graphic = new CCSprite("/Assets/Content/Images/crashed_drone.png");
+            _graphic.Scale = 0.3f;
+            _graphic.Position = position;
+            this.AddChild(_graphic);
         }
 
         public void HandleInput(CCPoint touchPoint)
@@ -43,19 +54,18 @@ namespace CrashDrone.Common.Entities
             desiredLocation = touchPoint;
         }
 
-        protected void SetCollisionBounds()
-        {
-            //var graphicBounds = _graphic.BoundingBoxTransformedToWorld;
-            //this.CollisionBounds = new CCRect(graphicBounds.MinX + 10, graphicBounds.MinY + 10, graphicBounds.MaxX - graphicBounds.MinX - 20, graphicBounds.MaxY - graphicBounds.MinY - 20);
-        }
-
         public void Activity(float frameTimeInSeconds)
         {
-            const float velocityCoefficient = 3;
-
             Velocity = (desiredLocation - this.Position) * velocityCoefficient;
 
             this.Position += Velocity * frameTimeInSeconds;
+        }
+
+        public void Crash()
+        {
+            CreateCrashedGraphic();
+            velocityCoefficient = 0.3f;
+            this.HandleInput(new CCPoint(this.PositionX, -200));
         }
 
         internal void SetStartPosition(CCPoint position)

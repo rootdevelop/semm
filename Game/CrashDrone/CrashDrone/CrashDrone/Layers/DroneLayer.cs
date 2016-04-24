@@ -9,6 +9,7 @@ namespace CrashDrone.Common
     public class DroneLayer : CCLayerColor
     {
         public Drone Drone;
+        public bool crashed = false;
 
         public DroneLayer() : base(CCColor4B.Transparent)
         {
@@ -30,32 +31,44 @@ namespace CrashDrone.Common
             Drone.SetStartPosition(new CCPoint(bounds.MaxX * 0.2f, bounds.MidY));
         }
 
+        public void Crash()
+        {
+            crashed = true;
+            Drone.Crash();
+        }
+
         public void MoveUp()
         {
-            CCPoint newLocation;
-            if (Drone.PositionY + 100 > 720)
+            if (!crashed)
             {
-                newLocation = new CCPoint(Drone.PositionX, 720);
+                CCPoint newLocation;
+                if (Drone.PositionY + 100 > 720)
+                {
+                    newLocation = new CCPoint(Drone.PositionX, 720);
+                }
+                else
+                {
+                    newLocation = Drone.Position.Offset(0, +100);
+                }
+                Drone.HandleInput(newLocation);
             }
-            else
-            {
-                newLocation = Drone.Position.Offset(0, +100);
-            }
-            Drone.HandleInput(newLocation);
         }
 
         public void MoveDown()
         {
-            CCPoint newLocation;
-            if (Drone.PositionY - 100 < 120)
+            if (!crashed)
             {
-                newLocation = new CCPoint(Drone.PositionX, 120);
+                CCPoint newLocation;
+                if (Drone.PositionY - 100 < 120)
+                {
+                    newLocation = new CCPoint(Drone.PositionX, 120);
+                }
+                else
+                {
+                    newLocation = Drone.Position.Offset(0, -100);
+                }
+                Drone.HandleInput(newLocation);
             }
-            else
-            {
-                newLocation = Drone.Position.Offset(0, -100);
-            }
-            Drone.HandleInput(newLocation);
         }
     }
 }

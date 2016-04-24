@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
@@ -10,6 +11,7 @@
                 <outlet property="btnGame" destination="cGT-jJ-PSp" id="6uP-pq-GkM"/>
                 <outlet property="btnInfo" destination="iWV-g0-cVF" id="Bbq-fZ-vjv"/>
                 <outlet property="btnMap" destination="b8I-qG-Uh7" id="oXa-rW-AHr"/>
+                <outlet property="btnReset" destination="9" id="name-outlet-9"/>
                 <outlet property="btnStart" destination="aSG-gc-PWA" id="jfS-5v-E3z"/>
                 <outlet property="imgCheckBirds" destination="WV7-n8-oWv" id="kNL-Bx-vJ3"/>
                 <outlet property="imgCheckNoFly" destination="Efn-6W-xQK" id="sUN-0f-hBN"/>
@@ -19,7 +21,6 @@
                 <outlet property="lblWindSpeed" destination="Izr-nj-IYd" id="9bF-fo-SD2"/>
                 <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
                 <outlet property="viewResults" destination="7DC-6h-HMP" id="Uv3-dN-c9x"/>
-                <outlet property="btnReset" destination="9" id="name-outlet-9"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -176,19 +177,22 @@
                         <constraint firstAttribute="trailing" secondItem="UVe-6D-07I" secondAttribute="trailing" constant="14" id="ssm-6K-Wdo"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9" translatesAutoresizingMaskIntoConstraints="NO">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9">
                     <rect key="frame" x="240" y="37" width="120" height="117"/>
-                    <state key="normal">
-                        <color key="titleShadowColor" colorSpace="calibratedWhite" white="0" alpha="0"/>
-                    </state>
                     <constraints>
-                        <constraint id="24" firstAttribute="width" constant="120"/>
-                        <constraint id="25" firstAttribute="height" constant="117"/>
+                        <constraint firstAttribute="width" constant="120" id="24"/>
+                        <constraint firstAttribute="height" constant="117" id="25"/>
                     </constraints>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </state>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="9" firstAttribute="top" secondItem="2" secondAttribute="top" constant="37" id="23"/>
+                <constraint firstItem="9" firstAttribute="centerY" secondItem="gUc-Z2-MX3" secondAttribute="centerY" id="26"/>
+                <constraint firstItem="9" firstAttribute="centerX" secondItem="gUc-Z2-MX3" secondAttribute="centerX" id="27"/>
                 <constraint firstItem="b8I-qG-Uh7" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="5O3-1T-8Pb"/>
                 <constraint firstItem="cGT-jJ-PSp" firstAttribute="leading" secondItem="b8I-qG-Uh7" secondAttribute="trailing" constant="10" id="6y5-fn-ELG"/>
                 <constraint firstAttribute="trailing" secondItem="I0a-xl-ADY" secondAttribute="trailing" id="94A-cT-0mZ"/>
@@ -212,9 +216,6 @@
                 <constraint firstItem="iWV-g0-cVF" firstAttribute="top" secondItem="2" secondAttribute="top" constant="30" id="u6X-38-QLb"/>
                 <constraint firstItem="7DC-6h-HMP" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="uJR-pe-oen"/>
                 <constraint firstAttribute="bottom" secondItem="I0a-xl-ADY" secondAttribute="bottom" id="ylQ-eG-Ny8"/>
-                <constraint id="23" firstItem="9" firstAttribute="top" secondItem="2" secondAttribute="top" constant="37"/>
-                <constraint id="26" firstItem="9" firstAttribute="centerY" secondItem="gUc-Z2-MX3" secondAttribute="centerY"/>
-                <constraint id="27" firstItem="9" firstAttribute="centerX" secondItem="gUc-Z2-MX3" secondAttribute="centerX"/>
             </constraints>
             <point key="canvasLocation" x="217" y="455"/>
         </view>
@@ -232,34 +233,5 @@
         <image name="IMG_waypoints_button.png" width="222" height="265"/>
         <image name="IMG_weather_positive.png" width="375" height="90"/>
         <image name="IMG_wind.png" width="275" height="276"/>
-        <image name="Image" width="696" height="607"/>
-        <image name="StartGreenButton.png" width="433" height="428"/>
-        <image name="StartRedButton.png" width="432" height="428"/>
-        <image name="StartOrangeButton.png" width="432" height="427"/>
-        <image name="Background.png" width="602" height="601"/>
-        <image name="ComputerSaysNo.png" width="192" height="196"/>
-        <image name="GameButton.png" width="242" height="226"/>
-        <image name="InfoButton.png" width="244" height="225"/>
-        <image name="MapButton.png" width="244" height="228"/>
-        <image name="OK.png" width="192" height="196"/>
-        <image name="WaypointButton.png" width="241" height="230"/>
-        <image name="LaunchScreen.png" width="800" height="1280"/>
-        <image name="BackButton.png" width="696" height="607"/>
-        <image name="Content/Images/button_down.png" width="193" height="223"/>
-        <image name="Content/Images/button_up.png" width="192" height="222"/>
-        <image name="Content/Images/drone.png" width="387" height="192"/>
-        <image name="Content/Images/Collision/bird.png" width="320" height="136"/>
-        <image name="Content/Images/Collision/house.png" width="495" height="282"/>
-        <image name="Content/Images/Collision/radar.png" width="340" height="316"/>
-        <image name="Content/Images/Collision/tree.png" width="574" height="477"/>
-        <image name="Content/Images/Hud/battery.png" width="300" height="93"/>
-        <image name="Content/Images/Periphery/bird_baked.png" width="372" height="220"/>
-        <image name="Content/Images/Periphery/cloud1.png" width="628" height="186"/>
-        <image name="Content/Images/Periphery/cloud2.png" width="330" height="149"/>
-        <image name="Content/Images/Periphery/forest.png" width="2187" height="150"/>
-        <image name="IMG_birds_negative.png" width="375" height="90"/>
-        <image name="IMG_noflyzones_positive.png" width="375" height="90"/>
-        <image name="IMG_otherobjects_negative.png" width="375" height="90"/>
-        <image name="IMG_weather_negative.png" width="375" height="90"/>
     </resources>
 </document>
