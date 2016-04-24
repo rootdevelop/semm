@@ -33,6 +33,7 @@
   <ItemGroup>
     <Compile Include="Entities\CollisionSpawner.cs" />
     <Compile Include="Entities\Collision\Airplane.cs" />
+    <Compile Include="Entities\Collision\Battery.cs" />
     <Compile Include="Entities\Collision\Bird.cs" />
     <Compile Include="Entities\Collision\CollisionEntity.cs" />
     <Compile Include="Entities\Collision\House.cs" />
