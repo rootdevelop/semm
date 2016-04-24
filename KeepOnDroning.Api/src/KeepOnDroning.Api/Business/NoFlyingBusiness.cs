@@ -46,7 +46,7 @@ namespace KeepOnDroning.Api.Business
         public async Task<List<Ooi>> GetOois(float latitude, float longitude)
         {
             var ooisEntities = await (from a in _dbContext.Set<Domain.Ooi>()
-                                       where Distance(a.CurrentLat, a.CurrentLng, latitude, longitude, 'K') < 50 || Distance(a.DestinationLat, a.DestinationLng, latitude, longitude, 'K') < 50
+                                       where Distance(a.CurrentLat, a.CurrentLng, latitude, longitude, 'K') < 300 || Distance(a.DestinationLat, a.DestinationLng, latitude, longitude, 'K') < 300
                                        select a).ToListAsync();
 
             if (ooisEntities.Count > 0)
@@ -66,7 +66,7 @@ namespace KeepOnDroning.Api.Business
         public async Task<List<ServiceNoFlyZone>> NoFlyZones(float latitude, float longitude)
         {
             var noFlyEntities = await (from a in _dbContext.Set<Domain.Airport>()
-                                    where Distance(a.Lat, a.Lng, latitude, longitude, 'K') < 50
+                                    where Distance(a.Lat, a.Lng, latitude, longitude, 'K') < 300
                                     select a).ToListAsync();
 
             if (noFlyEntities.Count <= 0)

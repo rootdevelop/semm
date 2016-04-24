@@ -172,7 +172,6 @@
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
     <None Include="packages.config" />
-    <None Include="Content\Fonts\MarkerFelt-22.xnb" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -251,6 +250,15 @@
     <BundleResource Include="Resources\IMG_wind.png" />
     <BundleResource Include="Content\Images\Collision\collide.png" />
     <BundleResource Include="Resources\IMG_back_button.png" />
+    <BundleResource Include="Content\Images\Hud\green_block_battery.png" />
+    <BundleResource Include="Content\Images\Hud\orange_block_battery.png" />
+    <BundleResource Include="Content\Images\Hud\red_block_battery.png" />
+    <BundleResource Include="Content\Images\Hud\white_block_battery.png" />
+    <BundleResource Include="Content\Images\Collision\battery_up_plop.png" />
+    <BundleResource Include="Content\Images\Collision\battery_up.png" />
+    <BundleResource Include="Content\Images\crashed_drone.png" />
+    <BundleResource Include="Content\Images\Collision\bird_wingsup.png" />
+    <BundleResource Include="Content\Fonts\MarkerFelt-22.xnb" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KeepOnDroning.Core\KeepOnDroning.Core.csproj">
