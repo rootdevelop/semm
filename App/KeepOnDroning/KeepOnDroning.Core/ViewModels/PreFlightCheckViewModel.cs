@@ -90,6 +90,17 @@ namespace KeepOnDroning.Core.ViewModels
         }
 
       
+        public ICommand ResetCommand
+        {
+            get
+            {
+                return new MvxCommand(() =>
+                    {
+                        WaitingForStart = true;
+                        IsLoading = false;
+                    });
+            }
+        }
 
         public ICommand PreFlightCheckCommand
         {
@@ -108,8 +119,11 @@ namespace KeepOnDroning.Core.ViewModels
                             {
                                 _loc = new MvxGeoLocation() { Coordinates = new MvxCoordinates() { Latitude = 1, Longitude = 1 } };
                             }
-
+                                
                             var res = await Mvx.Resolve<IToDroneOrNotToDroneOrMaybeShouldCouldIDroneTodayOrNotBecauseILikeDroningSoMuchPleaseYesService>().TellMe(_loc.Coordinates.Latitude, _loc.Coordinates.Longitude);
+
+                            WindSpeedText = res.Weather.WindSpeed + "km/h";
+                            WindHeadingText = res.Weather.WindDirection;
 
                             Reset();
                             await Task.Delay(500);
@@ -155,6 +169,8 @@ namespace KeepOnDroning.Core.ViewModels
 
                             if (WeatherIsOkay && BirdsIsOkay && NoFlyIsOkay && PlanesIsOkay)
                                 PreFlightStatus = EPreFlightStatus.Green;
+
+
                               
                         }
                         catch (Exception ex)

@@ -45,5 +45,45 @@
     </objects>
     <resources>
         <image name="BackButton.png" width="696" height="607"/>
+        <image name="Image" width="696" height="607"/>
+        <image name="StartGreenButton.png" width="433" height="428"/>
+        <image name="StartRedButton.png" width="432" height="428"/>
+        <image name="StartOrangeButton.png" width="432" height="427"/>
+        <image name="Background.png" width="602" height="601"/>
+        <image name="ComputerSaysNo.png" width="192" height="196"/>
+        <image name="GameButton.png" width="242" height="226"/>
+        <image name="InfoButton.png" width="244" height="225"/>
+        <image name="MapButton.png" width="244" height="228"/>
+        <image name="OK.png" width="192" height="196"/>
+        <image name="WaypointButton.png" width="241" height="230"/>
+        <image name="LaunchScreen.png" width="800" height="1280"/>
+        <image name="Content/Images/button_down.png" width="193" height="223"/>
+        <image name="Content/Images/button_up.png" width="192" height="222"/>
+        <image name="Content/Images/drone.png" width="387" height="192"/>
+        <image name="Content/Images/Collision/bird.png" width="320" height="136"/>
+        <image name="Content/Images/Collision/house.png" width="495" height="282"/>
+        <image name="Content/Images/Collision/radar.png" width="340" height="316"/>
+        <image name="Content/Images/Collision/tree.png" width="574" height="477"/>
+        <image name="Content/Images/Hud/battery.png" width="300" height="93"/>
+        <image name="Content/Images/Periphery/bird_baked.png" width="372" height="220"/>
+        <image name="Content/Images/Periphery/cloud1.png" width="628" height="186"/>
+        <image name="Content/Images/Periphery/cloud2.png" width="330" height="149"/>
+        <image name="Content/Images/Periphery/forest.png" width="2187" height="150"/>
+        <image name="IMG_background.png" width="750" height="1334"/>
+        <image name="IMG_birds_negative.png" width="375" height="90"/>
+        <image name="IMG_birds_positive.png" width="375" height="90"/>
+        <image name="IMG_check_button.png" width="368" height="363"/>
+        <image name="IMG_game_button.png" width="222" height="265"/>
+        <image name="IMG_info_button.png" width="44" height="44"/>
+        <image name="IMG_logo.png" width="480" height="467"/>
+        <image name="IMG_map_view_button.png" width="222" height="265"/>
+        <image name="IMG_noflyzones_negative.png" width="375" height="90"/>
+        <image name="IMG_noflyzones_positive.png" width="375" height="90"/>
+        <image name="IMG_otherobjects_negative.png" width="375" height="90"/>
+        <image name="IMG_otherobjects_positive.png" width="375" height="90"/>
+        <image name="IMG_waypoints_button.png" width="222" height="265"/>
+        <image name="IMG_weather_negative.png" width="375" height="90"/>
+        <image name="IMG_weather_positive.png" width="375" height="90"/>
+        <image name="IMG_wind.png" width="275" height="276"/>
     </resources>
 </document>

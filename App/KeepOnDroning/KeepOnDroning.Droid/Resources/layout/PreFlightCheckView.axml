@@ -95,8 +95,8 @@
             android:id="@+id/linearLayout1">
             <Mvx.MvxImageView
                 android:src="@drawable/ok"
-                android:layout_width="150dp"
-                android:layout_height="30dp"
+                android:layout_width="160dp"
+                android:layout_height="35dp"
                 android:id="@+id/imageView5"
                 local:MvxBind="DrawableId NoFlyIsOkay,Converter=BooleanToImage,ConverterParameter=nofly"
                 android:layout_marginRight="10dp"
@@ -111,8 +111,8 @@
             android:id="@+id/linearLayout2">
             <Mvx.MvxImageView
                 android:src="@drawable/ok"
-                android:layout_width="150dp"
-                android:layout_height="30dp"
+                android:layout_width="160dp"
+                android:layout_height="35dp"
                 android:id="@+id/imageView5"
                 local:MvxBind="DrawableId BirdsIsOkay,Converter=BooleanToImage,ConverterParameter=birds"
                 android:layout_marginRight="10dp"
@@ -127,8 +127,8 @@
             android:id="@+id/linearLayout3">
             <Mvx.MvxImageView
                 android:src="@drawable/ok"
-                android:layout_width="150dp"
-                android:layout_height="30dp"
+                android:layout_width="160dp"
+                android:layout_height="35dp"
                 android:id="@+id/imageView5"
                 local:MvxBind="DrawableId PlanesIsOkay,Converter=BooleanToImage,ConverterParameter=planes"
                 android:layout_marginRight="10dp"
@@ -143,8 +143,8 @@
             android:id="@+id/linearLayout4">
             <Mvx.MvxImageView
                 android:src="@drawable/ok"
-                android:layout_width="150dp"
-                android:layout_height="30dp"
+                android:layout_width="160dp"
+                android:layout_height="35dp"
                 local:MvxBind="DrawableId WeatherIsOkay,Converter=BooleanToImage,ConverterParameter=weather"
                 android:id="@+id/imageView5"
                 android:layout_marginRight="10dp"
@@ -179,6 +179,23 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/imageView419" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            local:MvxBind="Text WindHeadingText"
+            android:textSize="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:textColor="@color/white_color"
+            android:layout_marginBottom="10dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            local:MvxBind="Text WindSpeedText"
+            android:textSize="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:textColor="@color/white_color" />
     </RelativeLayout>
     <RelativeLayout
         android:minWidth="25px"
