@@ -18,20 +18,20 @@ namespace CrashDrone.Common.Entities
 
         protected override void InitGraphic()
         {
-            Graphic = new CCSprite("/Assets/Content/Images/Collision/radar.png");
-            Graphic.IsAntialiased = false;
-            Graphic.AnchorPoint = new CCPoint(0.0f, 0.0f);
-            AddChild(Graphic);
+			Graphic = new CCSprite("/Assets/Content/Images/Collision/radar.png");
+			Graphic.IsAntialiased = false;
+			Graphic.AnchorPoint = new CCPoint(0.0f, 0.0f);
+			AddChild(Graphic);
         }
 
         public override void Activity(float frameTimeInSeconds)
         {
-            Graphic.PositionX -= Speed * frameTimeInSeconds;
+			Graphic.PositionX -= Speed * frameTimeInSeconds;
         }
 
-        public override void Collide()
-        {
-            
-        }
+		public override void Collide ()
+		{
+			
+		}
     }
 }
