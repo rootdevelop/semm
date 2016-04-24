@@ -1,18 +1,44 @@
-﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
-	<dependencies>
-		<plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703" />
-	</dependencies>
-	<objects>
-		<placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomLocationView">
-			<connections>
-				<outlet property="view" destination="2" id="RRd-Eg-VrN" />
-			</connections>
-		</placeholder>
-		<placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder" />
-		<view contentMode="scaleToFill" id="2">
-			<rect key="frame" x="0.0" y="0.0" width="600" height="600" />
-			<color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite" />
-		</view>
-	</objects>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomLocationView">
+            <connections>
+                <outlet property="BtnBack" destination="HdH-Bh-1h3" id="sKu-ZH-uhF"/>
+                <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="2">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HdH-Bh-1h3">
+                    <rect key="frame" x="0.0" y="29" width="113" height="69"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="69" id="hGG-U4-wyl"/>
+                        <constraint firstAttribute="width" constant="113" id="vUR-Ng-GLP"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="BackButton.png"/>
+                </button>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="yWo-IT-TyC">
+                    <rect key="frame" x="0.0" y="169" width="600" height="431"/>
+                </mapView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="yWo-IT-TyC" firstAttribute="top" secondItem="HdH-Bh-1h3" secondAttribute="bottom" constant="71" id="Bog-9w-dRw"/>
+                <constraint firstItem="HdH-Bh-1h3" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="IJF-r8-UPx"/>
+                <constraint firstItem="yWo-IT-TyC" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="LQE-ce-a06"/>
+                <constraint firstItem="HdH-Bh-1h3" firstAttribute="top" secondItem="2" secondAttribute="top" constant="29" id="SYC-zS-8lT"/>
+                <constraint firstAttribute="bottom" secondItem="yWo-IT-TyC" secondAttribute="bottom" id="q2G-fG-AZY"/>
+                <constraint firstAttribute="trailing" secondItem="yWo-IT-TyC" secondAttribute="trailing" id="syt-pq-sSI"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="BackButton.png" width="696" height="607"/>
+    </resources>
 </document>
