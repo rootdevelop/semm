@@ -8,7 +8,6 @@ using MvvmCross.Plugins.Location;
 using MvvmCross.Platform.UI;
 using System.Diagnostics;
 using System;
-using Acr.UserDialogs;
 
 namespace KeepOnDroning.Core.ViewModels
 {
@@ -35,11 +34,21 @@ namespace KeepOnDroning.Core.ViewModels
 
         public PreFlightCheckViewModel()
         {
+			Mvx.Resolve<IMvxLocationWatcher>().Start(new MvxLocationOptions()
+				{
+					Accuracy = MvxLocationAccuracy.Fine,
+					TrackingMode = MvxLocationTrackingMode.Foreground
+				}, (location) =>
+				{
+					Debug.WriteLine(location);
+				},
+				(error) =>
+				{
+					Debug.WriteLine(error);
+				});
+
             WaitingForStart = true;
             IsLoading = false;
-
-        
-
             NoFlyText = "Interact with Start Button for info";
             BirdsText = "Interact with Start Button for info";
             WeatherText = "Interact with Start Button for info";
@@ -154,7 +163,6 @@ namespace KeepOnDroning.Core.ViewModels
                             WaitingForStart = true;
                             IsLoading = false;
 
-                            Mvx.Resolve<IUserDialogs>().ShowError("Unable to retrieve current location, is GPS turned on?");
 
                         }
                   
