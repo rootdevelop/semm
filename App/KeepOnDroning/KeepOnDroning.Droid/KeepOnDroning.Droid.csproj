@@ -158,6 +158,7 @@
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
     <Folder Include="Converters\" />
+    <Folder Include="Assets\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ItemGroup>
@@ -171,44 +172,18 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\AboutAssets.txt">
-      <Link>Assets\AboutAssets.txt</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Fonts\MarkerFelt-22.xnb">
-      <Link>Assets\Content\Fonts\MarkerFelt-22.xnb</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\button_down.png">
-      <Link>Assets\Content\Images\button_down.png</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\button_up.png">
-      <Link>Assets\Content\Images\button_up.png</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\drone.png">
-      <Link>Assets\Content\Images\drone.png</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\Collision\house.png">
-      <Link>Assets\Content\Images\Collision\house.png</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\Collision\radar.png">
-      <Link>Assets\Content\Images\Collision\radar.png</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\Collision\tree.png">
-      <Link>Assets\Content\Images\Collision\tree.png</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\Hud\battery.png">
-      <Link>Assets\Content\Images\Hud\battery.png</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\Periphery\bird_baked.png">
-      <Link>Assets\Content\Images\Periphery\bird_baked.png</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\Periphery\cloud1.png">
-      <Link>Assets\Content\Images\Periphery\cloud1.png</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\Periphery\cloud2.png">
-      <Link>Assets\Content\Images\Periphery\cloud2.png</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\..\..\Game\CrashDrone\CrashDrone\CrashDrone.Droid\Assets\Content\Images\Periphery\forest.png">
-      <Link>Assets\Content\Images\Periphery\forest.png</Link>
-    </AndroidAsset>
+    <AndroidAsset Include="Assets\Content\Fonts\MarkerFelt-22.xnb" />
+    <AndroidAsset Include="Assets\Content\Images\button_down.png" />
+    <AndroidAsset Include="Assets\Content\Images\button_up.png" />
+    <AndroidAsset Include="Assets\Content\Images\drone.png" />
+    <AndroidAsset Include="Assets\Content\Images\Collision\bird.png" />
+    <AndroidAsset Include="Assets\Content\Images\Collision\house.png" />
+    <AndroidAsset Include="Assets\Content\Images\Collision\radar.png" />
+    <AndroidAsset Include="Assets\Content\Images\Collision\tree.png" />
+    <AndroidAsset Include="Assets\Content\Images\Hud\battery.png" />
+    <AndroidAsset Include="Assets\Content\Images\Periphery\bird_baked.png" />
+    <AndroidAsset Include="Assets\Content\Images\Periphery\cloud1.png" />
+    <AndroidAsset Include="Assets\Content\Images\Periphery\cloud2.png" />
+    <AndroidAsset Include="Assets\Content\Images\Periphery\forest.png" />
   </ItemGroup>
 </Project>
