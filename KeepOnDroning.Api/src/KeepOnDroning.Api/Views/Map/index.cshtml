@@ -21,9 +21,9 @@
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAREXqULdhvZomG8DjBZ_IdCnxLRiJh9iw&callback=initMap"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>">
 <script>
-
-    var latI = 52.142244;//urlParam("lat");
-    var lngI = 4.418725;//urlParam("lng");
+    
+    var latI = urlParam("lat");
+    var lngI = urlParam("lng");
     var pathname = window.location.href;
     var newName = pathname.split("/Map");
     var url = newName[0] + "/api/Cornyx/Corny/" + latI + "/" + lngI;
@@ -38,13 +38,11 @@
         });
     });
 
-
-
     function initMap() {
         // Create the map.
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 12,
-            center: { lat: latI, lng: lngI },
+            center: { lat: parseFloat(latI), lng: parseFloat(lngI) },
             mapTypeId: google.maps.MapTypeId.TERRAIN
         });
 
@@ -80,7 +78,7 @@
     }
 
 function urlParam(name) {
-        var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+        var results = new RegExp('[\/?&]' + name + '=([^&#]*)').exec(window.location.href);
         if (results == null) {
             return null;
         } else {
