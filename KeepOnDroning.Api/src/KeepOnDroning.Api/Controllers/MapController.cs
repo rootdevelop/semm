@@ -6,11 +6,12 @@ using Microsoft.AspNet.Mvc;
 
 namespace KeepOnDroning.Api.Controllers
 {
-    [Route("Map")]
+    [Route("View/Map")]
     public class MapController : Controller
     {
 
         [HttpGet]
+        [Route("Index/lat={lat}&lng={lng}")]
         public async Task<ActionResult> Index(float lat, float lng)
         {
             return View();
