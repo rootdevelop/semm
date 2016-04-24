@@ -77,7 +77,7 @@ namespace CrashDrone.Common.Entities
 
         private void SpawnGroundUnit()
         {
-            TimeInbetweenGroundUnitSpawns = CCRandom.GetRandomFloat(5f, 35f); ;
+            TimeInbetweenGroundUnitSpawns = CCRandom.GetRandomFloat(5f, 35f);
             CollisionEntity collisionEntity = null;
             if (CCRandom.Float_0_1() > 0.5f)
             {
