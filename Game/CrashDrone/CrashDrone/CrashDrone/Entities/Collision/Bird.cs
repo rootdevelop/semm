@@ -14,10 +14,10 @@ namespace CrashDrone.Common.Entities
         public float collideLasts { get; private set; }
         public Bird()
         {
-            this.Speed = CCRandom.GetRandomFloat(200f, 500f);
+            this.Speed = CCRandom.GetRandomFloat(150f, 700f);
             CollisionEffect = CollisionEffect.LoseEnergy;
-            EnergyChange = -10;
-            this.collideLasts = 0.5f;
+            EnergyChange = (int)(-0.05 * Speed);
+            this.collideLasts = 0.05f;
             InitGraphic();
         }
 

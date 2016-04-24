@@ -111,6 +111,10 @@ namespace CrashDrone.Common
         {
             addedAmount = Math.Abs(addedAmount);
             energy = energy + addedAmount;
+            if (energy > 100)
+            {
+                energy = 100;
+            }
             energyLabel.Text = energy + "%";
             SetBatteryVisibility();
         }
@@ -143,7 +147,7 @@ namespace CrashDrone.Common
             {
                 energyLabel.Color = CCColor3B.Yellow;
             }
-            else if (this.energy >= 10)
+            else if (this.energy > 0)
             {
                 energyLabel.Color = CCColor3B.Red;
             }
