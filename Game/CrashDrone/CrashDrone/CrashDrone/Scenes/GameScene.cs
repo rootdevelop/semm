@@ -33,6 +33,7 @@ namespace CrashDrone.Common
             _collisionLayer = new CollisionLayer();
             CreateCollisionSpawner();
             this.AddLayer(_collisionLayer);
+            _collisionList = new List<CollisionEntity>();
             var droneLayer = new DroneLayer();
             var hudLayer = new HudLayer(droneLayer.MoveUp, droneLayer.MoveDown);
             this.AddLayer(hudLayer);
