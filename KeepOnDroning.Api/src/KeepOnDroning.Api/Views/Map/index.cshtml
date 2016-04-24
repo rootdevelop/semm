@@ -29,6 +29,7 @@
     var url = newName[0] + "/api/Cornyx/Corny/" + latI + "/" + lngI;
     var airports;
     var oois;
+    var map;
 
     $(document).ready(function() {
         $.get(url, function(data) {
@@ -39,23 +40,31 @@
     });
 
     function initMap() {
-        // Create the map.
-        var map = new google.maps.Map(document.getElementById('map'), {
+        map = new google.maps.Map(document.getElementById('map'), {
             zoom: 12,
             center: { lat: parseFloat(latI), lng: parseFloat(lngI) },
             mapTypeId: google.maps.MapTypeId.TERRAIN
         });
 
-        // Construct the circle for each value in citymap.
-        // Note: We scale the area of the circle based on the population.
+        //// Add the circle for this city to the map.
+        //var selfCircle = new google.maps.Circle({
+        //    strokeColor: '#00FF00',
+        //    strokeOpacity: 0.7,
+        //    strokeWeight: 2,
+        //    fillColor: '#00FF00',
+        //    fillOpacity: 0.10,
+        //    map: map,
+        //    center: { lat: parseFloat(latI), lng: parseFloat(lngI) },
+        //    radius: Math.sqrt(80000) * 100
+        //});
+
         for (var airport in airports) {
-            // Add the circle for this city to the map.
             var airportCircle = new google.maps.Circle({
                 strokeColor: '#FF0000',
-                strokeOpacity: 0.7,
+                strokeOpacity: 0.4,
                 strokeWeight: 2,
                 fillColor: '#FF0000',
-                fillOpacity: 0.20,
+                fillOpacity: 0.10,
                 map: map,
                 center: { lat: airports[airport].Latitude, lng: airports[airport].Longitude },
                 radius: Math.sqrt(airports[airport].Size) * 100
@@ -63,7 +72,6 @@
         }
 
         for (var airport in oois) {
-            // Add the circle for this city to the map.
             var airportCircle = new google.maps.Circle({
                 strokeColor: '#FF0000',
                 strokeOpacity: 0.7,
@@ -85,6 +93,7 @@ function urlParam(name) {
             return results[1] || 0;
         }
 }
+
 
 </script>
 
