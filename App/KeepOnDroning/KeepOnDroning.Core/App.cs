@@ -16,19 +16,7 @@ namespace KeepOnDroning.Core
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 
-
-            Mvx.Resolve<IMvxLocationWatcher>().Start(new MvxLocationOptions()
-                {
-                    Accuracy = MvxLocationAccuracy.Fine,
-                    TrackingMode = MvxLocationTrackingMode.Foreground
-                }, (location) =>
-                {
-                    Debug.WriteLine(location);
-                },
-                (error) =>
-                {
-                    Debug.WriteLine(error);
-                });
+		
 
             RegisterAppStart<PreFlightCheckViewModel>();
         }

@@ -34,11 +34,21 @@ namespace KeepOnDroning.Core.ViewModels
 
         public PreFlightCheckViewModel()
         {
+			Mvx.Resolve<IMvxLocationWatcher>().Start(new MvxLocationOptions()
+				{
+					Accuracy = MvxLocationAccuracy.Fine,
+					TrackingMode = MvxLocationTrackingMode.Foreground
+				}, (location) =>
+				{
+					Debug.WriteLine(location);
+				},
+				(error) =>
+				{
+					Debug.WriteLine(error);
+				});
+
             WaitingForStart = true;
             IsLoading = false;
-
-        
-
             NoFlyText = "Interact with Start Button for info";
             BirdsText = "Interact with Start Button for info";
             WeatherText = "Interact with Start Button for info";
