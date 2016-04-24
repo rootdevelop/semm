@@ -51,7 +51,7 @@ namespace CrashDrone.Common.Entities
 
         public void Activity(float frameTimeInSeconds)
         {
-            const float velocityCoefficient = 1;
+            const float velocityCoefficient = 3;
 
             Velocity = (desiredLocation - this.Position) * velocityCoefficient;
 

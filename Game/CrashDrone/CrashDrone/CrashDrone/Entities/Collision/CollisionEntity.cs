@@ -11,7 +11,7 @@ namespace CrashDrone.Common.Entities
     {
         public float Speed { get; set; }
         public CollisionEffect CollisionEffect { get; set; }
-        public int MyProperty { get; set; }
+        public int EnergyChange { get; set; }
         private CCSprite _graphic;
         public CCSprite Graphic
         {
@@ -41,6 +41,6 @@ namespace CrashDrone.Common.Entities
                 return new CCRect(graphicBounds.MinX + 7, graphicBounds.MinY + 7, graphicBounds.MaxX - graphicBounds.MinX - 14, graphicBounds.MaxY - graphicBounds.MinY - 14);
             } }
 
-        public abstract void Collide();
+        public abstract int Collide();
     }
 }

@@ -29,7 +29,7 @@ namespace CrashDrone.Common.Entities
             Graphic.PositionX -= Speed * frameTimeInSeconds;
         }
 
-        public override void Collide()
+        public override int Collide()
         {
             throw new NotImplementedException();
         }
