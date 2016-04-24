@@ -28,7 +28,6 @@ namespace KeepOnDroning.Core.ViewModels
         private bool _birdsIsOkay;
         private bool _planesIsOkay;
         private bool _weatherIsOkay;
-        private bool _isLoading;
         private bool _showInformation;
         private bool _waitingForStart;
         private EPreFlightStatus _preFlightStatus;
