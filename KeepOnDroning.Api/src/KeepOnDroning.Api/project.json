@@ -17,7 +17,9 @@
         "EntityFramework.MicrosoftSqlServer": "7.0.0-rc1-final",
         "EntityFramework.MicrosoftSqlServer.Design": "7.0.0-rc1-final",
         "EntityFramework.Commands": "7.0.0-rc1-final",
-        "Microsoft.AspNet.Identity.EntityFramework": "3.0.0-rc1-final"
+        "Microsoft.AspNet.Identity.EntityFramework": "3.0.0-rc1-final",
+        "Swashbuckle.SwaggerGen": "6.0.0-rc1-final",
+        "Swashbuckle.SwaggerUi": "6.0.0-rc1-final"
     },
 
     "commands": {

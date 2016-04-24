@@ -10,6 +10,7 @@ using Microsoft.Data.Entity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Swashbuckle.SwaggerGen;
 
 namespace KeepOnDroning.Api
 {
@@ -38,6 +39,29 @@ namespace KeepOnDroning.Api
             // Add framework services.
             services.AddMvc();
 
+            var pathToDoc = Configuration["Swagger:Path"];
+            services.AddSwaggerGen();
+
+            services.ConfigureSwaggerDocument(options =>
+            {
+                options.SingleApiVersion(new Info
+                {
+                    Version = "v1",
+                    Title = "Droning API",
+                    Description = "Things for droning",
+                    TermsOfService = "None"
+                });
+                options.OperationFilter(new Swashbuckle.SwaggerGen.XmlComments.ApplyXmlActionComments(pathToDoc));
+            });
+
+            services.ConfigureSwaggerSchema(options =>
+            {
+                options.DescribeAllEnumsAsStrings = true;
+                options.ModelFilter(new Swashbuckle.SwaggerGen.XmlComments.ApplyXmlTypeComments(pathToDoc));
+            });
+
+            //services.AddScoped<ISearchProvider, SearchProvider>();
+
             // Config
             services.AddTransient<DancerBusiness, DancerBusiness>();
             services.AddTransient<NoFlyingBusiness, NoFlyingBusiness>();
@@ -56,6 +80,9 @@ namespace KeepOnDroning.Api
             app.UseStaticFiles();
 
             app.UseMvc();
+
+            app.UseSwaggerGen();
+            app.UseSwaggerUi();
         }
 
         // Entry point for the application.
