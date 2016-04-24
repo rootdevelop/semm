@@ -3,6 +3,7 @@
 using UIKit;
 using MvvmCross.iOS.Views;
 using Foundation;
+using KeepOnDroning.Core.ViewModels;
 
 namespace KeepOnDroning.iOS
 {
@@ -22,7 +23,8 @@ namespace KeepOnDroning.iOS
 
             BtnBack.TouchUpInside += (sender, e) => NavigationController.PopViewController(true);
 
-			var url = "https://maps.google.com";
+			string url = "https://keepondroningnew.azurewebsites.net/Map/Index/lat=52.142244&lng=4.418725";
+
 			WebView.LoadRequest(new NSUrlRequest(new NSUrl(url)));
 			WebView.ScalesPageToFit = false;
         }

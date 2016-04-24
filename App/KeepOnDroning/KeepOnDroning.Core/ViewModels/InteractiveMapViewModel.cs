@@ -10,9 +10,9 @@ namespace KeepOnDroning.Core.ViewModels
     {
         public InteractiveMapViewModel()
         {
-			var location = Mvx.Resolve<IMvxLocationWatcher>().CurrentLocation;
-			Lat = location.Coordinates.Latitude;
-			Long = location.Coordinates.Longitude;
+			//var location = Mvx.Resolve<IMvxLocationWatcher>().CurrentLocation;
+			//Lat = location.Coordinates.Latitude;
+			//Long = location.Coordinates.Longitude;
         }
 
         public ICommand GoBackCommand

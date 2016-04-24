@@ -22,7 +22,7 @@ namespace KeepOnDroning.iOS
 
             var set = this.CreateBindingSet<PreFlightCheckView, PreFlightCheckViewModel>();
             set.Bind(btnReset).To(vm => vm.ResetCommand);
-            set.Bind(btnCustom).To(ViewModel => ViewModel.GoToCustomLocationCommand);
+			set.Bind(btnCustom).To(ViewModel => ViewModel.GoToInteractiveMapCommand);
             set.Bind(btnGame).To(ViewModel => ViewModel.GoToGameCommand);
             set.Bind(btnInfo).To(ViewModel => ViewModel.InformationCommand);
             set.Bind(btnMap).To(ViewModel => ViewModel.GoToInteractiveMapCommand);
