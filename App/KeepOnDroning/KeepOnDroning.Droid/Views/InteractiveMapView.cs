@@ -5,6 +5,7 @@ using MvvmCross.Binding.BindingContext;
 using Android.Views;
 using Android.Content.PM;
 using Android.Webkit;
+using KeepOnDroning.Core.ViewModels;
 
 namespace KeepOnDroning.Droid.Views
 {
@@ -20,10 +21,12 @@ namespace KeepOnDroning.Droid.Views
             base.OnCreate(bundle);
 			SetContentView(Resource.Layout.InteractiveMapView);
 
+			string url = "http://keepondroningnew.azurewebsites.net/Map/Index/lat=" + (ViewModel as InteractiveMapViewModel).Lat + "&lng=" + (ViewModel as InteractiveMapViewModel).Long;
+
 			webview = FindViewById<WebView> (Resource.Id.webview);
 			webview.SetWebViewClient (new CustomWebViewClient ());
 			webview.Settings.JavaScriptEnabled = true;
-			webview.LoadUrl ("http://maps.google.nl");
+			webview.LoadUrl(url);
         }
     }
 
