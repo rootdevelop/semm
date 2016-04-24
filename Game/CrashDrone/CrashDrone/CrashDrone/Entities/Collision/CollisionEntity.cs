@@ -7,13 +7,11 @@ using CocosSharp;
 
 namespace CrashDrone.Common.Entities
 {
-    public abstract class CollisionEntity : CCSprite
+    public abstract class CollisionEntity : CCNode
     {
         public float Speed { get; set; }
         public CollisionEffect CollisionEffect { get; set; }
 
-        public CollisionEntity(string filename) : base(filename)
-        {
-        }
+        public abstract void Activity(float frameTimeInSeconds);
     }
 }
