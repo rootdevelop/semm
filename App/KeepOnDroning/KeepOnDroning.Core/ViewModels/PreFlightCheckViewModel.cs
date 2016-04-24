@@ -22,7 +22,7 @@ namespace KeepOnDroning.Core.ViewModels
         private bool _planesIsOkay;
         private bool _weatherIsOkay;
         private bool _isLoading;
-        private bool _showInformation = true;
+        private bool _showInformation;
         private EPreFlightStatus _preFlightStatus;
         private MvxGeoLocation _loc;
 
