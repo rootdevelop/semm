@@ -120,7 +120,6 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
     <AndroidResource Include="Resources\layout\SplashScreen.axml" />
     <AndroidResource Include="Resources\values\SplashStyle.xml" />
-    <AndroidResource Include="Resources\drawable\splash.png" />
     <AndroidResource Include="Resources\layout\PreFlightCheckView.axml" />
     <AndroidResource Include="Resources\layout\InteractiveMapView.axml" />
     <AndroidResource Include="Resources\layout\GameView.axml" />
@@ -137,6 +136,24 @@
     <AndroidResource Include="Resources\drawable\ComputerSaysNo.png" />
     <AndroidResource Include="Resources\drawable\BackButton.png" />
     <AndroidResource Include="Resources\drawable\LaunchScreen.png" />
+    <AndroidResource Include="Resources\drawable\IMG_wind.png" />
+    <AndroidResource Include="Resources\drawable\IMG_weather_positive.png" />
+    <AndroidResource Include="Resources\drawable\IMG_weather_negative.png" />
+    <AndroidResource Include="Resources\drawable\IMG_waypoints_button.png" />
+    <AndroidResource Include="Resources\drawable\IMG_otherobjects_positive.png" />
+    <AndroidResource Include="Resources\drawable\IMG_otherobjects_negative.png" />
+    <AndroidResource Include="Resources\drawable\IMG_noflyzones_positive.png" />
+    <AndroidResource Include="Resources\drawable\IMG_noflyzones_negative.png" />
+    <AndroidResource Include="Resources\drawable\IMG_map_view_button.png" />
+    <AndroidResource Include="Resources\drawable\IMG_logo.png" />
+    <AndroidResource Include="Resources\drawable\IMG_info_button.png" />
+    <AndroidResource Include="Resources\drawable\IMG_game_button.png" />
+    <AndroidResource Include="Resources\drawable\IMG_check_button.png" />
+    <AndroidResource Include="Resources\drawable\IMG_birds_positive.png" />
+    <AndroidResource Include="Resources\drawable\IMG_birds_negative.png" />
+    <AndroidResource Include="Resources\drawable\IMG_background.png" />
+    <AndroidResource Include="Resources\drawable\Background.png" />
+    <AndroidResource Include="Resources\drawable\splash.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
