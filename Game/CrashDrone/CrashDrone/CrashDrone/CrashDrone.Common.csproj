@@ -36,6 +36,7 @@
     <Compile Include="Entities\Collision\Bird.cs" />
     <Compile Include="Entities\Collision\CollisionEntity.cs" />
     <Compile Include="Entities\Collision\House.cs" />
+    <Compile Include="Entities\Collision\Radar.cs" />
     <Compile Include="Entities\Collision\Tree.cs" />
     <Compile Include="Entities\Drone.cs" />
     <Compile Include="Entities\NavigateButton.cs" />

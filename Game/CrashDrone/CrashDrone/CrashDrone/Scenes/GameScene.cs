@@ -76,9 +76,9 @@ namespace CrashDrone.Common
             foreach (var co in _collisionList)
             {
                 co.Activity(frameTimeInSeconds);
-                if (co.BoundingBoxTransformedToWorld.IntersectsRect(_drone.BoundingBoxTransformedToWorld))
+                if (co.CollisionBounds.IntersectsRect(_drone.CollisionBounds))
                 {
-
+                    co.Collide();
                 }
             }
             
