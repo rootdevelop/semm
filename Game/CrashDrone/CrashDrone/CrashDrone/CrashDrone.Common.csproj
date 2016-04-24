@@ -56,17 +56,17 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="box2d">
-      <HintPath>..\..\packages\CocosSharp.1.7.0.0-pre1\lib\portable-net45+win+wpa81+wp81\box2d.dll</HintPath>
+      <HintPath>..\..\..\..\App\KeepOnDroning\packages\CocosSharp.1.7.1.0\lib\portable-net45+win+wpa81+wp81\box2d.dll</HintPath>
     </Reference>
     <Reference Include="CocosSharp">
-      <HintPath>..\..\packages\CocosSharp.1.7.0.0-pre1\lib\portable-net45+win+wpa81+wp81\CocosSharp.dll</HintPath>
+      <HintPath>..\..\..\..\App\KeepOnDroning\packages\CocosSharp.1.7.1.0\lib\portable-net45+win+wpa81+wp81\CocosSharp.dll</HintPath>
     </Reference>
     <Reference Include="MonoGame.Framework">
-      <HintPath>..\..\packages\CocosSharp.1.7.0.0-pre1\lib\portable-net45+win+wpa81+wp81\MonoGame.Framework.dll</HintPath>
+      <HintPath>..\..\..\..\App\KeepOnDroning\packages\CocosSharp.1.7.1.0\lib\portable-net45+win+wpa81+wp81\MonoGame.Framework.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

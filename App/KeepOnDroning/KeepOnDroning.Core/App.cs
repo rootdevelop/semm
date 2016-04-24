@@ -3,7 +3,7 @@ using KeepOnDroning.Core.ViewModels;
 using MvvmCross.Platform;
 using MvvmCross.Plugins.Location;
 using System.Diagnostics;
-using Acr.UserDialogs;
+
 
 namespace KeepOnDroning.Core
 {

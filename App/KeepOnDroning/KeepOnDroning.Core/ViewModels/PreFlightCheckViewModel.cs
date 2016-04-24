@@ -8,7 +8,6 @@ using MvvmCross.Plugins.Location;
 using MvvmCross.Platform.UI;
 using System.Diagnostics;
 using System;
-using Acr.UserDialogs;
 
 namespace KeepOnDroning.Core.ViewModels
 {
@@ -154,7 +153,6 @@ namespace KeepOnDroning.Core.ViewModels
                             WaitingForStart = true;
                             IsLoading = false;
 
-                            Mvx.Resolve<IUserDialogs>().ShowError("Unable to retrieve current location, is GPS turned on?");
 
                         }
                   
