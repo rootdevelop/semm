@@ -44,5 +44,20 @@ namespace KeepOnDroning.iOS
 			if (GameUIView != null)
 				GameUIView.Paused = false;
 		}
+
+		public override bool PrefersStatusBarHidden()
+		{
+			return true;
+		}
+
+		public override UIInterfaceOrientationMask GetSupportedInterfaceOrientations ()
+		{
+			return UIInterfaceOrientationMask.Landscape;
+		}
+
+		public override bool ShouldAutorotateToInterfaceOrientation (UIInterfaceOrientation toInterfaceOrientation)
+		{
+			return toInterfaceOrientation == UIInterfaceOrientation.LandscapeLeft;
+		}
 	}
 }

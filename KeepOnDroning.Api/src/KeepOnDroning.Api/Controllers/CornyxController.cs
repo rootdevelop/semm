@@ -8,49 +8,21 @@ using Microsoft.AspNet.Mvc;
 
 namespace KeepOnDroning.Api.Controllers
 {
-    [Route("api/lothric")]
+    [Route("api/Cornyx")]
     public class CornyxController : Controller
     {
-        private DancerBusiness _noFlyingBusiness;
+        private readonly NoFlyingBusiness _noFlyingBusiness;
 
-        public CornyxController(DancerBusiness noFlyingBusiness)
+        public CornyxController(NoFlyingBusiness noFlyingBusiness)
         {
             _noFlyingBusiness = noFlyingBusiness;
         }
 
-        [Route("Estus/{latitude}/{longitude}")]
-        public async Task<DancerResponse> Estus(float latitude, float longitude)
+        [Route("Corny/{latitude}/{longitude}")]
+        public async Task<NoFlyResult> Corny(float latitude, float longitude)
         {
-            var dancer = await _noFlyingBusiness.Dancing(latitude, longitude);
-
-            return dancer;
+            return await _noFlyingBusiness.NoFlyResult(latitude, longitude);
         }
 
-        [Route("Estusses")]
-        [HttpPost]
-        public async Task<RouteResult> Estusses(IList<ServiceCoordinate> coordinates)
-        {
-            var list = new List<DancerResponse>();
-
-            foreach (var coordinate in coordinates)
-            {
-                list.Add(await _noFlyingBusiness.Dancing(coordinate.Lat, coordinate.Lng));
-            }
-
-            var resp = new RouteResult
-            {
-                DancerResponses = list,
-                BasinOfVows = new DancerResponse()
-                {
-                    CrossingFlightpaths = list.Any(x => x.CrossingFlightpaths),
-                    HasBirds = list.Any(x => x.HasBirds),
-                    HasDangerDanger = list.Any(x => x.HasDangerDanger),
-                    HasNoFlyZone = list.Any(x => x.HasNoFlyZone),
-                    MaxHeight = list.Max(x => x.MaxHeight),
-                }
-            };
-
-            return resp;
-        }
     }
 }

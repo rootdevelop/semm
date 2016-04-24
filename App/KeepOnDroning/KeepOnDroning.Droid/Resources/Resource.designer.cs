@@ -145,22 +145,25 @@ namespace KeepOnDroning.Droid
 			public const int InfoButton = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int MapButton = 2130837509;
+			public const int LaunchScreen = 2130837509;
 			
 			// aapt resource value: 0x7f020006
-			public const int OK = 2130837510;
+			public const int MapButton = 2130837510;
 			
 			// aapt resource value: 0x7f020007
-			public const int OrangeButton = 2130837511;
+			public const int OK = 2130837511;
 			
 			// aapt resource value: 0x7f020008
-			public const int RedButton = 2130837512;
+			public const int OrangeButton = 2130837512;
 			
 			// aapt resource value: 0x7f020009
-			public const int splash = 2130837513;
+			public const int RedButton = 2130837513;
 			
 			// aapt resource value: 0x7f02000a
-			public const int WaypointButton = 2130837514;
+			public const int splash = 2130837514;
+			
+			// aapt resource value: 0x7f02000b
+			public const int WaypointButton = 2130837515;
 			
 			static Drawable()
 			{

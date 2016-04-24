@@ -19,13 +19,39 @@ namespace KeepOnDroning.Api.Business
             _dbContext = dbContext;
         }
 
+        public async Task<NoFlyResult> NoFlyResult(float latitude, float longitude)
+        {
+            var oois = await GetOois(latitude, longitude);
+            var zones = await NoFlyZones(latitude, longitude);
+
+            return new NoFlyResult()
+            {
+                NoFlyZones = zones.Count > 0 ? zones : null,
+                Oois = oois.Count > 0 ? oois : null
+            };
+        }
+
+        public async Task<List<Ooi>> GetOois(float latitude, float longitude)
+        {
+            var ooisEntities = await (from a in _dbContext.Set<Domain.Ooi>()
+                                       where Distance(a.CurrentLat, a.CurrentLng, latitude, longitude, 'K') < 50 || Distance(a.DestinationLat, a.DestinationLng, latitude, longitude, 'K') < 50
+                                       select a).ToListAsync();
+
+            if (ooisEntities.Count > 0)
+            {
+                return null;
+            }
+
+            return ooisEntities;
+        }
+
         public async Task<List<ServiceNoFlyZone>> NoFlyZones(float latitude, float longitude)
         {
             var noFlyEntities = await (from a in _dbContext.Set<Domain.Airport>()
-                                    where distance(a.Lat, a.Lng, latitude, longitude, 'K') < 50
+                                    where Distance(a.Lat, a.Lng, latitude, longitude, 'K') < 50
                                     select a).ToListAsync();
 
-            if (noFlyEntities.Count > 0)
+            if (noFlyEntities.Count <= 0)
             {
                 return null;
             }
@@ -48,7 +74,7 @@ namespace KeepOnDroning.Api.Business
         public async Task<bool> IsInNoFlyZone(float latitude, float longitude)
         {
             var noFlyZones = await (from a in _dbContext.Set<Domain.Airport>()
-                                    where distance(a.Lat, a.Lng, latitude, longitude, 'K') < 5
+                                    where Distance(a.Lat, a.Lng, latitude, longitude, 'K') < 5
                                     select a).ToListAsync();
 
             if (noFlyZones.Count > 0)
@@ -69,7 +95,7 @@ namespace KeepOnDroning.Api.Business
         //:::           GeoDataSource.com (C) All Rights Reserved 2015                :::
         //:::                                                                         :::
         //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-        private double distance(double lat1, double lon1, double lat2, double lon2, char unit)
+        private double Distance(double lat1, double lon1, double lat2, double lon2, char unit)
         {
             double theta = lon1 - lon2;
             double dist = Math.Sin(deg2rad(lat1)) * Math.Sin(deg2rad(lat2)) + Math.Cos(deg2rad(lat1)) * Math.Cos(deg2rad(lat2)) * Math.Cos(deg2rad(theta));

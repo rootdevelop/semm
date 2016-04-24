@@ -9,6 +9,8 @@ namespace KeepOnDroning.Core.Domain
         public float WindSpeed { get; set; }
 
         public float WindDegree { get; set; }
+
+        public string WindDirection { get; set; }
     }
 }
 

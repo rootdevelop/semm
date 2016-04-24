@@ -40,6 +40,7 @@
     <Compile Include="Entities\Drone.cs" />
     <Compile Include="Entities\NavigateButton.cs" />
     <Compile Include="Entities\PeripherySpawner.cs" />
+    <Compile Include="Entities\Periphery\Cloud.cs" />
     <Compile Include="Entities\Periphery\Forest.cs" />
     <Compile Include="Entities\Periphery\PeripheryEntity.cs" />
     <Compile Include="Entities\Periphery\RoastedChicken.cs" />
@@ -53,20 +54,20 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scenes\GameScene.cs" />
   </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
-    <Reference Include="box2d, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\packages\CocosSharp.1.7.0.0-pre1\lib\portable-net45+win+wpa81+wp81\box2d.dll</HintPath>
+    <Reference Include="box2d">
+      <HintPath>..\..\..\..\App\KeepOnDroning\packages\CocosSharp.1.7.1.0\lib\portable-net45+win+wpa81+wp81\box2d.dll</HintPath>
     </Reference>
-    <Reference Include="CocosSharp, Version=1.7.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\packages\CocosSharp.1.7.0.0-pre1\lib\portable-net45+win+wpa81+wp81\CocosSharp.dll</HintPath>
+    <Reference Include="CocosSharp">
+      <HintPath>..\..\..\..\App\KeepOnDroning\packages\CocosSharp.1.7.1.0\lib\portable-net45+win+wpa81+wp81\CocosSharp.dll</HintPath>
     </Reference>
-    <Reference Include="MonoGame.Framework, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\packages\CocosSharp.1.7.0.0-pre1\lib\portable-net45+win+wpa81+wp81\MonoGame.Framework.dll</HintPath>
+    <Reference Include="MonoGame.Framework">
+      <HintPath>..\..\..\..\App\KeepOnDroning\packages\CocosSharp.1.7.1.0\lib\portable-net45+win+wpa81+wp81\MonoGame.Framework.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 </Project>
