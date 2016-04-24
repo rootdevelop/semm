@@ -211,5 +211,12 @@
     <AndroidAsset Include="Assets\Content\Images\Periphery\cloud2.png" />
     <AndroidAsset Include="Assets\Content\Images\Periphery\forest.png" />
     <AndroidAsset Include="Assets\Content\Images\Collision\collide.png" />
+    <AndroidAsset Include="Assets\Content\Images\Collision\battery_up_plop.png" />
+    <AndroidAsset Include="Assets\Content\Images\Collision\battery_up.png" />
+    <AndroidAsset Include="Assets\Content\Images\Hud\green_block_battery.png" />
+    <AndroidAsset Include="Assets\Content\Images\Hud\orange_block_battery.png" />
+    <AndroidAsset Include="Assets\Content\Images\Hud\red_block_battery.png" />
+    <AndroidAsset Include="Assets\Content\Images\Hud\white_block_battery.png" />
+    <AndroidAsset Include="Assets\Content\Images\crashed_drone.png" />
   </ItemGroup>
 </Project>
