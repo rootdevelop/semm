@@ -58,7 +58,7 @@ namespace CrashDrone.Common.Entities
             {
                 timeSinceLastFlap += frameTimeInSeconds;
                 Graphic.PositionX -= Speed * frameTimeInSeconds;
-                if(FlapUp && timeSinceLastFlap > 0.5f)
+                if(FlapUp && timeSinceLastFlap > 0.9 - Speed / 1000)
                 {
                     timeSinceLastFlap = 0.0f;
                     var position = Graphic.Position;
@@ -70,7 +70,7 @@ namespace CrashDrone.Common.Entities
                     this.AddChild(Graphic);
                     FlapUp = false;
                 }
-                else if (timeSinceLastFlap > 0.5f)
+                else if (timeSinceLastFlap > 0.9 - Speed / 1000)
                 {
                     timeSinceLastFlap = 0.0f;
                     var position = Graphic.Position;
