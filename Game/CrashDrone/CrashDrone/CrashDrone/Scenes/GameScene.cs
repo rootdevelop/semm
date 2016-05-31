@@ -103,6 +103,7 @@ namespace CrashDrone.Common
                     int energyChange = co.Collide();
                     if (energyChange < 0)
                     {
+                        _hudLayer.AddScore(1);
                         _hudLayer.RemoveEnergy(energyChange);
                         var label = new CCLabel(string.Format("{0}", energyChange), "Fonts/MarkerFelt", 22, CCLabelFormat.SpriteFont);
                         label.Position = collisionCenter.Offset(0, -150f);

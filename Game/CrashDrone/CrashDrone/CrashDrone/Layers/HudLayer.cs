@@ -22,12 +22,15 @@ namespace CrashDrone.Common
         CCSprite energySprite;
         public int energy;
         CCLabel energyLabel;
+        public int Score;
+        CCLabel ScoreLabel;
 
         NavigateButton buttonUp;
         NavigateButton buttonDown;
 
         public HudLayer(Action up, Action down) : base(CCColor4B.Transparent)
         {
+            Score = 0;
             energy = 100;
 
             Battery10 = new CCSprite("/Assets/Content/Images/Hud/red_block_battery.png");
@@ -78,6 +81,10 @@ namespace CrashDrone.Common
             energyLabel.Color = CCColor3B.Green;
             AddChild(energyLabel);
 
+            ScoreLabel = new CCLabel("Score: 0", "Fonts/MarkerFelt", 22, CCLabelFormat.SpriteFont);
+            ScoreLabel.Color = new CCColor3B(200, 48, 255);
+            AddChild(ScoreLabel);
+
             buttonUp = new NavigateButton("up", 100, up);
             AddChild(buttonUp);
 
@@ -92,6 +99,7 @@ namespace CrashDrone.Common
             var bounds = VisibleBoundsWorldspace;
             energySprite.Position = new CCPoint(bounds.MaxX * 0.1f, bounds.MaxY * 0.95f);
             energyLabel.Position = new CCPoint(bounds.MaxX * 0.1f, bounds.MaxY * 0.89f);
+            ScoreLabel.Position = new CCPoint(bounds.MaxX * 0.25f, bounds.MaxY * 0.95f);
             Battery10.Position = new CCPoint(bounds.MaxX * 0.05f, bounds.MaxY * 0.95f);
             Battery20.Position = new CCPoint(bounds.MaxX * 0.06f, bounds.MaxY * 0.95f);
             Battery30.Position = new CCPoint(bounds.MaxX * 0.07f, bounds.MaxY * 0.95f);
@@ -105,6 +113,12 @@ namespace CrashDrone.Common
 
             buttonUp.Position = new CCPoint(bounds.MaxX * 0.9f, bounds.MaxY * 0.12f);
             buttonDown.Position = new CCPoint(bounds.MaxX * 0.1f, bounds.MaxY * 0.12f);
+        }
+
+        public void AddScore(int increase)
+        {
+            Score += increase;
+            ScoreLabel.Text = string.Format("Score: {0}", Score);
         }
 
         public void AddEnergy(int addedAmount)
