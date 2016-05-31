@@ -46,18 +46,6 @@
             mapTypeId: google.maps.MapTypeId.TERRAIN
         });
 
-        //// Add the circle for this city to the map.
-        //var selfCircle = new google.maps.Circle({
-        //    strokeColor: '#00FF00',
-        //    strokeOpacity: 0.7,
-        //    strokeWeight: 2,
-        //    fillColor: '#00FF00',
-        //    fillOpacity: 0.10,
-        //    map: map,
-        //    center: { lat: parseFloat(latI), lng: parseFloat(lngI) },
-        //    radius: Math.sqrt(80000) * 100
-        //});
-
         for (var airport in airports) {
             var airportCircle = new google.maps.Circle({
                 strokeColor: '#FF0000',
@@ -71,18 +59,30 @@
             });
         }
 
-        for (var airport in oois) {
-            var airportCircle = new google.maps.Circle({
+        for (var ooi in oois) {
+            var ooiCircle = new google.maps.Circle({
                 strokeColor: '#FF0000',
                 strokeOpacity: 0.7,
                 strokeWeight: 2,
                 fillColor: '#FF0000',
                 fillOpacity: 0.60,
                 map: map,
-                center: { lat: airports[airport].CurrentLat, lng: airports[airport].CurrentLng },
+                center: { lat: oois[ooi].CurrentLat, lng: oois[ooi].CurrentLng },
                 radius: Math.sqrt(10) * 100
             });
         }
+
+        // Add the circle for this city to the map.
+        var selfCircle = new google.maps.Circle({
+            strokeColor: '#00FF00',
+            strokeOpacity: 0.7,
+            strokeWeight: 2,
+            fillColor: '#00FF00',
+            fillOpacity: 0.10,
+            map: map,
+            center: { lat: parseFloat(latI), lng: parseFloat(lngI) },
+            radius: Math.sqrt(10) * 100
+        });
     }
 
 function urlParam(name) {

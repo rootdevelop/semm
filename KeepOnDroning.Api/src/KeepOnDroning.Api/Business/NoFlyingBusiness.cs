@@ -33,7 +33,7 @@ namespace KeepOnDroning.Api.Business
             return new NoFlyResult()
             {
                 NoFlyZones = zones.Count > 0 ? zones : null,
-                Oois = oois.Count > 0 ? oois : null
+                Oois = oois?.Count > 0 ? oois : null
             };
         }
 
@@ -49,7 +49,7 @@ namespace KeepOnDroning.Api.Business
                                        where Distance(a.CurrentLat, a.CurrentLng, latitude, longitude, 'K') < 300 || Distance(a.DestinationLat, a.DestinationLng, latitude, longitude, 'K') < 300
                                        select a).ToListAsync();
 
-            if (ooisEntities.Count > 0)
+            if (ooisEntities.Count <= 0)
             {
                 return null;
             }

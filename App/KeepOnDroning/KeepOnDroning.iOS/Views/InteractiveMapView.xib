@@ -21,12 +21,12 @@
                     <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                 </webView>
                 <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5">
-                    <rect key="frame" x="8" y="8" width="60" height="60"/>
+                    <rect key="frame" x="520" y="10" width="70" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="96" id="8"/>
                         <constraint firstAttribute="width" constant="113" id="9"/>
-                        <constraint firstAttribute="height" constant="60" id="g3X-6o-dgA"/>
-                        <constraint firstAttribute="width" constant="60" id="u2g-NV-abc"/>
+                        <constraint firstAttribute="height" constant="30" id="g3X-6o-dgA"/>
+                        <constraint firstAttribute="width" constant="70" id="u2g-NV-abc"/>
                     </constraints>
                     <state key="normal" backgroundImage="IMG_back_button.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -42,21 +42,15 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="Jnr-Mm-Lfr" secondAttribute="trailing" id="CIv-GV-moz"/>
-                <constraint firstItem="5" firstAttribute="top" secondItem="2" secondAttribute="top" constant="8" id="VSb-ag-QTb"/>
-                <constraint firstItem="5" firstAttribute="top" secondItem="2" secondAttribute="top" constant="29" id="WVw-Kv-g0l"/>
+                <constraint firstAttribute="trailing" secondItem="5" secondAttribute="trailing" constant="10" id="D40-tk-qiO"/>
+                <constraint firstItem="5" firstAttribute="top" secondItem="2" secondAttribute="top" constant="10" id="VSb-ag-QTb"/>
                 <constraint firstItem="Jnr-Mm-Lfr" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="aga-C2-3di"/>
                 <constraint firstItem="Jnr-Mm-Lfr" firstAttribute="top" secondItem="2" secondAttribute="top" id="e94-s3-Qsh"/>
                 <constraint firstAttribute="bottom" secondItem="Jnr-Mm-Lfr" secondAttribute="bottom" id="eMQ-br-As7"/>
-                <constraint firstItem="5" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="8" id="qlO-c0-MM5"/>
             </constraints>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="WVw-Kv-g0l"/>
-                </mask>
-            </variation>
         </view>
     </objects>
     <resources>
-        <image name="IMG_back_button.png" width="123" height="38"/>
+        <image name="IMG_back_button.png" width="139" height="60"/>
     </resources>
 </document>
