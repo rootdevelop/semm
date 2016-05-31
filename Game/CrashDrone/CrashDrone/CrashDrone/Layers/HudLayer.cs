@@ -25,6 +25,8 @@ namespace CrashDrone.Common
         public int Score;
         CCLabel ScoreLabel;
 
+        CCLabel RestartLabel;
+
         NavigateButton buttonUp;
         NavigateButton buttonDown;
 
@@ -170,6 +172,53 @@ namespace CrashDrone.Common
                 energyLabel.Color = CCColor3B.Black;
                 energyLabel.Text = "GAME OVER";
             }
+        }
+
+        Drone drone;
+        public void FlashRestart(Drone drone)
+        {
+            this.drone = drone;
+            Schedule(CheckFlashStart);            
+        }
+
+        private void CheckFlashStart(float frameTimeInSeconds)
+        {
+            if (drone != null && drone.PositionY < 0)
+            {
+
+                RestartLabel = new CCLabel("Touch to restart", "Fonts/MarkerFelt", 22, CCLabelFormat.SpriteFont);
+                RestartLabel.Color = new CCColor3B(200, 48, 255);
+                RestartLabel.Position = new CCPoint(VisibleBoundsWorldspace.MaxX * 0.5f, VisibleBoundsWorldspace.MaxY * 0.5f);
+                AddChild(RestartLabel);
+
+                Schedule(FlashRestartInner);
+                Unschedule(CheckFlashStart);
+            }
+        }
+
+        private CCColor3B[] FlashColors = 
+            {
+            CCColor3B.Black, CCColor3B.White, CCColor3B.DarkGray, CCColor3B.Yellow, CCColor3B.Gray,
+            CCColor3B.Magenta, CCColor3B.Blue, CCColor3B.Orange, CCColor3B.Green, CCColor3B.Red
+        };
+
+        private int _flashIndex = 1;
+        private CCColor3B GetNextFlashColor()
+        {
+            if (_flashIndex < 9)
+            {
+                _flashIndex++;
+            }
+            else
+            {
+                _flashIndex = 0;
+            }
+            return FlashColors[_flashIndex];
+        }
+
+        private void FlashRestartInner(float frameTimeInSeconds)
+        {
+            RestartLabel.Color = GetNextFlashColor();
         }
     }
 }

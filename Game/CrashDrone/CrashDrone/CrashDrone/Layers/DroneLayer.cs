@@ -35,6 +35,18 @@ namespace CrashDrone.Common
         {
             crashed = true;
             Drone.Crash();
+
+            var touchListener = new CCEventListenerTouchAllAtOnce();
+            touchListener.OnTouchesEnded = AllowRestart;
+            AddEventListener(touchListener, this);
+        }
+
+        private void AllowRestart(List<CCTouch> touches, CCEvent e)
+        {
+            if (touches.Count > 0 && Drone.PositionY < 0)
+            {
+                GameDelegate.RestartGame();
+            }
         }
 
         public void MoveUp()

@@ -123,6 +123,7 @@ namespace CrashDrone.Common
                     if (_hudLayer.energy <= 0)
                     {
                         _droneLayer.Crash();
+                        _hudLayer.FlashRestart(_drone);
                     }
                 }
             }
