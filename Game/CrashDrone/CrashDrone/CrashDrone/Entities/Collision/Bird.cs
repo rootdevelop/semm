@@ -14,9 +14,10 @@ namespace CrashDrone.Common.Entities
         public bool IsRoasted { get; set; }
         private bool falling;
         public float collideLasts { get; private set; }
-        public Bird()
+
+        public Bird(float speed)
         {
-            this.Speed = CCRandom.GetRandomFloat(150f, 700f);
+            this.Speed = speed;
             CollisionEffect = CollisionEffect.LoseEnergy;
             EnergyChange = (int)(-0.05 * Speed);
             this.collideLasts = 0.05f;
