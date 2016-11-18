@@ -51,8 +51,9 @@
     <MtouchArch>i386</MtouchArch>
     <MtouchLink>None</MtouchLink>
     <MtouchUseRefCounting>true</MtouchUseRefCounting>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>iPhone Distribution: Rick Artz (T8SMW473LD)</CodesignKey>
     <MtouchUseSGen>true</MtouchUseSGen>
+    <CodesignProvision>442dd633-9451-41ba-bdfc-e6b5179b747e</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -69,8 +70,9 @@
     <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <MtouchDebug>true</MtouchDebug>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>iPhone Developer: Rick Artz (588Q4A953Y)</CodesignKey>
     <MtouchUseSGen>true</MtouchUseSGen>
+    <CodesignProvision>deb66ae2-d28f-435c-8d4a-7a0de7c11f67</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -107,6 +109,7 @@
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
     <None Include="packages.config" />
+    <None Include="Content\tilemaps\Background_Level_0.tmx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -133,5 +136,9 @@
     <BundleResource Include="Content\tilemaps\level0.jpg" />
     <BundleResource Include="Content\tilemaps\level0.tmx" />
     <BundleResource Include="Content\Images\monkey.png" />
+    <BundleResource Include="Content\Images\shield.png" />
+    <BundleResource Include="Content\Images\player.png" />
+    <BundleResource Include="Content\tilemaps\level0_500x500.jpg" />
+    <BundleResource Include="Content\tilemaps\level0.png" />
   </ItemGroup>
 </Project>

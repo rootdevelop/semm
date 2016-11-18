@@ -64,6 +64,8 @@
     <None Include="Properties\AndroidManifest.xml" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="packages.config" />
+    <AndroidAsset Include="Assets\Content\Images\player.png" />
+    <AndroidAsset Include="Assets\Content\Images\shield.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />

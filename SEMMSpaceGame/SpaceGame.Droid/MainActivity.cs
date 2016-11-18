@@ -33,7 +33,7 @@ namespace SpaceGame.Droid
 
 				// Set world dimensions
 
-				gameView.DesignResolution = new CCSizeI (viewSize.Width, viewSize.Height);
+				gameView.DesignResolution = new CCSizeI (320, 160);
 
 				// Determine whether to use the high or low def versions of our images
 				// Make sure the default texel to content size ratio is set correctly
@@ -52,9 +52,7 @@ namespace SpaceGame.Droid
 				*/
 
 				gameView.ContentManager.SearchPaths = contentSearchPaths;
-
 				CCScene gameScene = new CCScene (gameView);
-
 				gameScene.AddLayer (new InitialGameLayer ());
 				gameView.RunWithScene (gameScene);
 			}

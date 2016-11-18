@@ -5,7 +5,7 @@
 	<key>CFBundleName</key>
 	<string>SpaceGame.iOS</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.semm.spacegame.spacegame-ios</string>
+	<string>com.appiekap.spacegame</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>

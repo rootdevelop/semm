@@ -38,13 +38,9 @@ namespace SpaceGame.Common
 			stationCore.SetDesiredPositionToCurrentPosition();
 			AddChild(stationCore);
 
-			/*
-			helloLabel = new CCLabel("Hello Space Apps!", "Arial", 30, CCLabelFormat.SystemFont);
-			helloLabel.PositionX = ContentSize.Height/2;
-			helloLabel.PositionY = ContentSize.Width/2;
-			helloLabel.Color = CCColor3B.White;
-			AddChild (helloLabel);
-			*/
+
+			tileMap.TileLayersContainer.RunAction(new CCFollow(stationCore, new CCRect(0, 0, 5000.0f, 5000.0f)));
+
 
 			// Use the bounds to layout the positioning of our drawable assets
 			CCRect bounds = VisibleBoundsWorldspace;

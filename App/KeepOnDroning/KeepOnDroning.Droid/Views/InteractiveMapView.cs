@@ -21,7 +21,7 @@ namespace KeepOnDroning.Droid.Views
             base.OnCreate(bundle);
 			SetContentView(Resource.Layout.InteractiveMapView);
 
-			string url = "http://keepondroningnew.azurewebsites.net/Map/Index/lat=" + (ViewModel as InteractiveMapViewModel).Lat + "&lng=" + (ViewModel as InteractiveMapViewModel).Long;
+			string url ="https://keepondroningnew.azurewebsites.net/Map/Index/lat=52.142244&lng=4.418725";
 
 			webview = FindViewById<WebView> (Resource.Id.webview);
 			webview.SetWebViewClient (new CustomWebViewClient ());
